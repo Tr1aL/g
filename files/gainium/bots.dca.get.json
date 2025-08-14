@@ -1,0 +1,3235 @@
+{
+  "status": "OK",
+  "reason": null,
+  "data": {
+    "page": 1,
+    "totalPages": 1,
+    "totalResults": 6,
+    "result": [
+      {
+        "_id": "689dc3ed9fc939e674733852",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "open",
+        "profit": {
+          "freeTotal": 0,
+          "freeTotalUsd": 0,
+          "total": 1.0486049508044568,
+          "totalUsd": 1.0489090415185869,
+          "pureBase": -0.00548400000001421,
+          "pureQuote": 1.066255003204505
+        },
+        "profitToday": {
+          "start": 0,
+          "end": 0,
+          "totalToday": 0,
+          "totalTodayUsd": 0
+        },
+        "symbol": [
+          {
+            "key": "FORTHUSDT",
+            "value": {
+              "symbol": "FORTHUSDT",
+              "baseAsset": "FORTH",
+              "quoteAsset": "USDT"
+            }
+          }
+        ],
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "workingShift": [
+          {
+            "start": 1755169775857,
+            "_id": "689dc3ef6628fafd5c4fdb49"
+          }
+        ],
+        "workingTimeNumber": 0,
+        "initialBalances": {
+          "base": [
+            {
+              "key": "FORTH",
+              "value": 68.7
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 0
+            }
+          ]
+        },
+        "currentBalances": {
+          "base": [
+            {
+              "key": "FORTH",
+              "value": 66.8
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 5.42849
+            }
+          ]
+        },
+        "usdRate": {
+          "GTCUSDT": 0
+        },
+        "lastPrice": {},
+        "lastUsdRate": {},
+        "assets": {
+          "used": {
+            "base": [
+              {
+                "key": "FORTH",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 0.4505294999999999
+              }
+            ]
+          },
+          "required": {
+            "base": [
+              {
+                "key": "FORTH",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 10.733685499999998
+              }
+            ]
+          }
+        },
+        "uuid": "4a356d5d-b746-4cc9-8e4c-dcc971130288",
+        "paperContext": false,
+        "vars": {
+          "list": [],
+          "paths": []
+        },
+        "updated": "2025-08-14T13:56:13.938Z",
+        "settings": {
+          "name": "SHORT_TEMPLATE (clone)",
+          "pair": [
+            "FORTHUSDT"
+          ],
+          "profitCurrency": "quote",
+          "orderFixedIn": "quote",
+          "skipBalanceCheck": false,
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "maxDealsPerHigherTimeframe": "1",
+          "useMaxDealsPerHigherTimeframe": true,
+          "dcaCustom": [],
+          "strategy": "SHORT",
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "startCondition": "ASAP",
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "orderSize": "9",
+          "step": "1.25",
+          "ordersCount": 8,
+          "activeOrdersCount": 1,
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "useTp": true,
+          "useSl": true,
+          "useSmartOrders": true,
+          "useDca": true,
+          "hodlDay": "7",
+          "hodlAt": "15:00:00",
+          "hodlNextBuy": 1755172800000,
+          "maxNumberOfOpenDeals": "10",
+          "indicators": [],
+          "indicatorGroups": [],
+          "type": "regular",
+          "orderSizeType": "quote",
+          "limitTimeout": "20",
+          "useLimitTimeout": true,
+          "cooldownAfterDealStart": false,
+          "cooldownAfterDealStartUnits": "minutes",
+          "cooldownAfterDealStartInterval": 1,
+          "cooldownAfterDealStop": false,
+          "cooldownAfterDealStopUnits": "minutes",
+          "cooldownAfterDealStopInterval": 1,
+          "cooldownAfterDealStartOption": "bot",
+          "cooldownAfterDealStopOption": "bot",
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingSl": false,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useCloseAfterX": false,
+          "useCloseAfterXwin": false,
+          "closeAfterXwin": "20",
+          "useCloseAfterXloss": false,
+          "closeAfterXloss": "20",
+          "useCloseAfterXprofit": true,
+          "closeAfterXprofitValue": "20",
+          "closeAfterXprofitCond": "gt",
+          "closeAfterX": "20",
+          "useCloseAfterXopen": false,
+          "closeAfterXopen": "20",
+          "maxDealsPerPair": "1",
+          "ignoreStartDeals": false,
+          "comboTpBase": "filled",
+          "useMulti": true,
+          "botStart": "manual",
+          "useBotController": true,
+          "stopType": "leave",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "useMinTP": false,
+          "minTp": "1",
+          "closeDealType": "closeByMarket",
+          "useMultiTp": false,
+          "multiTp": [],
+          "useMultiSl": true,
+          "pairPrioritization": "alphabetical",
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689dae779fc939e67470519a"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689dae779fc939e67470519b"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689dae779fc939e67470519c"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689dae779fc939e67470519d"
+            }
+          ],
+          "marginType": "cross",
+          "leverage": 20,
+          "futures": true,
+          "coinm": false,
+          "useVolumeFilter": false,
+          "volumeTop": "500",
+          "volumeValue": "top25",
+          "useRelativeVolumeFilter": false,
+          "relativeVolumeTop": "500",
+          "relativeVolumeValue": "top25",
+          "useDynamicPriceFilter": true,
+          "dynamicPriceFilterOverValue": "3",
+          "dynamicPriceFilterDeviation": "1",
+          "dynamicPriceFilterPriceType": "entry",
+          "useNoOverlapDeals": false,
+          "dynamicPriceFilterDirection": "over",
+          "riskSlType": "perc",
+          "riskSlAmountPerc": "2",
+          "riskSlAmountValue": "10",
+          "riskUseTpRatio": true,
+          "riskTpRatio": "1.5",
+          "riskMinPositionSize": "0",
+          "scaleDcaType": "percentage",
+          "riskMaxPositionSize": "-1",
+          "dynamicArLockValue": true,
+          "comboSmartGridsCount": "6",
+          "useRiskReduction": false,
+          "riskReductionValue": "50",
+          "useReinvest": false,
+          "reinvestValue": "50",
+          "startBotPriceCondition": "gt",
+          "stopBotPriceCondition": "gt",
+          "botActualStart": "manual",
+          "_id": "689dae779fc939e674705199"
+        },
+        "deals": {
+          "all": 22,
+          "active": 1
+        },
+        "usage": {
+          "current": {
+            "base": 0,
+            "quote": 0.2714245
+          },
+          "currentUsd": 0.27152764131,
+          "max": {
+            "base": 0,
+            "quote": 110.2407075
+          },
+          "maxUsd": 110.28259896885001,
+          "relative": 406.15606734101016
+        },
+        "flags": [
+          "newBaseProfit"
+        ],
+        "profitByAssets": [
+          {
+            "asset": "FORTH",
+            "total": -0.00548400000001421,
+            "totalUsd": -0.01778577606835231,
+            "_id": "689dd7fe6628fafd5c502ac4"
+          },
+          {
+            "asset": "USDT",
+            "total": 1.066255003204505,
+            "totalUsd": 1.0665641944783626,
+            "_id": "689dd7fe6628fafd5c502ac5"
+          }
+        ],
+        "created": "2025-08-14T11:09:33.165Z",
+        "dealsReduceForBot": [],
+        "lastOpenedDealPerSymbol": [
+          {
+            "symbol": "FORTHUSDT",
+            "time": 1755174916372,
+            "_id": "689dd8046628fafd5c502bd1"
+          }
+        ],
+        "lastClosedDealPerSymbol": [
+          {
+            "symbol": "FORTHUSDT",
+            "time": 1755174910562,
+            "_id": "689dd7fe6628fafd5c502acb"
+          }
+        ],
+        "lastPricesPerSymbol": [
+          {
+            "symbol": "FORTHUSDT",
+            "avg": 2.8571,
+            "entry": 2.8571,
+            "time": 1755174916372,
+            "_id": "689dd81e6628fafd5c502d0a"
+          }
+        ],
+        "indicatorsData": [],
+        "symbolStats": [
+          {
+            "numerical": {
+              "deals": {
+                "profit": 21,
+                "loss": 0
+              },
+              "general": {
+                "startBalance": {
+                  "usd": 11.028820281760002,
+                  "asset": 11.026174000000001,
+                  "_id": "689dd7fe6628fafd5c502ad3"
+                },
+                "netProfit": {
+                  "usd": 1.0489090415185869,
+                  "asset": 1.0486049508044568,
+                  "_id": "689dd7fe6628fafd5c502ad4"
+                },
+                "netProfitPerc": 0.09510618676535364,
+                "dailyProfit": {
+                  "usd": 17.649490927058764,
+                  "asset": 17.644374138006903,
+                  "_id": "689dd7fe6628fafd5c502ad5"
+                },
+                "dailyProfitPerc": 26.92758948795466,
+                "winRate": 1,
+                "profitFactor": -1
+              }
+            },
+            "duration": {
+              "maxDealDuration": 1246183,
+              "avgDealDuration": 0
+            },
+            "symbol": "FORTHUSDT",
+            "_id": "689dd7fe6628fafd5c502ad2"
+          }
+        ],
+        "lastOpenedDeal": 1755174916372,
+        "stats": {
+          "numerical": {
+            "profit": {
+              "grossProfit": {
+                "usd": 1.0489090415185869,
+                "asset": 1.0486049508044568,
+                "_id": "689dd7fe6628fafd5c502ad7"
+              },
+              "grossProfitPerc": 0.009510618676535364,
+              "maxDealProfit": {
+                "usd": 0.10414756541824022,
+                "asset": 0.10412257600000022,
+                "_id": "689dd7fe6628fafd5c502ad8"
+              },
+              "maxDealProfitPerc": 0.0009443219016859358,
+              "avgDealProfit": {
+                "usd": 0.04994804959612319,
+                "asset": 0.04993356908592651,
+                "_id": "689dd7fe6628fafd5c502ad9"
+              },
+              "avgDealProfitPerc": 0.0004528866036445412,
+              "maxRunUp": {
+                "usd": 1.0489090415185842,
+                "asset": 1.0486049508044601,
+                "_id": "689dd7fe6628fafd5c502ada"
+              },
+              "maxRunUpPerc": 0.00951061867653534,
+              "maxConsecutiveWins": 21,
+              "standardDeviationOfPositiveReturns": 0,
+              "series": {
+                "count": 21,
+                "value": {
+                  "usd": 1.0489090415185842,
+                  "asset": 1.0486049508044601,
+                  "_id": "689dd7fe6628fafd5c502adc"
+                },
+                "minValue": {
+                  "usd": 110.28820281760001,
+                  "asset": 110.26174,
+                  "_id": "689dd7fe6628fafd5c502add"
+                },
+                "maxValue": {
+                  "usd": 111.3371118591186,
+                  "asset": 111.31034495080446,
+                  "_id": "689dd7fe6628fafd5c502ade"
+                },
+                "perc": 0.00951061867653534,
+                "_id": "689dd7fe6628fafd5c502adb"
+              }
+            },
+            "loss": {
+              "grossLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dd7fe6628fafd5c502adf"
+              },
+              "grossLossPerc": 0,
+              "maxDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dd7fe6628fafd5c502ae0"
+              },
+              "maxDealLossPerc": 0,
+              "avgDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dd7fe6628fafd5c502ae1"
+              },
+              "avgDealLossPerc": 0,
+              "maxDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dd7fe6628fafd5c502ae2"
+              },
+              "maxDrawdownPerc": 0,
+              "maxEquityDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dd7fe6628fafd5c502ae3"
+              },
+              "maxEquityDrawdownPerc": 0,
+              "maxConsecutiveLosses": 0,
+              "standardDeviationOfNegativeReturns": 0,
+              "standardDeviationOfDownside": 0,
+              "series": {
+                "count": 0,
+                "value": {
+                  "usd": 0,
+                  "asset": 0,
+                  "_id": "689dd7fe6628fafd5c502ae5"
+                },
+                "minValue": {
+                  "usd": 111.3371118591186,
+                  "asset": 111.31034495080446,
+                  "_id": "689dd7fe6628fafd5c502ae6"
+                },
+                "maxValue": {
+                  "usd": 111.3371118591186,
+                  "asset": 111.31034495080446,
+                  "_id": "689dd7fe6628fafd5c502ae7"
+                },
+                "perc": 0,
+                "_id": "689dd7fe6628fafd5c502ae4"
+              },
+              "seriesEquity": {
+                "value": 0,
+                "min": 0,
+                "max": 0,
+                "perc": 0
+              }
+            },
+            "general": {
+              "netProfitPerc": 0.009510618676535364,
+              "avgDaily": {
+                "usd": 17.649490927058764,
+                "asset": 17.644374138006903,
+                "_id": "689dd7fe6628fafd5c502ae8"
+              },
+              "avgDailyPerc": 0.160030633160723,
+              "annualizedReturn": 58.41118110366389,
+              "startBalance": {
+                "usd": 110.28820281760001,
+                "asset": 110.26174,
+                "_id": "689dd7fe6628fafd5c502ae9"
+              },
+              "maxDCAOrdersTriggered": 1,
+              "avgDCAOrdersTriggered": 0,
+              "coveredPriceDeviation": 0.06250733309867426,
+              "actualPriceDeviation": 0.06256231306081758,
+              "confidenceGrade": "F"
+            },
+            "ratios": {
+              "profitFactor": -1,
+              "sharpeRatio": 0,
+              "sortinoRatio": 0,
+              "cwr": 0,
+              "buyAndHold": {
+                "result": -21.037025219310166,
+                "perc": -0.19074592460357906,
+                "symbol": "FORTHUSDT",
+                "startPrice": 3.4092
+              }
+            },
+            "usage": {
+              "maxTheoreticalUsage": 11.048397,
+              "maxActualUsage": 0.743822,
+              "avgDealUsage": 0
+            },
+            "deals": {
+              "profit": 21,
+              "loss": 0
+            }
+          },
+          "duration": {
+            "profit": {
+              "avgWinningTradeDuration": 0,
+              "maxWinningTradeDuration": 1246183
+            },
+            "loss": {
+              "avgLosingTradeDuration": 0,
+              "maxLosingTradeDuration": 0
+            },
+            "general": {
+              "maxDealDuration": 1246183,
+              "avgDealDuration": 0,
+              "dealsPerDay": 353.3569592761168,
+              "workingTime": 5134751
+            }
+          },
+          "chart": [
+            {
+              "realizedProfit": 111.3371118591186,
+              "buyAndHold": 110.28820281760001,
+              "equity": 111.3371118591186,
+              "time": 1755129600000,
+              "_id": "689dd7fe6628fafd5c502aea"
+            }
+          ],
+          "_id": "689dd7fe6628fafd5c502ad6"
+        },
+        "lastClosedDeal": 1755174910562,
+        "unrealizedProfit": -0.13438104540001627
+      },
+      {
+        "_id": "689dc3f09fc939e674733883",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "open",
+        "profit": {
+          "freeTotal": 0,
+          "freeTotalUsd": 0,
+          "total": 0.8335329279999988,
+          "totalUsd": 0.8338381385020789,
+          "pureBase": -0.08856,
+          "pureQuote": 0.8476547799999989
+        },
+        "profitToday": {
+          "start": 0,
+          "end": 0,
+          "totalToday": 0,
+          "totalTodayUsd": 0
+        },
+        "symbol": [
+          {
+            "key": "KAIAUSDT",
+            "value": {
+              "symbol": "KAIAUSDT",
+              "baseAsset": "KAIA",
+              "quoteAsset": "USDT"
+            }
+          }
+        ],
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "workingShift": [
+          {
+            "start": 1755169778829,
+            "_id": "689dc3f26628fafd5c4fdb92"
+          }
+        ],
+        "workingTimeNumber": 0,
+        "initialBalances": {
+          "base": [
+            {
+              "key": "KAIA",
+              "value": 1332
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 0
+            }
+          ]
+        },
+        "currentBalances": {
+          "base": [
+            {
+              "key": "KAIA",
+              "value": 1166
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 26.5732
+            }
+          ]
+        },
+        "usdRate": {
+          "GTCUSDT": 0
+        },
+        "lastPrice": {},
+        "lastUsdRate": {},
+        "assets": {
+          "used": {
+            "base": [
+              {
+                "key": "KAIA",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 0.75795
+              }
+            ]
+          },
+          "required": {
+            "base": [
+              {
+                "key": "KAIA",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 9.696645
+              }
+            ]
+          }
+        },
+        "uuid": "8f2760ba-a815-473f-91bc-036f79fe8fb5",
+        "paperContext": false,
+        "vars": {
+          "list": [],
+          "paths": []
+        },
+        "updated": "2025-08-14T13:56:10.703Z",
+        "settings": {
+          "name": "SHORT_TEMPLATE (clone)",
+          "pair": [
+            "KAIAUSDT"
+          ],
+          "profitCurrency": "quote",
+          "orderFixedIn": "quote",
+          "skipBalanceCheck": false,
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "maxDealsPerHigherTimeframe": "1",
+          "useMaxDealsPerHigherTimeframe": true,
+          "dcaCustom": [],
+          "strategy": "SHORT",
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "startCondition": "ASAP",
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "orderSize": "9",
+          "step": "1.25",
+          "ordersCount": 8,
+          "activeOrdersCount": 1,
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "useTp": true,
+          "useSl": true,
+          "useSmartOrders": true,
+          "useDca": true,
+          "hodlDay": "7",
+          "hodlAt": "15:00:00",
+          "hodlNextBuy": 1755172800000,
+          "maxNumberOfOpenDeals": "10",
+          "indicators": [],
+          "indicatorGroups": [],
+          "type": "regular",
+          "orderSizeType": "quote",
+          "limitTimeout": "20",
+          "useLimitTimeout": true,
+          "cooldownAfterDealStart": false,
+          "cooldownAfterDealStartUnits": "minutes",
+          "cooldownAfterDealStartInterval": 1,
+          "cooldownAfterDealStop": false,
+          "cooldownAfterDealStopUnits": "minutes",
+          "cooldownAfterDealStopInterval": 1,
+          "cooldownAfterDealStartOption": "bot",
+          "cooldownAfterDealStopOption": "bot",
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingSl": false,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useCloseAfterX": false,
+          "useCloseAfterXwin": false,
+          "closeAfterXwin": "20",
+          "useCloseAfterXloss": false,
+          "closeAfterXloss": "20",
+          "useCloseAfterXprofit": true,
+          "closeAfterXprofitValue": "20",
+          "closeAfterXprofitCond": "gt",
+          "closeAfterX": "20",
+          "useCloseAfterXopen": false,
+          "closeAfterXopen": "20",
+          "maxDealsPerPair": "1",
+          "ignoreStartDeals": false,
+          "comboTpBase": "filled",
+          "useMulti": true,
+          "botStart": "manual",
+          "useBotController": true,
+          "stopType": "leave",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "useMinTP": false,
+          "minTp": "1",
+          "closeDealType": "closeByMarket",
+          "useMultiTp": false,
+          "multiTp": [],
+          "useMultiSl": true,
+          "pairPrioritization": "alphabetical",
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689dae779fc939e67470519a"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689dae779fc939e67470519b"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689dae779fc939e67470519c"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689dae779fc939e67470519d"
+            }
+          ],
+          "marginType": "cross",
+          "leverage": 20,
+          "futures": true,
+          "coinm": false,
+          "useVolumeFilter": false,
+          "volumeTop": "500",
+          "volumeValue": "top25",
+          "useRelativeVolumeFilter": false,
+          "relativeVolumeTop": "500",
+          "relativeVolumeValue": "top25",
+          "useDynamicPriceFilter": true,
+          "dynamicPriceFilterOverValue": "3",
+          "dynamicPriceFilterDeviation": "1",
+          "dynamicPriceFilterPriceType": "entry",
+          "useNoOverlapDeals": false,
+          "dynamicPriceFilterDirection": "over",
+          "riskSlType": "perc",
+          "riskSlAmountPerc": "2",
+          "riskSlAmountValue": "10",
+          "riskUseTpRatio": true,
+          "riskTpRatio": "1.5",
+          "riskMinPositionSize": "0",
+          "scaleDcaType": "percentage",
+          "riskMaxPositionSize": "-1",
+          "dynamicArLockValue": true,
+          "comboSmartGridsCount": "6",
+          "useRiskReduction": false,
+          "riskReductionValue": "50",
+          "useReinvest": false,
+          "reinvestValue": "50",
+          "startBotPriceCondition": "gt",
+          "stopBotPriceCondition": "gt",
+          "botActualStart": "manual",
+          "_id": "689dae779fc939e674705199"
+        },
+        "deals": {
+          "all": 12,
+          "active": 1
+        },
+        "usage": {
+          "current": {
+            "base": 0,
+            "quote": 1.32866
+          },
+          "currentUsd": 1.3291648908,
+          "max": {
+            "base": 0,
+            "quote": 110.27748500000001
+          },
+          "maxUsd": 110.31939044430001,
+          "relative": 82.99902533379496
+        },
+        "flags": [
+          "newBaseProfit"
+        ],
+        "profitByAssets": [
+          {
+            "asset": "KAIA",
+            "total": -0.08856,
+            "totalUsd": -0.014230859037359999,
+            "_id": "689de3746628fafd5c5072ad"
+          },
+          {
+            "asset": "USDT",
+            "total": 0.8476547799999989,
+            "totalUsd": 0.847965159526799,
+            "_id": "689de3746628fafd5c5072ae"
+          }
+        ],
+        "created": "2025-08-14T11:09:36.156Z",
+        "dealsReduceForBot": [],
+        "lastOpenedDealPerSymbol": [
+          {
+            "symbol": "KAIAUSDT",
+            "time": 1755177845570,
+            "_id": "689de3756628fafd5c5072ec"
+          }
+        ],
+        "lastClosedDealPerSymbol": [
+          {
+            "symbol": "KAIAUSDT",
+            "time": 1755177845166,
+            "_id": "689de3756628fafd5c5072dc"
+          }
+        ],
+        "lastPricesPerSymbol": [
+          {
+            "symbol": "KAIAUSDT",
+            "avg": 0.1601,
+            "entry": 0.1578,
+            "time": 1755177845570,
+            "_id": "689de9fa6628fafd5c50909b"
+          }
+        ],
+        "indicatorsData": [],
+        "symbolStats": [
+          {
+            "numerical": {
+              "deals": {
+                "profit": 11,
+                "loss": 0
+              },
+              "general": {
+                "startBalance": {
+                  "usd": 11.031441910799998,
+                  "asset": 11.028794999999999,
+                  "_id": "689de3746628fafd5c5072b9"
+                },
+                "netProfit": {
+                  "usd": 0.8338381385020789,
+                  "asset": 0.8335329279999988,
+                  "_id": "689de3746628fafd5c5072ba"
+                },
+                "netProfitPerc": 0.07558741144126725,
+                "dailyProfit": {
+                  "usd": 8.932172353831618,
+                  "asset": 8.928902902983907,
+                  "_id": "689de3746628fafd5c5072bb"
+                },
+                "dailyProfitPerc": 8.673615209143193,
+                "winRate": 1,
+                "profitFactor": -1
+              }
+            },
+            "duration": {
+              "maxDealDuration": 2617790,
+              "avgDealDuration": 0
+            },
+            "symbol": "KAIAUSDT",
+            "_id": "689de3746628fafd5c5072b8"
+          }
+        ],
+        "lastOpenedDeal": 1755177845570,
+        "unrealizedProfit": -0.38534637599999755,
+        "stats": {
+          "numerical": {
+            "profit": {
+              "grossProfit": {
+                "usd": 0.8338381385020789,
+                "asset": 0.8335329279999988,
+                "_id": "689de3746628fafd5c5072bd"
+              },
+              "grossProfitPerc": 0.007558741144126724,
+              "maxDealProfit": {
+                "usd": 0.3091530135204036,
+                "asset": 0.3090355800000036,
+                "_id": "689de3746628fafd5c5072be"
+              },
+              "maxDealProfitPerc": 0.002802471481246134,
+              "avgDealProfit": {
+                "usd": 0.07580346713655263,
+                "asset": 0.07577572072727262,
+                "_id": "689de3746628fafd5c5072bf"
+              },
+              "avgDealProfitPerc": 0.0006871582858297022,
+              "maxRunUp": {
+                "usd": 0.8338381385020739,
+                "asset": 0.8335329279999968,
+                "_id": "689de3746628fafd5c5072c0"
+              },
+              "maxRunUpPerc": 0.007558741144126679,
+              "maxConsecutiveWins": 11,
+              "standardDeviationOfPositiveReturns": 0,
+              "series": {
+                "count": 11,
+                "value": {
+                  "usd": 0.8338381385020739,
+                  "asset": 0.8335329279999968,
+                  "_id": "689de3746628fafd5c5072c2"
+                },
+                "minValue": {
+                  "usd": 110.314419108,
+                  "asset": 110.28795,
+                  "_id": "689de3746628fafd5c5072c3"
+                },
+                "maxValue": {
+                  "usd": 111.14825724650207,
+                  "asset": 111.12148292799999,
+                  "_id": "689de3746628fafd5c5072c4"
+                },
+                "perc": 0.007558741144126679,
+                "_id": "689de3746628fafd5c5072c1"
+              }
+            },
+            "loss": {
+              "grossLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de3746628fafd5c5072c5"
+              },
+              "grossLossPerc": 0,
+              "maxDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de3746628fafd5c5072c6"
+              },
+              "maxDealLossPerc": 0,
+              "avgDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de3746628fafd5c5072c7"
+              },
+              "avgDealLossPerc": 0,
+              "maxDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de3746628fafd5c5072c8"
+              },
+              "maxDrawdownPerc": 0,
+              "maxEquityDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de3746628fafd5c5072c9"
+              },
+              "maxEquityDrawdownPerc": 0,
+              "maxConsecutiveLosses": 0,
+              "standardDeviationOfNegativeReturns": 0,
+              "standardDeviationOfDownside": 0,
+              "series": {
+                "count": 0,
+                "value": {
+                  "usd": 0,
+                  "asset": 0,
+                  "_id": "689de3746628fafd5c5072cb"
+                },
+                "minValue": {
+                  "usd": 111.14825724650207,
+                  "asset": 111.12148292799999,
+                  "_id": "689de3746628fafd5c5072cc"
+                },
+                "maxValue": {
+                  "usd": 111.14825724650207,
+                  "asset": 111.12148292799999,
+                  "_id": "689de3746628fafd5c5072cd"
+                },
+                "perc": 0,
+                "_id": "689de3746628fafd5c5072ca"
+              },
+              "seriesEquity": {
+                "value": 0,
+                "min": 0,
+                "max": 0,
+                "perc": 0
+              }
+            },
+            "general": {
+              "netProfitPerc": 0.007558741144126724,
+              "avgDaily": {
+                "usd": 8.932172353831618,
+                "asset": 8.928902902983907,
+                "_id": "689de3746628fafd5c5072ce"
+              },
+              "avgDailyPerc": 0.08097012544739816,
+              "annualizedReturn": 29.55409578830033,
+              "startBalance": {
+                "usd": 110.314419108,
+                "asset": 110.28795,
+                "_id": "689de3746628fafd5c5072cf"
+              },
+              "maxDCAOrdersTriggered": 3,
+              "avgDCAOrdersTriggered": 0,
+              "coveredPriceDeviation": 0.06160287081339715,
+              "actualPriceDeviation": 0.06225930680359445,
+              "confidenceGrade": "F"
+            },
+            "ratios": {
+              "profitFactor": -1,
+              "sharpeRatio": 0,
+              "sortinoRatio": 0,
+              "cwr": 0,
+              "buyAndHold": {
+                "result": -6.202755254529896,
+                "perc": -0.05622796461863499,
+                "symbol": "KAIAUSDT",
+                "startPrice": 0.1672
+              }
+            },
+            "usage": {
+              "maxTheoreticalUsage": 11.039629999999999,
+              "maxActualUsage": 2.091075,
+              "avgDealUsage": 0
+            },
+            "deals": {
+              "profit": 11,
+              "loss": 0
+            }
+          },
+          "duration": {
+            "profit": {
+              "avgWinningTradeDuration": 0,
+              "maxWinningTradeDuration": 2617790
+            },
+            "loss": {
+              "avgLosingTradeDuration": 0,
+              "maxLosingTradeDuration": 0
+            },
+            "general": {
+              "maxDealDuration": 2617790,
+              "avgDealDuration": 0,
+              "dealsPerDay": 117.83329564254853,
+              "workingTime": 8065632
+            }
+          },
+          "chart": [
+            {
+              "realizedProfit": 111.14825724650207,
+              "buyAndHold": 110.314419108,
+              "equity": 111.14825724650207,
+              "time": 1755129600000,
+              "_id": "689de3746628fafd5c5072d0"
+            }
+          ],
+          "_id": "689de3746628fafd5c5072bc"
+        },
+        "lastClosedDeal": 1755177845166
+      },
+      {
+        "_id": "689dc3f39fc939e6747338c6",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "open",
+        "profit": {
+          "freeTotal": 0,
+          "freeTotalUsd": 0,
+          "total": 10.202549937001349,
+          "totalUsd": 10.206324880770103,
+          "pureBase": -1.5802963199996414,
+          "pureQuote": 13.084383840313185
+        },
+        "profitToday": {
+          "start": 0,
+          "end": 0,
+          "totalToday": 0,
+          "totalTodayUsd": 0
+        },
+        "symbol": [
+          {
+            "key": "GTCUSDT",
+            "value": {
+              "symbol": "GTCUSDT",
+              "baseAsset": "GTC",
+              "quoteAsset": "USDT"
+            }
+          }
+        ],
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "workingShift": [
+          {
+            "start": 1755169781902,
+            "end": 1755177165413,
+            "_id": "689de0cf6628fafd5c505241"
+          },
+          {
+            "start": 1755177167133,
+            "_id": "689de0cf6628fafd5c505242"
+          }
+        ],
+        "workingTimeNumber": 7383511,
+        "initialBalances": {
+          "base": [
+            {
+              "key": "GTC",
+              "value": 511.70000000000005
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 0
+            }
+          ]
+        },
+        "currentBalances": {
+          "base": [
+            {
+              "key": "GTC",
+              "value": 447.8
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 26.66272
+            }
+          ]
+        },
+        "usdRate": {
+          "GTCUSDT": 0
+        },
+        "lastPrice": {},
+        "lastUsdRate": {},
+        "assets": {
+          "used": {
+            "base": [
+              {
+                "key": "GTC",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 0.760213
+              }
+            ]
+          },
+          "required": {
+            "base": [
+              {
+                "key": "GTC",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 9.70063
+              }
+            ]
+          }
+        },
+        "uuid": "b248bf15-87ae-4038-97ad-d89238d5562c",
+        "paperContext": false,
+        "vars": {
+          "list": [],
+          "paths": []
+        },
+        "updated": "2025-08-14T13:55:32.524Z",
+        "settings": {
+          "name": "SHORT_TEMPLATE (clone)",
+          "pair": [
+            "GTCUSDT"
+          ],
+          "profitCurrency": "quote",
+          "orderFixedIn": "quote",
+          "skipBalanceCheck": false,
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "maxDealsPerHigherTimeframe": "1",
+          "useMaxDealsPerHigherTimeframe": true,
+          "dcaCustom": [],
+          "strategy": "SHORT",
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "startCondition": "ASAP",
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "orderSize": "9",
+          "step": "1.25",
+          "ordersCount": 8,
+          "activeOrdersCount": 1,
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "useTp": true,
+          "useSl": true,
+          "useSmartOrders": true,
+          "useDca": true,
+          "hodlDay": "7",
+          "hodlAt": "15:00:00",
+          "hodlNextBuy": 1755172800000,
+          "maxNumberOfOpenDeals": "10",
+          "indicators": [],
+          "indicatorGroups": [],
+          "type": "regular",
+          "orderSizeType": "quote",
+          "limitTimeout": "20",
+          "useLimitTimeout": true,
+          "cooldownAfterDealStart": false,
+          "cooldownAfterDealStartUnits": "minutes",
+          "cooldownAfterDealStartInterval": 1,
+          "cooldownAfterDealStop": false,
+          "cooldownAfterDealStopUnits": "minutes",
+          "cooldownAfterDealStopInterval": 1,
+          "cooldownAfterDealStartOption": "bot",
+          "cooldownAfterDealStopOption": "bot",
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingSl": false,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useCloseAfterX": false,
+          "useCloseAfterXwin": false,
+          "closeAfterXwin": "20",
+          "useCloseAfterXloss": false,
+          "closeAfterXloss": "20",
+          "useCloseAfterXprofit": true,
+          "closeAfterXprofitValue": "20",
+          "closeAfterXprofitCond": "gt",
+          "closeAfterX": "20",
+          "useCloseAfterXopen": false,
+          "closeAfterXopen": "20",
+          "maxDealsPerPair": "1",
+          "ignoreStartDeals": false,
+          "comboTpBase": "filled",
+          "useMulti": true,
+          "botStart": "manual",
+          "useBotController": true,
+          "stopType": "leave",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "useMinTP": false,
+          "minTp": "1",
+          "closeDealType": "closeByMarket",
+          "useMultiTp": false,
+          "multiTp": [],
+          "useMultiSl": true,
+          "pairPrioritization": "alphabetical",
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689dae779fc939e67470519a"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689dae779fc939e67470519b"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689dae779fc939e67470519c"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689dae779fc939e67470519d"
+            }
+          ],
+          "marginType": "cross",
+          "leverage": 20,
+          "futures": true,
+          "coinm": false,
+          "useVolumeFilter": false,
+          "volumeTop": "500",
+          "volumeValue": "top25",
+          "useRelativeVolumeFilter": false,
+          "relativeVolumeTop": "500",
+          "relativeVolumeValue": "top25",
+          "useDynamicPriceFilter": true,
+          "dynamicPriceFilterOverValue": "3",
+          "dynamicPriceFilterDeviation": "1",
+          "dynamicPriceFilterPriceType": "entry",
+          "useNoOverlapDeals": false,
+          "dynamicPriceFilterDirection": "over",
+          "riskSlType": "perc",
+          "riskSlAmountPerc": "2",
+          "riskSlAmountValue": "10",
+          "riskUseTpRatio": true,
+          "riskTpRatio": "1.5",
+          "riskMinPositionSize": "0",
+          "scaleDcaType": "percentage",
+          "riskMaxPositionSize": "-1",
+          "dynamicArLockValue": true,
+          "comboSmartGridsCount": "6",
+          "useRiskReduction": false,
+          "riskReductionValue": "50",
+          "useReinvest": false,
+          "reinvestValue": "50",
+          "startBotPriceCondition": "gt",
+          "stopBotPriceCondition": "gt",
+          "botActualStart": "manual",
+          "_id": "689dae779fc939e674705199"
+        },
+        "deals": {
+          "all": 78,
+          "active": 1
+        },
+        "usage": {
+          "current": {
+            "base": 0,
+            "quote": 1.333136
+          },
+          "currentUsd": 1.33364259168,
+          "max": {
+            "base": 0,
+            "quote": 110.3588235
+          },
+          "maxUsd": 110.40075985293001,
+          "relative": 82.78136926765161
+        },
+        "flags": [
+          "newBaseProfit"
+        ],
+        "profitByAssets": [
+          {
+            "asset": "GTC",
+            "total": -96.34442399999965,
+            "totalUsd": -46.38570381143795,
+            "_id": "689de9626628fafd5c508ee3"
+          },
+          {
+            "asset": "USDT",
+            "total": 56.67827117580122,
+            "totalUsd": 56.699705159174734,
+            "_id": "689de9626628fafd5c508ee4"
+          }
+        ],
+        "created": "2025-08-14T11:09:39.232Z",
+        "dealsReduceForBot": [],
+        "lastOpenedDealPerSymbol": [
+          {
+            "symbol": "GTCUSDT",
+            "time": 1755179363098,
+            "_id": "689de9636628fafd5c508f1d"
+          }
+        ],
+        "lastClosedDealPerSymbol": [
+          {
+            "symbol": "GTCUSDT",
+            "time": 1755179362627,
+            "_id": "689de9626628fafd5c508f0d"
+          }
+        ],
+        "lastPricesPerSymbol": [
+          {
+            "symbol": "GTCUSDT",
+            "avg": 0.4173,
+            "entry": 0.4114,
+            "time": 1755179363099,
+            "_id": "689de9fb6628fafd5c5090bd"
+          }
+        ],
+        "indicatorsData": [],
+        "symbolStats": [
+          {
+            "numerical": {
+              "deals": {
+                "profit": 77,
+                "loss": 0
+              },
+              "general": {
+                "startBalance": {
+                  "usd": 11.03727881132,
+                  "asset": 11.0346305,
+                  "_id": "689de9626628fafd5c508eef"
+                },
+                "netProfit": {
+                  "usd": 10.206324880770103,
+                  "asset": 10.202549937001349,
+                  "_id": "689de9626628fafd5c508ef0"
+                },
+                "netProfitPerc": 0.924713876965973,
+                "dailyProfit": {
+                  "usd": 92.0638181783246,
+                  "asset": 92.02976716184023,
+                  "_id": "689de9626628fafd5c508ef1"
+                },
+                "dailyProfitPerc": 75.23961476867065,
+                "winRate": 1,
+                "profitFactor": -1
+              }
+            },
+            "duration": {
+              "maxDealDuration": 1101715,
+              "avgDealDuration": 0
+            },
+            "symbol": "GTCUSDT",
+            "_id": "689de9626628fafd5c508eee"
+          }
+        ],
+        "lastOpenedDeal": 1755179363098,
+        "stats": {
+          "numerical": {
+            "profit": {
+              "grossProfit": {
+                "usd": 10.206324880770103,
+                "asset": 10.202549937001349,
+                "_id": "689de9626628fafd5c508ef3"
+              },
+              "grossProfitPerc": 0.0924713876965973,
+              "maxDealProfit": {
+                "usd": 1.5641012407010044,
+                "asset": 1.5635071079999643,
+                "_id": "689de9626628fafd5c508ef4"
+              },
+              "maxDealProfitPerc": 0.01417107665248828,
+              "avgDealProfit": {
+                "usd": 0.1325496737762351,
+                "asset": 0.13250064853248505,
+                "_id": "689de9626628fafd5c508ef5"
+              },
+              "avgDealProfitPerc": 0.001200927112942822,
+              "maxRunUp": {
+                "usd": 10.206324880770097,
+                "asset": 10.20254993700135,
+                "_id": "689de9626628fafd5c508ef6"
+              },
+              "maxRunUpPerc": 0.09247138769659724,
+              "maxConsecutiveWins": 77,
+              "standardDeviationOfPositiveReturns": 0,
+              "series": {
+                "count": 77,
+                "value": {
+                  "usd": 10.206324880770097,
+                  "asset": 10.20254993700135,
+                  "_id": "689de9626628fafd5c508ef8"
+                },
+                "minValue": {
+                  "usd": 110.3727881132,
+                  "asset": 110.346305,
+                  "_id": "689de9626628fafd5c508ef9"
+                },
+                "maxValue": {
+                  "usd": 120.5791129939701,
+                  "asset": 120.54885493700135,
+                  "_id": "689de9626628fafd5c508efa"
+                },
+                "perc": 0.09247138769659724,
+                "_id": "689de9626628fafd5c508ef7"
+              }
+            },
+            "loss": {
+              "grossLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de9626628fafd5c508efb"
+              },
+              "grossLossPerc": 0,
+              "maxDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de9626628fafd5c508efc"
+              },
+              "maxDealLossPerc": 0,
+              "avgDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de9626628fafd5c508efd"
+              },
+              "avgDealLossPerc": 0,
+              "maxDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de9626628fafd5c508efe"
+              },
+              "maxDrawdownPerc": 0,
+              "maxEquityDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689de9626628fafd5c508eff"
+              },
+              "maxEquityDrawdownPerc": 0,
+              "maxConsecutiveLosses": 0,
+              "standardDeviationOfNegativeReturns": 0,
+              "standardDeviationOfDownside": 0,
+              "series": {
+                "count": 0,
+                "value": {
+                  "usd": 0,
+                  "asset": 0,
+                  "_id": "689de9626628fafd5c508f01"
+                },
+                "minValue": {
+                  "usd": 120.5791129939701,
+                  "asset": 120.54885493700135,
+                  "_id": "689de9626628fafd5c508f02"
+                },
+                "maxValue": {
+                  "usd": 120.5791129939701,
+                  "asset": 120.54885493700135,
+                  "_id": "689de9626628fafd5c508f03"
+                },
+                "perc": 0,
+                "_id": "689de9626628fafd5c508f00"
+              },
+              "seriesEquity": {
+                "value": 0,
+                "min": 0,
+                "max": 0,
+                "perc": 0
+              }
+            },
+            "general": {
+              "netProfitPerc": 0.0924713876965973,
+              "avgDaily": {
+                "usd": 92.0638181783246,
+                "asset": 92.02976716184023,
+                "_id": "689de9626628fafd5c508f04"
+              },
+              "avgDailyPerc": 0.8341169934377534,
+              "annualizedReturn": 304.45270260478,
+              "startBalance": {
+                "usd": 110.3727881132,
+                "asset": 110.346305,
+                "_id": "689de9626628fafd5c508f05"
+              },
+              "maxDCAOrdersTriggered": 8,
+              "avgDCAOrdersTriggered": 0,
+              "coveredPriceDeviation": 0.06260096930533124,
+              "actualPriceDeviation": 0.06251485619206082,
+              "confidenceGrade": "F"
+            },
+            "ratios": {
+              "profitFactor": -1,
+              "sharpeRatio": 0,
+              "sortinoRatio": 0,
+              "cwr": 0,
+              "buyAndHold": {
+                "result": -18.724983590580766,
+                "perc": -0.16965217523884726,
+                "symbol": "GTCUSDT",
+                "startPrice": 0.4952
+              }
+            },
+            "usage": {
+              "maxTheoreticalUsage": 11.0410705,
+              "maxActualUsage": 11.0347595,
+              "avgDealUsage": 0
+            },
+            "deals": {
+              "profit": 77,
+              "loss": 0
+            }
+          },
+          "duration": {
+            "profit": {
+              "avgWinningTradeDuration": 0,
+              "maxWinningTradeDuration": 1101715
+            },
+            "loss": {
+              "avgLosingTradeDuration": 0,
+              "maxLosingTradeDuration": 0
+            },
+            "general": {
+              "maxDealDuration": 1101715,
+              "avgDealDuration": 0,
+              "dealsPerDay": 694.5608808795934,
+              "workingTime": 9578426
+            }
+          },
+          "chart": [
+            {
+              "realizedProfit": 120.5791129939701,
+              "buyAndHold": 110.3727881132,
+              "equity": 120.5791129939701,
+              "time": 1755129600000,
+              "_id": "689de9626628fafd5c508f06"
+            }
+          ],
+          "_id": "689de9626628fafd5c508ef2"
+        },
+        "lastClosedDeal": 1755179362627,
+        "unrealizedProfit": -0.20091631920001368,
+        "showErrorWarning": "none",
+        "previousStatus": "open",
+        "statusReason": ""
+      },
+      {
+        "_id": "689dc3f69fc939e6747338fe",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "open",
+        "profit": {
+          "freeTotal": 0,
+          "freeTotalUsd": 0,
+          "total": 0.6160891580000023,
+          "totalUsd": 0.6163232718800422,
+          "pureBase": -0.007704,
+          "pureQuote": 0.6266295980000023
+        },
+        "profitToday": {
+          "start": 0,
+          "end": 0,
+          "totalToday": 0,
+          "totalTodayUsd": 0
+        },
+        "symbol": [
+          {
+            "key": "AKTUSDT",
+            "value": {
+              "symbol": "AKTUSDT",
+              "baseAsset": "AKT",
+              "quoteAsset": "USDT"
+            }
+          }
+        ],
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "workingShift": [
+          {
+            "start": 1755169785283,
+            "_id": "689dc3f96628fafd5c4fdc25"
+          }
+        ],
+        "workingTimeNumber": 0,
+        "initialBalances": {
+          "base": [
+            {
+              "key": "AKT",
+              "value": 157.3
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 0
+            }
+          ]
+        },
+        "currentBalances": {
+          "base": [
+            {
+              "key": "AKT",
+              "value": 146.3
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 14.819200000000002
+            }
+          ]
+        },
+        "usdRate": {
+          "GTCUSDT": 0
+        },
+        "lastPrice": {},
+        "lastUsdRate": {},
+        "assets": {
+          "used": {
+            "base": [
+              {
+                "key": "AKT",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 0.5882400000000001
+              }
+            ]
+          },
+          "required": {
+            "base": [
+              {
+                "key": "AKT",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 10.28404
+              }
+            ]
+          }
+        },
+        "uuid": "2d8afb04-948e-4357-9817-1f618644ad26",
+        "paperContext": false,
+        "vars": {
+          "list": [],
+          "paths": []
+        },
+        "updated": "2025-08-14T13:56:10.150Z",
+        "settings": {
+          "name": "SHORT_TEMPLATE (clone)",
+          "pair": [
+            "AKTUSDT"
+          ],
+          "profitCurrency": "quote",
+          "orderFixedIn": "quote",
+          "skipBalanceCheck": false,
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "maxDealsPerHigherTimeframe": "1",
+          "useMaxDealsPerHigherTimeframe": true,
+          "dcaCustom": [],
+          "strategy": "SHORT",
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "startCondition": "ASAP",
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "orderSize": "9",
+          "step": "1.25",
+          "ordersCount": 8,
+          "activeOrdersCount": 1,
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "useTp": true,
+          "useSl": true,
+          "useSmartOrders": true,
+          "useDca": true,
+          "hodlDay": "7",
+          "hodlAt": "15:00:00",
+          "hodlNextBuy": 1755172800000,
+          "maxNumberOfOpenDeals": "10",
+          "indicators": [],
+          "indicatorGroups": [],
+          "type": "regular",
+          "orderSizeType": "quote",
+          "limitTimeout": "20",
+          "useLimitTimeout": true,
+          "cooldownAfterDealStart": false,
+          "cooldownAfterDealStartUnits": "minutes",
+          "cooldownAfterDealStartInterval": 1,
+          "cooldownAfterDealStop": false,
+          "cooldownAfterDealStopUnits": "minutes",
+          "cooldownAfterDealStopInterval": 1,
+          "cooldownAfterDealStartOption": "bot",
+          "cooldownAfterDealStopOption": "bot",
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingSl": false,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useCloseAfterX": false,
+          "useCloseAfterXwin": false,
+          "closeAfterXwin": "20",
+          "useCloseAfterXloss": false,
+          "closeAfterXloss": "20",
+          "useCloseAfterXprofit": true,
+          "closeAfterXprofitValue": "20",
+          "closeAfterXprofitCond": "gt",
+          "closeAfterX": "20",
+          "useCloseAfterXopen": false,
+          "closeAfterXopen": "20",
+          "maxDealsPerPair": "1",
+          "ignoreStartDeals": false,
+          "comboTpBase": "filled",
+          "useMulti": true,
+          "botStart": "manual",
+          "useBotController": true,
+          "stopType": "leave",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "useMinTP": false,
+          "minTp": "1",
+          "closeDealType": "closeByMarket",
+          "useMultiTp": false,
+          "multiTp": [],
+          "useMultiSl": true,
+          "pairPrioritization": "alphabetical",
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689dae779fc939e67470519a"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689dae779fc939e67470519b"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689dae779fc939e67470519c"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689dae779fc939e67470519d"
+            }
+          ],
+          "marginType": "cross",
+          "leverage": 20,
+          "futures": true,
+          "coinm": false,
+          "useVolumeFilter": false,
+          "volumeTop": "500",
+          "volumeValue": "top25",
+          "useRelativeVolumeFilter": false,
+          "relativeVolumeTop": "500",
+          "relativeVolumeValue": "top25",
+          "useDynamicPriceFilter": true,
+          "dynamicPriceFilterOverValue": "3",
+          "dynamicPriceFilterDeviation": "1",
+          "dynamicPriceFilterPriceType": "entry",
+          "useNoOverlapDeals": false,
+          "dynamicPriceFilterDirection": "over",
+          "riskSlType": "perc",
+          "riskSlAmountPerc": "2",
+          "riskSlAmountValue": "10",
+          "riskUseTpRatio": true,
+          "riskTpRatio": "1.5",
+          "riskMinPositionSize": "0",
+          "scaleDcaType": "percentage",
+          "riskMaxPositionSize": "-1",
+          "dynamicArLockValue": true,
+          "comboSmartGridsCount": "6",
+          "useRiskReduction": false,
+          "riskReductionValue": "50",
+          "useReinvest": false,
+          "reinvestValue": "50",
+          "startBotPriceCondition": "gt",
+          "stopBotPriceCondition": "gt",
+          "botActualStart": "manual",
+          "_id": "689dae779fc939e674705199"
+        },
+        "deals": {
+          "all": 9,
+          "active": 1
+        },
+        "usage": {
+          "current": {
+            "base": 0,
+            "quote": 0.7409600000000001
+          },
+          "currentUsd": 0.7412415648000001,
+          "max": {
+            "base": 0,
+            "quote": 110.411595
+          },
+          "maxUsd": 110.4535514061,
+          "relative": 149.01154583243357
+        },
+        "flags": [
+          "newBaseProfit"
+        ],
+        "profitByAssets": [
+          {
+            "asset": "AKT",
+            "total": -0.007704,
+            "totalUsd": -0.010621514642400002,
+            "_id": "689ddec46628fafd5c503f59"
+          },
+          {
+            "asset": "USDT",
+            "total": 0.6266295980000023,
+            "totalUsd": 0.6268677172472423,
+            "_id": "689ddec46628fafd5c503f5a"
+          }
+        ],
+        "created": "2025-08-14T11:09:42.273Z",
+        "dealsReduceForBot": [],
+        "lastOpenedDealPerSymbol": [
+          {
+            "symbol": "AKTUSDT",
+            "time": 1755176645882,
+            "_id": "689ddec56628fafd5c503fbf"
+          }
+        ],
+        "lastClosedDealPerSymbol": [
+          {
+            "symbol": "AKTUSDT",
+            "time": 1755176645408,
+            "_id": "689ddec56628fafd5c503fa4"
+          }
+        ],
+        "lastPricesPerSymbol": [
+          {
+            "symbol": "AKTUSDT",
+            "avg": 1.347,
+            "entry": 1.337,
+            "time": 1755176645882,
+            "_id": "689dea3d6628fafd5c5092ef"
+          }
+        ],
+        "indicatorsData": [],
+        "symbolStats": [
+          {
+            "numerical": {
+              "deals": {
+                "profit": 8,
+                "loss": 0
+              },
+              "general": {
+                "startBalance": {
+                  "usd": 11.036832403200002,
+                  "asset": 11.03264,
+                  "_id": "689ddec46628fafd5c503f82"
+                },
+                "netProfit": {
+                  "usd": 0.6163232718800422,
+                  "asset": 0.6160891580000023,
+                  "_id": "689ddec46628fafd5c503f83"
+                },
+                "netProfitPerc": 0.05584240562548965,
+                "dailyProfit": {
+                  "usd": 7.762950370845958,
+                  "asset": 7.760001570249265,
+                  "_id": "689ddec46628fafd5c503f84"
+                },
+                "dailyProfitPerc": 8.85932441110498,
+                "winRate": 1,
+                "profitFactor": -1
+              }
+            },
+            "duration": {
+              "maxDealDuration": 4561022,
+              "avgDealDuration": 0
+            },
+            "symbol": "AKTUSDT",
+            "_id": "689ddec46628fafd5c503f81"
+          }
+        ],
+        "lastOpenedDeal": 1755176645882,
+        "unrealizedProfit": -0.019807523999998265,
+        "stats": {
+          "numerical": {
+            "profit": {
+              "grossProfit": {
+                "usd": 0.6163232718800422,
+                "asset": 0.6160891580000023,
+                "_id": "689ddec46628fafd5c503f86"
+              },
+              "grossProfitPerc": 0.005584240562548965,
+              "maxDealProfit": {
+                "usd": 0.1939410055876824,
+                "asset": 0.1938673360000024,
+                "_id": "689ddec46628fafd5c503f87"
+              },
+              "maxDealProfitPerc": 0.0017572161876033513,
+              "avgDealProfit": {
+                "usd": 0.07704040898500528,
+                "asset": 0.07701114475000029,
+                "_id": "689ddec46628fafd5c503f88"
+              },
+              "avgDealProfitPerc": 0.0006980300703186206,
+              "maxRunUp": {
+                "usd": 0.6163232718800487,
+                "asset": 0.6160891580000083,
+                "_id": "689ddec46628fafd5c503f89"
+              },
+              "maxRunUpPerc": 0.005584240562549023,
+              "maxConsecutiveWins": 8,
+              "standardDeviationOfPositiveReturns": 0,
+              "series": {
+                "count": 8,
+                "value": {
+                  "usd": 0.6163232718800487,
+                  "asset": 0.6160891580000083,
+                  "_id": "689ddec46628fafd5c503f8b"
+                },
+                "minValue": {
+                  "usd": 110.36832403200002,
+                  "asset": 110.3264,
+                  "_id": "689ddec46628fafd5c503f8c"
+                },
+                "maxValue": {
+                  "usd": 110.98464730388007,
+                  "asset": 110.94248915800001,
+                  "_id": "689ddec46628fafd5c503f8d"
+                },
+                "perc": 0.005584240562549023,
+                "_id": "689ddec46628fafd5c503f8a"
+              }
+            },
+            "loss": {
+              "grossLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddec46628fafd5c503f8e"
+              },
+              "grossLossPerc": 0,
+              "maxDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddec46628fafd5c503f8f"
+              },
+              "maxDealLossPerc": 0,
+              "avgDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddec46628fafd5c503f90"
+              },
+              "avgDealLossPerc": 0,
+              "maxDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddec46628fafd5c503f91"
+              },
+              "maxDrawdownPerc": 0,
+              "maxEquityDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddec46628fafd5c503f92"
+              },
+              "maxEquityDrawdownPerc": 0,
+              "maxConsecutiveLosses": 0,
+              "standardDeviationOfNegativeReturns": 0,
+              "standardDeviationOfDownside": 0,
+              "series": {
+                "count": 0,
+                "value": {
+                  "usd": 0,
+                  "asset": 0,
+                  "_id": "689ddec46628fafd5c503f94"
+                },
+                "minValue": {
+                  "usd": 110.98464730388007,
+                  "asset": 110.94248915800001,
+                  "_id": "689ddec46628fafd5c503f95"
+                },
+                "maxValue": {
+                  "usd": 110.98464730388007,
+                  "asset": 110.94248915800001,
+                  "_id": "689ddec46628fafd5c503f96"
+                },
+                "perc": 0,
+                "_id": "689ddec46628fafd5c503f93"
+              },
+              "seriesEquity": {
+                "value": 0,
+                "min": 0,
+                "max": 0,
+                "perc": 0
+              }
+            },
+            "general": {
+              "netProfitPerc": 0.005584240562548965,
+              "avgDaily": {
+                "usd": 7.762950370845958,
+                "asset": 7.760001570249265,
+                "_id": "689ddec46628fafd5c503f97"
+              },
+              "avgDailyPerc": 0.07033676046938232,
+              "annualizedReturn": 25.672917571324547,
+              "startBalance": {
+                "usd": 110.36832403200002,
+                "asset": 110.3264,
+                "_id": "689ddec46628fafd5c503f98"
+              },
+              "maxDCAOrdersTriggered": 2,
+              "avgDCAOrdersTriggered": 0,
+              "coveredPriceDeviation": 0.06236559139784944,
+              "actualPriceDeviation": 0.0627333831217327,
+              "confidenceGrade": "F"
+            },
+            "ratios": {
+              "profitFactor": -1,
+              "sharpeRatio": 0,
+              "sortinoRatio": 0,
+              "cwr": 0,
+              "buyAndHold": {
+                "result": -4.509673455070957,
+                "perc": -0.04086021505376334,
+                "symbol": "AKTUSDT",
+                "startPrice": 1.395
+              }
+            },
+            "usage": {
+              "maxTheoreticalUsage": 11.03698,
+              "maxActualUsage": 1.336835,
+              "avgDealUsage": 0
+            },
+            "deals": {
+              "profit": 8,
+              "loss": 0
+            }
+          },
+          "duration": {
+            "profit": {
+              "avgWinningTradeDuration": 0,
+              "maxWinningTradeDuration": 4561022
+            },
+            "loss": {
+              "avgLosingTradeDuration": 0,
+              "maxLosingTradeDuration": 0
+            },
+            "general": {
+              "maxDealDuration": 4561022,
+              "avgDealDuration": 0,
+              "dealsPerDay": 100.76465679662859,
+              "workingTime": 6859548
+            }
+          },
+          "chart": [
+            {
+              "realizedProfit": 110.98464730388005,
+              "buyAndHold": 110.36832403200002,
+              "equity": 110.98464730388005,
+              "time": 1755129600000,
+              "_id": "689ddec46628fafd5c503f99"
+            }
+          ],
+          "_id": "689ddec46628fafd5c503f85"
+        },
+        "lastClosedDeal": 1755176645408
+      },
+      {
+        "_id": "689dc4499fc939e6747341fa",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "open",
+        "profit": {
+          "freeTotal": 0,
+          "freeTotalUsd": 0,
+          "total": 0.9315747208000027,
+          "totalUsd": 0.9318909374216828,
+          "pureBase": -0.26436000000000004,
+          "pureQuote": 0.9470855692000028
+        },
+        "profitToday": {
+          "start": 0,
+          "end": 0,
+          "totalToday": 0,
+          "totalTodayUsd": 0
+        },
+        "symbol": [
+          {
+            "key": "COTIUSDT",
+            "value": {
+              "symbol": "COTIUSDT",
+              "baseAsset": "COTI",
+              "quoteAsset": "USDT"
+            }
+          }
+        ],
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "workingShift": [
+          {
+            "start": 1755169874794,
+            "_id": "689dc4526628fafd5c4fdd33"
+          }
+        ],
+        "workingTimeNumber": 0,
+        "initialBalances": {
+          "base": [
+            {
+              "key": "COTI",
+              "value": 3762
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 0
+            }
+          ]
+        },
+        "currentBalances": {
+          "base": [
+            {
+              "key": "COTI",
+              "value": 3293
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 26.60767
+            }
+          ]
+        },
+        "usdRate": {
+          "GTCUSDT": 0
+        },
+        "lastPrice": {},
+        "lastUsdRate": {},
+        "assets": {
+          "used": {
+            "base": [
+              {
+                "key": "COTI",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 0.7594125
+              }
+            ]
+          },
+          "required": {
+            "base": [
+              {
+                "key": "COTI",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 9.698425
+              }
+            ]
+          }
+        },
+        "uuid": "44687f2a-9fd9-4ee5-811e-fab12eeb06db",
+        "paperContext": false,
+        "vars": {
+          "list": [],
+          "paths": []
+        },
+        "updated": "2025-08-14T13:56:35.884Z",
+        "settings": {
+          "name": "SHORT_TEMPLATE (clone)",
+          "pair": [
+            "COTIUSDT"
+          ],
+          "profitCurrency": "quote",
+          "orderFixedIn": "quote",
+          "skipBalanceCheck": false,
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "maxDealsPerHigherTimeframe": "1",
+          "useMaxDealsPerHigherTimeframe": true,
+          "dcaCustom": [],
+          "strategy": "SHORT",
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "startCondition": "ASAP",
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "orderSize": "9",
+          "step": "1.25",
+          "ordersCount": 8,
+          "activeOrdersCount": 1,
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "useTp": true,
+          "useSl": true,
+          "useSmartOrders": true,
+          "useDca": true,
+          "hodlDay": "7",
+          "hodlAt": "15:00:00",
+          "hodlNextBuy": 1755172800000,
+          "maxNumberOfOpenDeals": "10",
+          "indicators": [],
+          "indicatorGroups": [],
+          "type": "regular",
+          "orderSizeType": "quote",
+          "limitTimeout": "20",
+          "useLimitTimeout": true,
+          "cooldownAfterDealStart": false,
+          "cooldownAfterDealStartUnits": "minutes",
+          "cooldownAfterDealStartInterval": 1,
+          "cooldownAfterDealStop": false,
+          "cooldownAfterDealStopUnits": "minutes",
+          "cooldownAfterDealStopInterval": 1,
+          "cooldownAfterDealStartOption": "bot",
+          "cooldownAfterDealStopOption": "bot",
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingSl": false,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useCloseAfterX": false,
+          "useCloseAfterXwin": false,
+          "closeAfterXwin": "20",
+          "useCloseAfterXloss": false,
+          "closeAfterXloss": "20",
+          "useCloseAfterXprofit": true,
+          "closeAfterXprofitValue": "20",
+          "closeAfterXprofitCond": "gt",
+          "closeAfterX": "20",
+          "useCloseAfterXopen": false,
+          "closeAfterXopen": "20",
+          "maxDealsPerPair": "1",
+          "ignoreStartDeals": false,
+          "comboTpBase": "filled",
+          "useMulti": true,
+          "botStart": "manual",
+          "useBotController": true,
+          "stopType": "leave",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "useMinTP": false,
+          "minTp": "1",
+          "closeDealType": "closeByMarket",
+          "useMultiTp": false,
+          "multiTp": [],
+          "useMultiSl": true,
+          "pairPrioritization": "alphabetical",
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689dae779fc939e67470519a"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689dae779fc939e67470519b"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689dae779fc939e67470519c"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689dae779fc939e67470519d"
+            }
+          ],
+          "marginType": "cross",
+          "leverage": 20,
+          "futures": true,
+          "coinm": false,
+          "useVolumeFilter": false,
+          "volumeTop": "500",
+          "volumeValue": "top25",
+          "useRelativeVolumeFilter": false,
+          "relativeVolumeTop": "500",
+          "relativeVolumeValue": "top25",
+          "useDynamicPriceFilter": true,
+          "dynamicPriceFilterOverValue": "3",
+          "dynamicPriceFilterDeviation": "1",
+          "dynamicPriceFilterPriceType": "entry",
+          "useNoOverlapDeals": false,
+          "dynamicPriceFilterDirection": "over",
+          "riskSlType": "perc",
+          "riskSlAmountPerc": "2",
+          "riskSlAmountValue": "10",
+          "riskUseTpRatio": true,
+          "riskTpRatio": "1.5",
+          "riskMinPositionSize": "0",
+          "scaleDcaType": "percentage",
+          "riskMaxPositionSize": "-1",
+          "dynamicArLockValue": true,
+          "comboSmartGridsCount": "6",
+          "useRiskReduction": false,
+          "riskReductionValue": "50",
+          "useReinvest": false,
+          "reinvestValue": "50",
+          "startBotPriceCondition": "gt",
+          "stopBotPriceCondition": "gt",
+          "botActualStart": "manual",
+          "_id": "689dae779fc939e674705199"
+        },
+        "deals": {
+          "all": 18,
+          "active": 1
+        },
+        "usage": {
+          "current": {
+            "base": 0,
+            "quote": 1.3303835
+          },
+          "currentUsd": 1.33088904573,
+          "max": {
+            "base": 0,
+            "quote": 110.38049699999998
+          },
+          "maxUsd": 110.42244158885998,
+          "relative": 82.9689311390287
+        },
+        "flags": [
+          "newBaseProfit"
+        ],
+        "profitByAssets": [
+          {
+            "asset": "COTI",
+            "total": -0.26436000000000004,
+            "totalUsd": -0.015632472280223998,
+            "_id": "689ddef96628fafd5c5040fb"
+          },
+          {
+            "asset": "USDT",
+            "total": 0.9470855692000028,
+            "totalUsd": 0.947407036174627,
+            "_id": "689ddef96628fafd5c5040fc"
+          }
+        ],
+        "created": "2025-08-14T11:11:05.783Z",
+        "dealsReduceForBot": [],
+        "lastOpenedDealPerSymbol": [
+          {
+            "symbol": "COTIUSDT",
+            "time": 1755176698670,
+            "_id": "689ddefa6628fafd5c504135"
+          }
+        ],
+        "lastClosedDealPerSymbol": [
+          {
+            "symbol": "COTIUSDT",
+            "time": 1755176698208,
+            "_id": "689ddefa6628fafd5c504125"
+          }
+        ],
+        "lastPricesPerSymbol": [
+          {
+            "symbol": "COTIUSDT",
+            "avg": 0.05673,
+            "entry": 0.05593,
+            "time": 1755176698670,
+            "_id": "689de0936628fafd5c504e38"
+          }
+        ],
+        "indicatorsData": [],
+        "symbolStats": [
+          {
+            "numerical": {
+              "deals": {
+                "profit": 17,
+                "loss": 0
+              },
+              "general": {
+                "startBalance": {
+                  "usd": 11.035031272040001,
+                  "asset": 11.032383500000002,
+                  "_id": "689ddef96628fafd5c504107"
+                },
+                "netProfit": {
+                  "usd": 0.9318909374216828,
+                  "asset": 0.9315747208000027,
+                  "_id": "689ddef96628fafd5c504108"
+                },
+                "netProfitPerc": 0.08444841835499466,
+                "dailyProfit": {
+                  "usd": 11.80093744473246,
+                  "asset": 11.79693305707122,
+                  "_id": "689ddef96628fafd5c504109"
+                },
+                "dailyProfitPerc": 13.542360167600194,
+                "winRate": 1,
+                "profitFactor": -1
+              }
+            },
+            "duration": {
+              "maxDealDuration": 2389274,
+              "avgDealDuration": 0
+            },
+            "symbol": "COTIUSDT",
+            "_id": "689ddef96628fafd5c504106"
+          }
+        ],
+        "lastOpenedDeal": 1755176698670,
+        "unrealizedProfit": -0.08315158560000098,
+        "stats": {
+          "numerical": {
+            "profit": {
+              "grossProfit": {
+                "usd": 0.9318909374216828,
+                "asset": 0.9315747208000027,
+                "_id": "689ddef96628fafd5c50410b"
+              },
+              "grossProfitPerc": 0.008444841835499465,
+              "maxDealProfit": {
+                "usd": 0.18591834609673738,
+                "asset": 0.18587373640000138,
+                "_id": "689ddef96628fafd5c50410c"
+              },
+              "maxDealProfitPerc": 0.0016848012616675386,
+              "avgDealProfit": {
+                "usd": 0.054817113965981344,
+                "asset": 0.05479851298823545,
+                "_id": "689ddef96628fafd5c50410d"
+              },
+              "avgDealProfitPerc": 0.0004967554020882039,
+              "maxRunUp": {
+                "usd": 0.9318909374216844,
+                "asset": 0.9315747208000005,
+                "_id": "689ddef96628fafd5c50410e"
+              },
+              "maxRunUpPerc": 0.00844484183549948,
+              "maxConsecutiveWins": 17,
+              "standardDeviationOfPositiveReturns": 0,
+              "series": {
+                "count": 17,
+                "value": {
+                  "usd": 0.9318909374216844,
+                  "asset": 0.9315747208000005,
+                  "_id": "689ddef96628fafd5c504110"
+                },
+                "minValue": {
+                  "usd": 110.35031272040001,
+                  "asset": 110.32383500000002,
+                  "_id": "689ddef96628fafd5c504111"
+                },
+                "maxValue": {
+                  "usd": 111.2822036578217,
+                  "asset": 111.25540972080002,
+                  "_id": "689ddef96628fafd5c504112"
+                },
+                "perc": 0.00844484183549948,
+                "_id": "689ddef96628fafd5c50410f"
+              }
+            },
+            "loss": {
+              "grossLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddef96628fafd5c504113"
+              },
+              "grossLossPerc": 0,
+              "maxDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddef96628fafd5c504114"
+              },
+              "maxDealLossPerc": 0,
+              "avgDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddef96628fafd5c504115"
+              },
+              "avgDealLossPerc": 0,
+              "maxDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddef96628fafd5c504116"
+              },
+              "maxDrawdownPerc": 0,
+              "maxEquityDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689ddef96628fafd5c504117"
+              },
+              "maxEquityDrawdownPerc": 0,
+              "maxConsecutiveLosses": 0,
+              "standardDeviationOfNegativeReturns": 0,
+              "standardDeviationOfDownside": 0,
+              "series": {
+                "count": 0,
+                "value": {
+                  "usd": 0,
+                  "asset": 0,
+                  "_id": "689ddef96628fafd5c504119"
+                },
+                "minValue": {
+                  "usd": 111.2822036578217,
+                  "asset": 111.25540972080002,
+                  "_id": "689ddef96628fafd5c50411a"
+                },
+                "maxValue": {
+                  "usd": 111.2822036578217,
+                  "asset": 111.25540972080002,
+                  "_id": "689ddef96628fafd5c50411b"
+                },
+                "perc": 0,
+                "_id": "689ddef96628fafd5c504118"
+              },
+              "seriesEquity": {
+                "value": 0,
+                "min": 0,
+                "max": 0,
+                "perc": 0
+              }
+            },
+            "general": {
+              "netProfitPerc": 0.008444841835499465,
+              "avgDaily": {
+                "usd": 11.80093744473246,
+                "asset": 11.79693305707122,
+                "_id": "689ddef96628fafd5c50411c"
+              },
+              "avgDailyPerc": 0.10694067967558073,
+              "annualizedReturn": 39.033348081586965,
+              "startBalance": {
+                "usd": 110.35031272040001,
+                "asset": 110.32383500000002,
+                "_id": "689ddef96628fafd5c50411d"
+              },
+              "maxDCAOrdersTriggered": 2,
+              "avgDCAOrdersTriggered": 0,
+              "coveredPriceDeviation": 0.06238859180035638,
+              "actualPriceDeviation": 0.06259890979426765,
+              "confidenceGrade": "F"
+            },
+            "ratios": {
+              "profitFactor": -1,
+              "sharpeRatio": 0,
+              "sortinoRatio": 0,
+              "cwr": 0,
+              "buyAndHold": {
+                "result": -10.408826963109481,
+                "perc": -0.09432530553386682,
+                "symbol": "COTIUSDT",
+                "startPrice": 0.06171
+              }
+            },
+            "usage": {
+              "maxTheoreticalUsage": 11.039491,
+              "maxActualUsage": 1.3331945,
+              "avgDealUsage": 0
+            },
+            "deals": {
+              "profit": 17,
+              "loss": 0
+            }
+          },
+          "duration": {
+            "profit": {
+              "avgWinningTradeDuration": 0,
+              "maxWinningTradeDuration": 2389274
+            },
+            "loss": {
+              "avgLosingTradeDuration": 0,
+              "maxLosingTradeDuration": 0
+            },
+            "general": {
+              "maxDealDuration": 2389274,
+              "avgDealDuration": 0,
+              "dealsPerDay": 215.27834267334723,
+              "workingTime": 6822795
+            }
+          },
+          "chart": [
+            {
+              "realizedProfit": 111.28220365782171,
+              "buyAndHold": 110.35031272040001,
+              "equity": 111.28220365782171,
+              "time": 1755129600000,
+              "_id": "689ddef96628fafd5c50411e"
+            }
+          ],
+          "_id": "689ddef96628fafd5c50410a"
+        },
+        "lastClosedDeal": 1755176698208
+      },
+      {
+        "_id": "689de0ce9fc939e6747daa12",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "open",
+        "profit": {
+          "freeTotal": 0,
+          "freeTotalUsd": 0,
+          "total": 0.1827518799999995,
+          "totalUsd": 0.18282132571439952,
+          "pureBase": -0.00144,
+          "pureQuote": 0.1859597199999995
+        },
+        "profitToday": {
+          "start": 0,
+          "end": 0,
+          "totalToday": 0,
+          "totalTodayUsd": 0
+        },
+        "symbol": [
+          {
+            "key": "BERAUSDT",
+            "value": {
+              "symbol": "BERAUSDT",
+              "baseAsset": "BERA",
+              "quoteAsset": "USDT"
+            }
+          }
+        ],
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "workingShift": [
+          {
+            "start": 1755177170116,
+            "_id": "689de0d26628fafd5c50528c"
+          }
+        ],
+        "workingTimeNumber": 0,
+        "initialBalances": {
+          "base": [
+            {
+              "key": "BERA",
+              "value": 94
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 0
+            }
+          ]
+        },
+        "currentBalances": {
+          "base": [
+            {
+              "key": "BERA",
+              "value": 92
+            }
+          ],
+          "quote": [
+            {
+              "key": "USDT",
+              "value": 4.438
+            }
+          ]
+        },
+        "usdRate": {
+          "GTCUSDT": 0
+        },
+        "lastPrice": {},
+        "lastUsdRate": {},
+        "assets": {
+          "used": {
+            "base": [
+              {
+                "key": "BERA",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 0.44939999999999997
+              }
+            ]
+          },
+          "required": {
+            "base": [
+              {
+                "key": "BERA",
+                "value": 0
+              }
+            ],
+            "quote": [
+              {
+                "key": "USDT",
+                "value": 10.719100000000001
+              }
+            ]
+          }
+        },
+        "uuid": "2f9213a4-c189-409f-a323-442030d52313",
+        "paperContext": false,
+        "vars": {
+          "list": [],
+          "paths": []
+        },
+        "updated": "2025-08-14T13:56:22.692Z",
+        "settings": {
+          "name": "SHORT_TEMPLATE (clone)",
+          "pair": [
+            "BERAUSDT"
+          ],
+          "profitCurrency": "quote",
+          "orderFixedIn": "quote",
+          "skipBalanceCheck": false,
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "maxDealsPerHigherTimeframe": "1",
+          "useMaxDealsPerHigherTimeframe": true,
+          "dcaCustom": [],
+          "strategy": "SHORT",
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "startCondition": "ASAP",
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "orderSize": "9",
+          "step": "1.25",
+          "ordersCount": 8,
+          "activeOrdersCount": 1,
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "useTp": true,
+          "useSl": true,
+          "useSmartOrders": true,
+          "useDca": true,
+          "hodlDay": "7",
+          "hodlAt": "15:00:00",
+          "hodlNextBuy": 1755172800000,
+          "maxNumberOfOpenDeals": "10",
+          "indicators": [],
+          "indicatorGroups": [],
+          "type": "regular",
+          "orderSizeType": "quote",
+          "limitTimeout": "20",
+          "useLimitTimeout": true,
+          "cooldownAfterDealStart": false,
+          "cooldownAfterDealStartUnits": "minutes",
+          "cooldownAfterDealStartInterval": 1,
+          "cooldownAfterDealStop": false,
+          "cooldownAfterDealStopUnits": "minutes",
+          "cooldownAfterDealStopInterval": 1,
+          "cooldownAfterDealStartOption": "bot",
+          "cooldownAfterDealStopOption": "bot",
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingSl": false,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useCloseAfterX": false,
+          "useCloseAfterXwin": false,
+          "closeAfterXwin": "20",
+          "useCloseAfterXloss": false,
+          "closeAfterXloss": "20",
+          "useCloseAfterXprofit": true,
+          "closeAfterXprofitValue": "20",
+          "closeAfterXprofitCond": "gt",
+          "closeAfterX": "20",
+          "useCloseAfterXopen": false,
+          "closeAfterXopen": "20",
+          "maxDealsPerPair": "1",
+          "ignoreStartDeals": false,
+          "comboTpBase": "filled",
+          "useMulti": true,
+          "botStart": "manual",
+          "useBotController": true,
+          "stopType": "leave",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "useMinTP": false,
+          "minTp": "1",
+          "closeDealType": "closeByMarket",
+          "useMultiTp": false,
+          "multiTp": [],
+          "useMultiSl": true,
+          "pairPrioritization": "alphabetical",
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689dae779fc939e67470519a"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689dae779fc939e67470519b"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689dae779fc939e67470519c"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689dae779fc939e67470519d"
+            }
+          ],
+          "marginType": "cross",
+          "leverage": 20,
+          "futures": true,
+          "coinm": false,
+          "useVolumeFilter": false,
+          "volumeTop": "500",
+          "volumeValue": "top25",
+          "useRelativeVolumeFilter": false,
+          "relativeVolumeTop": "500",
+          "relativeVolumeValue": "top25",
+          "useDynamicPriceFilter": true,
+          "dynamicPriceFilterOverValue": "3",
+          "dynamicPriceFilterDeviation": "1",
+          "dynamicPriceFilterPriceType": "entry",
+          "useNoOverlapDeals": false,
+          "dynamicPriceFilterDirection": "over",
+          "riskSlType": "perc",
+          "riskSlAmountPerc": "2",
+          "riskSlAmountValue": "10",
+          "riskUseTpRatio": true,
+          "riskTpRatio": "1.5",
+          "riskMinPositionSize": "0",
+          "scaleDcaType": "percentage",
+          "riskMaxPositionSize": "-1",
+          "dynamicArLockValue": true,
+          "comboSmartGridsCount": "6",
+          "useRiskReduction": false,
+          "riskReductionValue": "50",
+          "useReinvest": false,
+          "reinvestValue": "50",
+          "startBotPriceCondition": "gt",
+          "stopBotPriceCondition": "gt",
+          "botActualStart": "manual",
+          "_id": "689dae779fc939e674705199"
+        },
+        "deals": {
+          "all": 5,
+          "active": 1
+        },
+        "usage": {
+          "current": {
+            "base": 0,
+            "quote": 0.2219
+          },
+          "currentUsd": 0.22198432199999998,
+          "max": {
+            "base": 0,
+            "quote": 109.45230000000002
+          },
+          "maxUsd": 109.49389187400003,
+          "relative": 493.2505633168095
+        },
+        "flags": [
+          "newBaseProfit"
+        ],
+        "profitByAssets": [
+          {
+            "asset": "BERA",
+            "total": -0.00144,
+            "totalUsd": -0.0032321077344000006,
+            "_id": "689dea106628fafd5c509183"
+          },
+          {
+            "asset": "USDT",
+            "total": 0.1859597199999995,
+            "totalUsd": 0.1860303846935995,
+            "_id": "689dea106628fafd5c509184"
+          }
+        ],
+        "created": "2025-08-14T13:12:46.769Z",
+        "dealsReduceForBot": [],
+        "lastOpenedDealPerSymbol": [
+          {
+            "symbol": "BERAUSDT",
+            "time": 1755179538361,
+            "_id": "689dea126628fafd5c5091c1"
+          }
+        ],
+        "lastClosedDealPerSymbol": [
+          {
+            "symbol": "BERAUSDT",
+            "time": 1755179537950,
+            "_id": "689dea116628fafd5c5091af"
+          }
+        ],
+        "lastPricesPerSymbol": [
+          {
+            "symbol": "BERAUSDT",
+            "avg": 2.219,
+            "entry": 2.219,
+            "time": 1755179538362,
+            "_id": "689dea146628fafd5c5091f3"
+          }
+        ],
+        "indicatorsData": [],
+        "symbolStats": [
+          {
+            "numerical": {
+              "deals": {
+                "profit": 4,
+                "loss": 0
+              },
+              "general": {
+                "startBalance": {
+                  "usd": 10.827863025000001,
+                  "asset": 10.82375,
+                  "_id": "689dea106628fafd5c50918f"
+                },
+                "netProfit": {
+                  "usd": 0.18282132571439952,
+                  "asset": 0.1827518799999995,
+                  "_id": "689dea106628fafd5c509190"
+                },
+                "netProfitPerc": 0.016884340455017854,
+                "dailyProfit": {
+                  "usd": 6.6755539625494436,
+                  "asset": 6.673018215627504,
+                  "_id": "689dea106628fafd5c509191"
+                },
+                "dailyProfitPerc": 22.511530096457378,
+                "winRate": 1,
+                "profitFactor": -1
+              }
+            },
+            "duration": {
+              "maxDealDuration": 1727191,
+              "avgDealDuration": 0
+            },
+            "symbol": "BERAUSDT",
+            "_id": "689dea106628fafd5c50918e"
+          }
+        ],
+        "lastOpenedDeal": 1755179538361,
+        "unrealizedProfit": 0.0060022799999993395,
+        "stats": {
+          "numerical": {
+            "profit": {
+              "grossProfit": {
+                "usd": 0.18282132571439952,
+                "asset": 0.1827518799999995,
+                "_id": "689dea106628fafd5c509193"
+              },
+              "grossProfitPerc": 0.0016884340455017852,
+              "maxDealProfit": {
+                "usd": 0.09082498038239943,
+                "asset": 0.09079047999999942,
+                "_id": "689dea106628fafd5c509194"
+              },
+              "maxDealProfitPerc": 0.0008388079916849466,
+              "avgDealProfit": {
+                "usd": 0.04570533142859988,
+                "asset": 0.045687969999999876,
+                "_id": "689dea106628fafd5c509195"
+              },
+              "avgDealProfitPerc": 0.0004221085113754463,
+              "maxRunUp": {
+                "usd": 0.18282132571440002,
+                "asset": 0.18275187999999787,
+                "_id": "689dea106628fafd5c509196"
+              },
+              "maxRunUpPerc": 0.00168843404550179,
+              "maxConsecutiveWins": 4,
+              "standardDeviationOfPositiveReturns": 0,
+              "series": {
+                "count": 4,
+                "value": {
+                  "usd": 0.18282132571440002,
+                  "asset": 0.18275187999999787,
+                  "_id": "689dea106628fafd5c509198"
+                },
+                "minValue": {
+                  "usd": 108.27863025000002,
+                  "asset": 108.23750000000001,
+                  "_id": "689dea106628fafd5c509199"
+                },
+                "maxValue": {
+                  "usd": 108.46145157571442,
+                  "asset": 108.42025188000001,
+                  "_id": "689dea106628fafd5c50919a"
+                },
+                "perc": 0.00168843404550179,
+                "_id": "689dea106628fafd5c509197"
+              }
+            },
+            "loss": {
+              "grossLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dea106628fafd5c50919b"
+              },
+              "grossLossPerc": 0,
+              "maxDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dea106628fafd5c50919c"
+              },
+              "maxDealLossPerc": 0,
+              "avgDealLoss": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dea106628fafd5c50919d"
+              },
+              "avgDealLossPerc": 0,
+              "maxDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dea106628fafd5c50919e"
+              },
+              "maxDrawdownPerc": 0,
+              "maxEquityDrawdown": {
+                "usd": 0,
+                "asset": 0,
+                "_id": "689dea106628fafd5c50919f"
+              },
+              "maxEquityDrawdownPerc": 0,
+              "maxConsecutiveLosses": 0,
+              "standardDeviationOfNegativeReturns": 0,
+              "standardDeviationOfDownside": 0,
+              "series": {
+                "count": 0,
+                "value": {
+                  "usd": 0,
+                  "asset": 0,
+                  "_id": "689dea106628fafd5c5091a1"
+                },
+                "minValue": {
+                  "usd": 108.46145157571442,
+                  "asset": 108.42025188000001,
+                  "_id": "689dea106628fafd5c5091a2"
+                },
+                "maxValue": {
+                  "usd": 108.46145157571442,
+                  "asset": 108.42025188000001,
+                  "_id": "689dea106628fafd5c5091a3"
+                },
+                "perc": 0,
+                "_id": "689dea106628fafd5c5091a0"
+              },
+              "seriesEquity": {
+                "value": 0,
+                "min": 0,
+                "max": 0,
+                "perc": 0
+              }
+            },
+            "general": {
+              "netProfitPerc": 0.0016884340455017852,
+              "avgDaily": {
+                "usd": 6.6755539625494436,
+                "asset": 6.673018215627504,
+                "_id": "689dea106628fafd5c5091a4"
+              },
+              "avgDailyPerc": 0.06165162920085463,
+              "annualizedReturn": 22.50284465831194,
+              "startBalance": {
+                "usd": 108.27863025000002,
+                "asset": 108.23750000000001,
+                "_id": "689dea106628fafd5c5091a5"
+              },
+              "maxDCAOrdersTriggered": 1,
+              "avgDCAOrdersTriggered": 0,
+              "coveredPriceDeviation": 0.0621419127368885,
+              "actualPriceDeviation": 0.06311992786293964,
+              "confidenceGrade": "F"
+            },
+            "ratios": {
+              "profitFactor": -1,
+              "sharpeRatio": 0,
+              "sortinoRatio": 0,
+              "cwr": 0,
+              "buyAndHold": {
+                "result": -2.2906012569413825,
+                "perc": -0.021154693697664154,
+                "symbol": "BERAUSDT",
+                "startPrice": 2.269
+              }
+            },
+            "usage": {
+              "maxTheoreticalUsage": 11.0537,
+              "maxActualUsage": 0.671,
+              "avgDealUsage": 0
+            },
+            "deals": {
+              "profit": 4,
+              "loss": 0
+            }
+          },
+          "duration": {
+            "profit": {
+              "avgWinningTradeDuration": 0,
+              "maxWinningTradeDuration": 1727191
+            },
+            "loss": {
+              "avgLosingTradeDuration": 0,
+              "maxLosingTradeDuration": 0
+            },
+            "general": {
+              "maxDealDuration": 1727191,
+              "avgDealDuration": 0,
+              "dealsPerDay": 146.05635171857105,
+              "workingTime": 2366210
+            }
+          },
+          "chart": [
+            {
+              "realizedProfit": 108.46145157571442,
+              "buyAndHold": 108.27863025000002,
+              "equity": 108.46145157571442,
+              "time": 1755129600000,
+              "_id": "689dea106628fafd5c5091a6"
+            }
+          ],
+          "_id": "689dea106628fafd5c509192"
+        },
+        "lastClosedDeal": 1755179537950
+      }
+    ]
+  }
+}

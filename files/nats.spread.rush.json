@@ -1,0 +1,2335 @@
+{
+  "timestamp": 1755091607580,
+  "data": [
+    {
+      "symbol": "MEMEUSDT",
+      "adtv": 102.62,
+      "adts": 110.33
+    },
+    {
+      "symbol": "FLMUSDT",
+      "adtv": 93.32,
+      "adts": 92.04
+    },
+    {
+      "symbol": "AUCTIONUSDT",
+      "adtv": 83.22,
+      "adts": 90.07
+    },
+    {
+      "symbol": "OMUSDT",
+      "adtv": 82.61,
+      "adts": 91.08
+    },
+    {
+      "symbol": "BMTUSDT",
+      "adtv": 80.04,
+      "adts": 77.46
+    },
+    {
+      "symbol": "LAUSDT",
+      "adtv": 79.97,
+      "adts": 78.64
+    },
+    {
+      "symbol": "TOWNSUSDT",
+      "adtv": 129.1,
+      "adts": 137.51
+    },
+    {
+      "symbol": "MERLUSDT",
+      "adtv": 109.45,
+      "adts": 114.72
+    },
+    {
+      "symbol": "METISUSDT",
+      "adtv": 111.21,
+      "adts": 103.53
+    },
+    {
+      "symbol": "LRCUSDT",
+      "adtv": 141.38,
+      "adts": 127.28
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "adtv": 152.17,
+      "adts": 144.6
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "adtv": 101.61,
+      "adts": 112.62
+    },
+    {
+      "symbol": "USUALUSDT",
+      "adtv": 90.99,
+      "adts": 93.36
+    },
+    {
+      "symbol": "MKRUSDT",
+      "adtv": 113.11,
+      "adts": 112.09
+    },
+    {
+      "symbol": "MOODENGUSDT",
+      "adtv": 99.38,
+      "adts": 96.8
+    },
+    {
+      "symbol": "BSVUSDT",
+      "adtv": 60.07,
+      "adts": 83.41
+    },
+    {
+      "symbol": "JTOUSDT",
+      "adtv": 130.12,
+      "adts": 119
+    },
+    {
+      "symbol": "1000SHIBUSDT",
+      "adtv": 107.28,
+      "adts": 108.2
+    },
+    {
+      "symbol": "FISUSDT",
+      "adtv": 109.06,
+      "adts": 98.25
+    },
+    {
+      "symbol": "ATAUSDT",
+      "adtv": 83.99,
+      "adts": 94.22
+    },
+    {
+      "symbol": "KASUSDT",
+      "adtv": 114.26,
+      "adts": 113.72
+    },
+    {
+      "symbol": "FARTCOINUSDT",
+      "adtv": 137.93,
+      "adts": 120.52
+    },
+    {
+      "symbol": "OMNIUSDT",
+      "adtv": 108.91,
+      "adts": 107.72
+    },
+    {
+      "symbol": "CETUSUSDT",
+      "adtv": 96.69,
+      "adts": 94.5
+    },
+    {
+      "symbol": "KNCUSDT",
+      "adtv": 96.19,
+      "adts": 101.01
+    },
+    {
+      "symbol": "TUSDT",
+      "adtv": 105.83,
+      "adts": 97.7
+    },
+    {
+      "symbol": "SSVUSDT",
+      "adtv": 85.73,
+      "adts": 88.32
+    },
+    {
+      "symbol": "ICNTUSDT",
+      "adtv": 25.4,
+      "adts": 34.23
+    },
+    {
+      "symbol": "ZENUSDT",
+      "adtv": 100.59,
+      "adts": 98.38
+    },
+    {
+      "symbol": "SAHARAUSDT",
+      "adtv": 68.57,
+      "adts": 85.33
+    },
+    {
+      "symbol": "LDOUSDT",
+      "adtv": 76.83,
+      "adts": 80.43
+    },
+    {
+      "symbol": "ALICEUSDT",
+      "adtv": 103.25,
+      "adts": 115.33
+    },
+    {
+      "symbol": "NOTUSDT",
+      "adtv": 116.75,
+      "adts": 105.47
+    },
+    {
+      "symbol": "A2ZUSDT",
+      "adtv": 106.61,
+      "adts": 110.52
+    },
+    {
+      "symbol": "SEIUSDT",
+      "adtv": 124.63,
+      "adts": 118.73
+    },
+    {
+      "symbol": "PROMPTUSDT",
+      "adtv": 74.64,
+      "adts": 79.11
+    },
+    {
+      "symbol": "YFIUSDT",
+      "adtv": 106.54,
+      "adts": 107.61
+    },
+    {
+      "symbol": "GASUSDT",
+      "adtv": 108.71,
+      "adts": 109
+    },
+    {
+      "symbol": "SPKUSDT",
+      "adtv": 113.11,
+      "adts": 110.23
+    },
+    {
+      "symbol": "ALTUSDT",
+      "adtv": 88.59,
+      "adts": 91.52
+    },
+    {
+      "symbol": "ARBUSDT",
+      "adtv": 126.69,
+      "adts": 120.61
+    },
+    {
+      "symbol": "GLMUSDT",
+      "adtv": 90.37,
+      "adts": 79.13
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "adtv": 104.52,
+      "adts": 109.04
+    },
+    {
+      "symbol": "AXSUSDT",
+      "adtv": 90.46,
+      "adts": 101.29
+    },
+    {
+      "symbol": "BROCCOLIF3BUSDT",
+      "adtv": 98.16,
+      "adts": 106.05
+    },
+    {
+      "symbol": "B3USDT",
+      "adtv": 99.53,
+      "adts": 95.3
+    },
+    {
+      "symbol": "GMTUSDT",
+      "adtv": 105.09,
+      "adts": 105.73
+    },
+    {
+      "symbol": "ACHUSDT",
+      "adtv": 107.44,
+      "adts": 97.29
+    },
+    {
+      "symbol": "ZKUSDT",
+      "adtv": 307.52,
+      "adts": 265.08
+    },
+    {
+      "symbol": "HOTUSDT",
+      "adtv": 108.34,
+      "adts": 92.39
+    },
+    {
+      "symbol": "MAVUSDT",
+      "adtv": 74.22,
+      "adts": 80.24
+    },
+    {
+      "symbol": "SLERFUSDT",
+      "adtv": 126.56,
+      "adts": 125.62
+    },
+    {
+      "symbol": "MILKUSDT",
+      "adtv": 94.65,
+      "adts": 104.12
+    },
+    {
+      "symbol": "MBOXUSDT",
+      "adtv": 102,
+      "adts": 96.65
+    },
+    {
+      "symbol": "SANTOSUSDT",
+      "adtv": 337.45,
+      "adts": 299.31
+    },
+    {
+      "symbol": "BRETTUSDT",
+      "adtv": 91.03,
+      "adts": 104.69
+    },
+    {
+      "symbol": "FUNUSDT",
+      "adtv": 42.63,
+      "adts": 46.36
+    },
+    {
+      "symbol": "HOOKUSDT",
+      "adtv": 86.7,
+      "adts": 82.46
+    },
+    {
+      "symbol": "AEVOUSDT",
+      "adtv": 108.96,
+      "adts": 96.69
+    },
+    {
+      "symbol": "WOOUSDT",
+      "adtv": 102.57,
+      "adts": 107.79
+    },
+    {
+      "symbol": "GUNUSDT",
+      "adtv": 98.75,
+      "adts": 98.95
+    },
+    {
+      "symbol": "RESOLVUSDT",
+      "adtv": 254.21,
+      "adts": 106.35
+    },
+    {
+      "symbol": "ETCUSDT",
+      "adtv": 104.16,
+      "adts": 106.77
+    },
+    {
+      "symbol": "IOTXUSDT",
+      "adtv": 101.17,
+      "adts": 96.52
+    },
+    {
+      "symbol": "LISTAUSDT",
+      "adtv": 91.74,
+      "adts": 91.58
+    },
+    {
+      "symbol": "BROCCOLI714USDT",
+      "adtv": 81.04,
+      "adts": 88.23
+    },
+    {
+      "symbol": "PORTALUSDT",
+      "adtv": 82.02,
+      "adts": 93.8
+    },
+    {
+      "symbol": "CHZUSDT",
+      "adtv": 111.54,
+      "adts": 104.26
+    },
+    {
+      "symbol": "ARKUSDT",
+      "adtv": 83.21,
+      "adts": 89.3
+    },
+    {
+      "symbol": "FXSUSDT",
+      "adtv": 102.41,
+      "adts": 95.78
+    },
+    {
+      "symbol": "XVSUSDT",
+      "adtv": 112.26,
+      "adts": 109.43
+    },
+    {
+      "symbol": "XAIUSDT",
+      "adtv": 95.72,
+      "adts": 97.39
+    },
+    {
+      "symbol": "MORPHOUSDT",
+      "adtv": 116.29,
+      "adts": 125.11
+    },
+    {
+      "symbol": "FLUXUSDT",
+      "adtv": 102.2,
+      "adts": 109.51
+    },
+    {
+      "symbol": "ARKMUSDT",
+      "adtv": 99.24,
+      "adts": 98.66
+    },
+    {
+      "symbol": "VICUSDT",
+      "adtv": 86.9,
+      "adts": 89.13
+    },
+    {
+      "symbol": "SYRUPUSDT",
+      "adtv": 109.61,
+      "adts": 107.18
+    },
+    {
+      "symbol": "RPLUSDT",
+      "adtv": 88.49,
+      "adts": 93.25
+    },
+    {
+      "symbol": "SKATEUSDT",
+      "adtv": 91.69,
+      "adts": 90.96
+    },
+    {
+      "symbol": "SOPHUSDT",
+      "adtv": 78.24,
+      "adts": 85.89
+    },
+    {
+      "symbol": "ASTRUSDT",
+      "adtv": 87.1,
+      "adts": 92.37
+    },
+    {
+      "symbol": "HEIUSDT",
+      "adtv": 79.87,
+      "adts": 91.55
+    },
+    {
+      "symbol": "TAGUSDT",
+      "adtv": 68.42,
+      "adts": 76.37
+    },
+    {
+      "symbol": "HUSDT",
+      "adtv": 121.39,
+      "adts": 118.94
+    },
+    {
+      "symbol": "THETAUSDT",
+      "adtv": 98.44,
+      "adts": 99.76
+    },
+    {
+      "symbol": "IOUSDT",
+      "adtv": 144.18,
+      "adts": 140.27
+    },
+    {
+      "symbol": "WCTUSDT",
+      "adtv": 141.22,
+      "adts": 145.3
+    },
+    {
+      "symbol": "GOATUSDT",
+      "adtv": 99.06,
+      "adts": 104.96
+    },
+    {
+      "symbol": "ENAUSDT",
+      "adtv": 85.62,
+      "adts": 92.03
+    },
+    {
+      "symbol": "OGNUSDT",
+      "adtv": 96.39,
+      "adts": 96.19
+    },
+    {
+      "symbol": "RVNUSDT",
+      "adtv": 84.06,
+      "adts": 89.09
+    },
+    {
+      "symbol": "TURBOUSDT",
+      "adtv": 95.95,
+      "adts": 101.79
+    },
+    {
+      "symbol": "MOVEUSDT",
+      "adtv": 94.82,
+      "adts": 103
+    },
+    {
+      "symbol": "AEROUSDT",
+      "adtv": 132.83,
+      "adts": 133.43
+    },
+    {
+      "symbol": "SOONUSDT",
+      "adtv": 49.98,
+      "adts": 62.08
+    },
+    {
+      "symbol": "ETHFIUSDT",
+      "adtv": 99.21,
+      "adts": 100.89
+    },
+    {
+      "symbol": "FILUSDT",
+      "adtv": 97.15,
+      "adts": 104.71
+    },
+    {
+      "symbol": "CUSDT",
+      "adtv": 92.73,
+      "adts": 92.54
+    },
+    {
+      "symbol": "SCRUSDT",
+      "adtv": 98.92,
+      "adts": 101.44
+    },
+    {
+      "symbol": "CELRUSDT",
+      "adtv": 126.45,
+      "adts": 113.14
+    },
+    {
+      "symbol": "ZRXUSDT",
+      "adtv": 97.9,
+      "adts": 99.02
+    },
+    {
+      "symbol": "MTLUSDT",
+      "adtv": 119.49,
+      "adts": 112.86
+    },
+    {
+      "symbol": "GPSUSDT",
+      "adtv": 89.73,
+      "adts": 89.39
+    },
+    {
+      "symbol": "INJUSDT",
+      "adtv": 106.44,
+      "adts": 107.19
+    },
+    {
+      "symbol": "UMAUSDT",
+      "adtv": 106.61,
+      "adts": 107.54
+    },
+    {
+      "symbol": "HBARUSDT",
+      "adtv": 106.13,
+      "adts": 108.11
+    },
+    {
+      "symbol": "OXTUSDT",
+      "adtv": 106.77,
+      "adts": 100.97
+    },
+    {
+      "symbol": "RDNTUSDT",
+      "adtv": 102.47,
+      "adts": 96.26
+    },
+    {
+      "symbol": "REDUSDT",
+      "adtv": 83.21,
+      "adts": 84.37
+    },
+    {
+      "symbol": "SKYAIUSDT",
+      "adtv": 68.13,
+      "adts": 61.26
+    },
+    {
+      "symbol": "BANANAUSDT",
+      "adtv": 127.19,
+      "adts": 113.5
+    },
+    {
+      "symbol": "CGPTUSDT",
+      "adtv": 90.26,
+      "adts": 91.95
+    },
+    {
+      "symbol": "ACEUSDT",
+      "adtv": 139.57,
+      "adts": 118.37
+    },
+    {
+      "symbol": "AGLDUSDT",
+      "adtv": 116.7,
+      "adts": 102.49
+    },
+    {
+      "symbol": "ATOMUSDT",
+      "adtv": 101.34,
+      "adts": 108.36
+    },
+    {
+      "symbol": "ZROUSDT",
+      "adtv": 80.21,
+      "adts": 83.65
+    },
+    {
+      "symbol": "MOVRUSDT",
+      "adtv": 126.3,
+      "adts": 109.39
+    },
+    {
+      "symbol": "YGGUSDT",
+      "adtv": 97.64,
+      "adts": 102.13
+    },
+    {
+      "symbol": "ALPHAUSDT",
+      "adtv": 98.36,
+      "adts": 94.21
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "adtv": 103.24,
+      "adts": 108.28
+    },
+    {
+      "symbol": "BEAMXUSDT",
+      "adtv": 89.19,
+      "adts": 90.86
+    },
+    {
+      "symbol": "KAITOUSDT",
+      "adtv": 96.14,
+      "adts": 104.99
+    },
+    {
+      "symbol": "RAREUSDT",
+      "adtv": 93.1,
+      "adts": 97.56
+    },
+    {
+      "symbol": "UNIUSDT",
+      "adtv": 95.83,
+      "adts": 95.78
+    },
+    {
+      "symbol": "PROMUSDT",
+      "adtv": 47.47,
+      "adts": 57.77
+    },
+    {
+      "symbol": "FETUSDT",
+      "adtv": 107.34,
+      "adts": 100.88
+    },
+    {
+      "symbol": "BAKEUSDT",
+      "adtv": 102.98,
+      "adts": 101.74
+    },
+    {
+      "symbol": "CYBERUSDT",
+      "adtv": 62.9,
+      "adts": 53.44
+    },
+    {
+      "symbol": "KMNOUSDT",
+      "adtv": 213.91,
+      "adts": 181.55
+    },
+    {
+      "symbol": "MUSDT",
+      "adtv": 97.68,
+      "adts": 101.16
+    },
+    {
+      "symbol": "HIGHUSDT",
+      "adtv": 87.11,
+      "adts": 94.55
+    },
+    {
+      "symbol": "BBUSDT",
+      "adtv": 98.47,
+      "adts": 101.93
+    },
+    {
+      "symbol": "ONGUSDT",
+      "adtv": 81.95,
+      "adts": 92.76
+    },
+    {
+      "symbol": "BIOUSDT",
+      "adtv": 56.43,
+      "adts": 59.31
+    },
+    {
+      "symbol": "SWELLUSDT",
+      "adtv": 107.65,
+      "adts": 111.18
+    },
+    {
+      "symbol": "PHBUSDT",
+      "adtv": 136.89,
+      "adts": 121.79
+    },
+    {
+      "symbol": "MLNUSDT",
+      "adtv": 144.18,
+      "adts": 143.19
+    },
+    {
+      "symbol": "CFXUSDT",
+      "adtv": 97.08,
+      "adts": 93.04
+    },
+    {
+      "symbol": "IDOLUSDT",
+      "adtv": 62.04,
+      "adts": 65.93
+    },
+    {
+      "symbol": "PENGUUSDT",
+      "adtv": 103.55,
+      "adts": 105.93
+    },
+    {
+      "symbol": "LUNA2USDT",
+      "adtv": 102.46,
+      "adts": 101.2
+    },
+    {
+      "symbol": "LAYERUSDT",
+      "adtv": 112.65,
+      "adts": 116.11
+    },
+    {
+      "symbol": "STEEMUSDT",
+      "adtv": 108.91,
+      "adts": 105.01
+    },
+    {
+      "symbol": "HYPERUSDT",
+      "adtv": 73.2,
+      "adts": 83.25
+    },
+    {
+      "symbol": "VELODROMEUSDT",
+      "adtv": 99.03,
+      "adts": 99.85
+    },
+    {
+      "symbol": "CKBUSDT",
+      "adtv": 103.02,
+      "adts": 104.2
+    },
+    {
+      "symbol": "API3USDT",
+      "adtv": 102.42,
+      "adts": 107.2
+    },
+    {
+      "symbol": "ACTUSDT",
+      "adtv": 80.03,
+      "adts": 90.47
+    },
+    {
+      "symbol": "BELUSDT",
+      "adtv": 104.21,
+      "adts": 107.79
+    },
+    {
+      "symbol": "EPTUSDT",
+      "adtv": 113.85,
+      "adts": 108.63
+    },
+    {
+      "symbol": "IDUSDT",
+      "adtv": 58.86,
+      "adts": 58.8
+    },
+    {
+      "symbol": "SIGNUSDT",
+      "adtv": 292.69,
+      "adts": 261.4
+    },
+    {
+      "symbol": "ZEREBROUSDT",
+      "adtv": 87.02,
+      "adts": 86.62
+    },
+    {
+      "symbol": "1000CHEEMSUSDT",
+      "adtv": 95.38,
+      "adts": 99.11
+    },
+    {
+      "symbol": "AXLUSDT",
+      "adtv": 91.41,
+      "adts": 104.92
+    },
+    {
+      "symbol": "DUSDT",
+      "adtv": 98.15,
+      "adts": 100.91
+    },
+    {
+      "symbol": "NXPCUSDT",
+      "adtv": 79.31,
+      "adts": 88.53
+    },
+    {
+      "symbol": "CELOUSDT",
+      "adtv": 85.79,
+      "adts": 85.85
+    },
+    {
+      "symbol": "KOMAUSDT",
+      "adtv": 107.94,
+      "adts": 93.42
+    },
+    {
+      "symbol": "SUSDT",
+      "adtv": 111.58,
+      "adts": 103.57
+    },
+    {
+      "symbol": "SLPUSDT",
+      "adtv": 104.99,
+      "adts": 100.94
+    },
+    {
+      "symbol": "MEWUSDT",
+      "adtv": 115.78,
+      "adts": 143.13
+    },
+    {
+      "symbol": "POPCATUSDT",
+      "adtv": 97.13,
+      "adts": 107.17
+    },
+    {
+      "symbol": "MINAUSDT",
+      "adtv": 116.27,
+      "adts": 109.63
+    },
+    {
+      "symbol": "1000LUNCUSDT",
+      "adtv": 97.57,
+      "adts": 87.86
+    },
+    {
+      "symbol": "GRTUSDT",
+      "adtv": 102.11,
+      "adts": 101.17
+    },
+    {
+      "symbol": "CATIUSDT",
+      "adtv": 32.34,
+      "adts": 46.17
+    },
+    {
+      "symbol": "IOTAUSDT",
+      "adtv": 88.35,
+      "adts": 100.6
+    },
+    {
+      "symbol": "JASMYUSDT",
+      "adtv": 114.76,
+      "adts": 114.98
+    },
+    {
+      "symbol": "BLURUSDT",
+      "adtv": 103.56,
+      "adts": 96.14
+    },
+    {
+      "symbol": "PONKEUSDT",
+      "adtv": 163.11,
+      "adts": 144.6
+    },
+    {
+      "symbol": "MELANIAUSDT",
+      "adtv": 102.3,
+      "adts": 101.39
+    },
+    {
+      "symbol": "MOCAUSDT",
+      "adtv": 105.13,
+      "adts": 119.36
+    },
+    {
+      "symbol": "DEXEUSDT",
+      "adtv": 104.26,
+      "adts": 100.79
+    },
+    {
+      "symbol": "ENJUSDT",
+      "adtv": 100.69,
+      "adts": 99.47
+    },
+    {
+      "symbol": "NEIROETHUSDT",
+      "adtv": 117.41,
+      "adts": 127.43
+    },
+    {
+      "symbol": "CROSSUSDT",
+      "adtv": 72.44,
+      "adts": 71.34
+    },
+    {
+      "symbol": "NTRNUSDT",
+      "adtv": 136.17,
+      "adts": 132.08
+    },
+    {
+      "symbol": "OLUSDT",
+      "adtv": 60.61,
+      "adts": 74.02
+    },
+    {
+      "symbol": "CHILLGUYUSDT",
+      "adtv": 93.13,
+      "adts": 101.01
+    },
+    {
+      "symbol": "BANKUSDT",
+      "adtv": 46.78,
+      "adts": 59.77
+    },
+    {
+      "symbol": "HOMEUSDT",
+      "adtv": 134.21,
+      "adts": 129.29
+    },
+    {
+      "symbol": "JELLYJELLYUSDT",
+      "adtv": 118.72,
+      "adts": 95.72
+    },
+    {
+      "symbol": "PEOPLEUSDT",
+      "adtv": 144.49,
+      "adts": 140.86
+    },
+    {
+      "symbol": "WALUSDT",
+      "adtv": 108.58,
+      "adts": 119.74
+    },
+    {
+      "symbol": "ZRCUSDT",
+      "adtv": 114.53,
+      "adts": 120.64
+    },
+    {
+      "symbol": "QTUMUSDT",
+      "adtv": 108.58,
+      "adts": 98.92
+    },
+    {
+      "symbol": "NMRUSDT",
+      "adtv": 80.81,
+      "adts": 85.65
+    },
+    {
+      "symbol": "C98USDT",
+      "adtv": 104.74,
+      "adts": 102.51
+    },
+    {
+      "symbol": "OGUSDT",
+      "adtv": 104.66,
+      "adts": 104.52
+    },
+    {
+      "symbol": "AIUSDT",
+      "adtv": 117.44,
+      "adts": 112.95
+    },
+    {
+      "symbol": "WLDUSDT",
+      "adtv": 99.96,
+      "adts": 105.83
+    },
+    {
+      "symbol": "PUNDIXUSDT",
+      "adtv": 151.57,
+      "adts": 118.81
+    },
+    {
+      "symbol": "BTCDOMUSDT",
+      "adtv": 129.58,
+      "adts": 119.03
+    },
+    {
+      "symbol": "CVCUSDT",
+      "adtv": 114.78,
+      "adts": 105.42
+    },
+    {
+      "symbol": "PENDLEUSDT",
+      "adtv": 113.66,
+      "adts": 112.87
+    },
+    {
+      "symbol": "VINEUSDT",
+      "adtv": 43.09,
+      "adts": 49.7
+    },
+    {
+      "symbol": "TSTUSDT",
+      "adtv": 36.3,
+      "adts": 46.05
+    },
+    {
+      "symbol": "SPELLUSDT",
+      "adtv": 97.22,
+      "adts": 99.6
+    },
+    {
+      "symbol": "NAORISUSDT",
+      "adtv": 87.1,
+      "adts": 78.82
+    },
+    {
+      "symbol": "DRIFTUSDT",
+      "adtv": 128.09,
+      "adts": 117.58
+    },
+    {
+      "symbol": "1INCHUSDT",
+      "adtv": 93.3,
+      "adts": 95.89
+    },
+    {
+      "symbol": "GRASSUSDT",
+      "adtv": 90.73,
+      "adts": 103.81
+    },
+    {
+      "symbol": "TOKENUSDT",
+      "adtv": 113.68,
+      "adts": 101
+    },
+    {
+      "symbol": "XLMUSDT",
+      "adtv": 100.44,
+      "adts": 100.37
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "adtv": 84.51,
+      "adts": 94.95
+    },
+    {
+      "symbol": "GALAUSDT",
+      "adtv": 87.53,
+      "adts": 100.55
+    },
+    {
+      "symbol": "LINKUSDT",
+      "adtv": 117.58,
+      "adts": 114.51
+    },
+    {
+      "symbol": "VANRYUSDT",
+      "adtv": 106.09,
+      "adts": 101.63
+    },
+    {
+      "symbol": "SONICUSDT",
+      "adtv": 99.93,
+      "adts": 102.67
+    },
+    {
+      "symbol": "MUBARAKUSDT",
+      "adtv": 109.26,
+      "adts": 110.54
+    },
+    {
+      "symbol": "1000XUSDT",
+      "adtv": 37.74,
+      "adts": 51.41
+    },
+    {
+      "symbol": "ICPUSDT",
+      "adtv": 107.46,
+      "adts": 100.95
+    },
+    {
+      "symbol": "RONINUSDT",
+      "adtv": 110.06,
+      "adts": 114.09
+    },
+    {
+      "symbol": "POLYXUSDT",
+      "adtv": 93.62,
+      "adts": 96.63
+    },
+    {
+      "symbol": "BNBUSDT",
+      "adtv": 129.62,
+      "adts": 118.45
+    },
+    {
+      "symbol": "RUNEUSDT",
+      "adtv": 107.89,
+      "adts": 104.94
+    },
+    {
+      "symbol": "TRUMPUSDT",
+      "adtv": 117.2,
+      "adts": 118.06
+    },
+    {
+      "symbol": "STXUSDT",
+      "adtv": 101.29,
+      "adts": 98.42
+    },
+    {
+      "symbol": "QUICKUSDT",
+      "adtv": 102.25,
+      "adts": 106.61
+    },
+    {
+      "symbol": "1000PEPEUSDT",
+      "adtv": 107.31,
+      "adts": 106.74
+    },
+    {
+      "symbol": "ETHWUSDT",
+      "adtv": 108.51,
+      "adts": 107.55
+    },
+    {
+      "symbol": "NEIROUSDT",
+      "adtv": 110.7,
+      "adts": 111.81
+    },
+    {
+      "symbol": "NEWTUSDT",
+      "adtv": 79.02,
+      "adts": 86.5
+    },
+    {
+      "symbol": "USTCUSDT",
+      "adtv": 72.97,
+      "adts": 75.51
+    },
+    {
+      "symbol": "THEUSDT",
+      "adtv": 244.21,
+      "adts": 211.08
+    },
+    {
+      "symbol": "VANAUSDT",
+      "adtv": 106.48,
+      "adts": 107.12
+    },
+    {
+      "symbol": "BANANAS31USDT",
+      "adtv": 70.43,
+      "adts": 79.08
+    },
+    {
+      "symbol": "SFPUSDT",
+      "adtv": 95.09,
+      "adts": 93.54
+    },
+    {
+      "symbol": "IMXUSDT",
+      "adtv": 91.67,
+      "adts": 99.35
+    },
+    {
+      "symbol": "VIRTUALUSDT",
+      "adtv": 101.75,
+      "adts": 108.37
+    },
+    {
+      "symbol": "ZKJUSDT",
+      "adtv": 61.2,
+      "adts": 64.86
+    },
+    {
+      "symbol": "1000WHYUSDT",
+      "adtv": 168.34,
+      "adts": 134.51
+    },
+    {
+      "symbol": "HFTUSDT",
+      "adtv": 66.32,
+      "adts": 79.87
+    },
+    {
+      "symbol": "RLCUSDT",
+      "adtv": 113.32,
+      "adts": 111.16
+    },
+    {
+      "symbol": "SUNUSDT",
+      "adtv": 109.69,
+      "adts": 99.54
+    },
+    {
+      "symbol": "SUIUSDT",
+      "adtv": 113.54,
+      "adts": 105.55
+    },
+    {
+      "symbol": "ORCAUSDT",
+      "adtv": 87.9,
+      "adts": 85.4
+    },
+    {
+      "symbol": "HUMAUSDT",
+      "adtv": 124.1,
+      "adts": 120.83
+    },
+    {
+      "symbol": "PUFFERUSDT",
+      "adtv": 109.27,
+      "adts": 105.39
+    },
+    {
+      "symbol": "NFPUSDT",
+      "adtv": 100.73,
+      "adts": 94.96
+    },
+    {
+      "symbol": "FORMUSDT",
+      "adtv": 133.87,
+      "adts": 133.57
+    },
+    {
+      "symbol": "ORDIUSDT",
+      "adtv": 101.49,
+      "adts": 104.97
+    },
+    {
+      "symbol": "TONUSDT",
+      "adtv": 137.19,
+      "adts": 122.15
+    },
+    {
+      "symbol": "BANUSDT",
+      "adtv": 447.41,
+      "adts": 312.83
+    },
+    {
+      "symbol": "IPUSDT",
+      "adtv": 69.34,
+      "adts": 80.79
+    },
+    {
+      "symbol": "MASKUSDT",
+      "adtv": 100.66,
+      "adts": 103.18
+    },
+    {
+      "symbol": "XMRUSDT",
+      "adtv": 71.02,
+      "adts": 83.84
+    },
+    {
+      "symbol": "PIXELUSDT",
+      "adtv": 87.93,
+      "adts": 95.11
+    },
+    {
+      "symbol": "TACUSDT",
+      "adtv": 42.21,
+      "adts": 50.25
+    },
+    {
+      "symbol": "VOXELUSDT",
+      "adtv": 86.95,
+      "adts": 93.32
+    },
+    {
+      "symbol": "SAFEUSDT",
+      "adtv": 133.42,
+      "adts": 117.89
+    },
+    {
+      "symbol": "FUSDT",
+      "adtv": 115.58,
+      "adts": 114.38
+    },
+    {
+      "symbol": "FORTHUSDT",
+      "adtv": 41.28,
+      "adts": 56.47
+    },
+    {
+      "symbol": "CAKEUSDT",
+      "adtv": 127.95,
+      "adts": 116.38
+    },
+    {
+      "symbol": "GTCUSDT",
+      "adtv": 108.86,
+      "adts": 106.29
+    },
+    {
+      "symbol": "ACXUSDT",
+      "adtv": 91.09,
+      "adts": 93.23
+    },
+    {
+      "symbol": "KAVAUSDT",
+      "adtv": 95.72,
+      "adts": 104.19
+    },
+    {
+      "symbol": "PLUMEUSDT",
+      "adtv": 85.9,
+      "adts": 99.29
+    },
+    {
+      "symbol": "KSMUSDT",
+      "adtv": 121.76,
+      "adts": 108.66
+    },
+    {
+      "symbol": "DOODUSDT",
+      "adtv": 126.77,
+      "adts": 118.24
+    },
+    {
+      "symbol": "SHELLUSDT",
+      "adtv": 165.14,
+      "adts": 144.35
+    },
+    {
+      "symbol": "DFUSDT",
+      "adtv": 88.43,
+      "adts": 89.13
+    },
+    {
+      "symbol": "PHAUSDT",
+      "adtv": 94.57,
+      "adts": 95.33
+    },
+    {
+      "symbol": "POWRUSDT",
+      "adtv": 94.88,
+      "adts": 92.78
+    },
+    {
+      "symbol": "ANKRUSDT",
+      "adtv": 103.03,
+      "adts": 107.1
+    },
+    {
+      "symbol": "CTSIUSDT",
+      "adtv": 104.7,
+      "adts": 97.01
+    },
+    {
+      "symbol": "HAEDALUSDT",
+      "adtv": 99.09,
+      "adts": 104.99
+    },
+    {
+      "symbol": "PORT3USDT",
+      "adtv": 30.45,
+      "adts": 34.19
+    },
+    {
+      "symbol": "SOLUSDT",
+      "adtv": 130.76,
+      "adts": 129.09
+    },
+    {
+      "symbol": "ZECUSDT",
+      "adtv": 145.4,
+      "adts": 133.23
+    },
+    {
+      "symbol": "ALPINEUSDT",
+      "adtv": 146.61,
+      "adts": 145.38
+    },
+    {
+      "symbol": "CRVUSDT",
+      "adtv": 116.29,
+      "adts": 112.94
+    },
+    {
+      "symbol": "TAOUSDT",
+      "adtv": 107.71,
+      "adts": 108.22
+    },
+    {
+      "symbol": "XRPUSDT",
+      "adtv": 105.31,
+      "adts": 102.72
+    },
+    {
+      "symbol": "MEUSDT",
+      "adtv": 118.41,
+      "adts": 107.15
+    },
+    {
+      "symbol": "NEARUSDT",
+      "adtv": 106.82,
+      "adts": 114.2
+    },
+    {
+      "symbol": "COTIUSDT",
+      "adtv": 145.07,
+      "adts": 130.35
+    },
+    {
+      "symbol": "FHEUSDT",
+      "adtv": 45,
+      "adts": 77.91
+    },
+    {
+      "symbol": "ZORAUSDT",
+      "adtv": 83.67,
+      "adts": 90.62
+    },
+    {
+      "symbol": "AWEUSDT",
+      "adtv": 83.82,
+      "adts": 90.95
+    },
+    {
+      "symbol": "DMCUSDT",
+      "adtv": 92.05,
+      "adts": 87.67
+    },
+    {
+      "symbol": "COWUSDT",
+      "adtv": 91.98,
+      "adts": 96.86
+    },
+    {
+      "symbol": "ETHUSDT",
+      "adtv": 101.53,
+      "adts": 102.5
+    },
+    {
+      "symbol": "BTCUSDT",
+      "adtv": 98.08,
+      "adts": 98.29
+    },
+    {
+      "symbol": "1MBABYDOGEUSDT",
+      "adtv": 104.25,
+      "adts": 107.22
+    },
+    {
+      "symbol": "ICXUSDT",
+      "adtv": 90.24,
+      "adts": 86.83
+    },
+    {
+      "symbol": "PARTIUSDT",
+      "adtv": 100.49,
+      "adts": 97.87
+    },
+    {
+      "symbol": "DYMUSDT",
+      "adtv": 96.09,
+      "adts": 77.03
+    },
+    {
+      "symbol": "NKNUSDT",
+      "adtv": 92.83,
+      "adts": 94.96
+    },
+    {
+      "symbol": "KERNELUSDT",
+      "adtv": 83.24,
+      "adts": 86.77
+    },
+    {
+      "symbol": "BICOUSDT",
+      "adtv": 106.48,
+      "adts": 105.75
+    },
+    {
+      "symbol": "SQDUSDT",
+      "adtv": 108.38,
+      "adts": 110.31
+    },
+    {
+      "symbol": "XTZUSDT",
+      "adtv": 51.14,
+      "adts": 80.19
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "adtv": 102.98,
+      "adts": 102.46
+    },
+    {
+      "symbol": "APTUSDT",
+      "adtv": 118.83,
+      "adts": 115.44
+    },
+    {
+      "symbol": "DEGENUSDT",
+      "adtv": 118.51,
+      "adts": 109.98
+    },
+    {
+      "symbol": "1000XECUSDT",
+      "adtv": 82.59,
+      "adts": 99.55
+    },
+    {
+      "symbol": "ADAUSDT",
+      "adtv": 120.71,
+      "adts": 107.7
+    },
+    {
+      "symbol": "ILVUSDT",
+      "adtv": 115.14,
+      "adts": 116.04
+    },
+    {
+      "symbol": "XCNUSDT",
+      "adtv": 112.17,
+      "adts": 104.08
+    },
+    {
+      "symbol": "1000FLOKIUSDT",
+      "adtv": 99.24,
+      "adts": 105.6
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "adtv": 121.57,
+      "adts": 120.9
+    },
+    {
+      "symbol": "BABYUSDT",
+      "adtv": 101.77,
+      "adts": 102.62
+    },
+    {
+      "symbol": "MAVIAUSDT",
+      "adtv": 37.84,
+      "adts": 39.12
+    },
+    {
+      "symbol": "PNUTUSDT",
+      "adtv": 104.33,
+      "adts": 106.35
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "adtv": 111.57,
+      "adts": 111.07
+    },
+    {
+      "symbol": "SANDUSDT",
+      "adtv": 108.87,
+      "adts": 105.63
+    },
+    {
+      "symbol": "RSRUSDT",
+      "adtv": 84.29,
+      "adts": 89.34
+    },
+    {
+      "symbol": "TANSSIUSDT",
+      "adtv": 99.93,
+      "adts": 105.86
+    },
+    {
+      "symbol": "TWTUSDT",
+      "adtv": 168.91,
+      "adts": 129.17
+    },
+    {
+      "symbol": "PERPUSDT",
+      "adtv": 103.98,
+      "adts": 103.42
+    },
+    {
+      "symbol": "SXPUSDT",
+      "adtv": 101.88,
+      "adts": 109.16
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "adtv": 82.88,
+      "adts": 96.05
+    },
+    {
+      "symbol": "TRUUSDT",
+      "adtv": 85.67,
+      "adts": 90.43
+    },
+    {
+      "symbol": "SUSHIUSDT",
+      "adtv": 103.72,
+      "adts": 102.02
+    },
+    {
+      "symbol": "1000SATSUSDT",
+      "adtv": 107.57,
+      "adts": 100.19
+    },
+    {
+      "symbol": "BULLAUSDT",
+      "adtv": 66.45,
+      "adts": 70.37
+    },
+    {
+      "symbol": "DASHUSDT",
+      "adtv": 109.53,
+      "adts": 109.25
+    },
+    {
+      "symbol": "VVVUSDT",
+      "adtv": 108.67,
+      "adts": 109.95
+    },
+    {
+      "symbol": "MYROUSDT",
+      "adtv": 125.54,
+      "adts": 122.98
+    },
+    {
+      "symbol": "LEVERUSDT",
+      "adtv": 101.08,
+      "adts": 93.79
+    },
+    {
+      "symbol": "1000CATUSDT",
+      "adtv": 95.41,
+      "adts": 96.62
+    },
+    {
+      "symbol": "COSUSDT",
+      "adtv": 101.58,
+      "adts": 96.76
+    },
+    {
+      "symbol": "LTCUSDT",
+      "adtv": 115.32,
+      "adts": 117.4
+    },
+    {
+      "symbol": "REIUSDT",
+      "adtv": 118.62,
+      "adts": 107.58
+    },
+    {
+      "symbol": "TRXUSDT",
+      "adtv": 90.84,
+      "adts": 99.96
+    },
+    {
+      "symbol": "1000BONKUSDT",
+      "adtv": 108.51,
+      "adts": 109.2
+    },
+    {
+      "symbol": "AVAUSDT",
+      "adtv": 83.58,
+      "adts": 88.08
+    },
+    {
+      "symbol": "PAXGUSDT",
+      "adtv": 83.94,
+      "adts": 83.48
+    },
+    {
+      "symbol": "TAIKOUSDT",
+      "adtv": 80.95,
+      "adts": 107.61
+    },
+    {
+      "symbol": "PUMPBTCUSDT",
+      "adtv": 78.84,
+      "adts": 92.01
+    },
+    {
+      "symbol": "POLUSDT",
+      "adtv": 107.74,
+      "adts": 97.86
+    },
+    {
+      "symbol": "TIAUSDT",
+      "adtv": 99.03,
+      "adts": 105.83
+    },
+    {
+      "symbol": "ZILUSDT",
+      "adtv": 108.59,
+      "adts": 111.74
+    },
+    {
+      "symbol": "EGLDUSDT",
+      "adtv": 128.35,
+      "adts": 121.45
+    },
+    {
+      "symbol": "ENSUSDT",
+      "adtv": 88.32,
+      "adts": 88.06
+    },
+    {
+      "symbol": "ARPAUSDT",
+      "adtv": 127.8,
+      "adts": 119.66
+    },
+    {
+      "symbol": "MAGICUSDT",
+      "adtv": 57.05,
+      "adts": 66.23
+    },
+    {
+      "symbol": "MANTAUSDT",
+      "adtv": 106.98,
+      "adts": 100.46
+    },
+    {
+      "symbol": "BUSDT",
+      "adtv": 91.6,
+      "adts": 98.81
+    },
+    {
+      "symbol": "HYPEUSDT",
+      "adtv": 111.87,
+      "adts": 112.18
+    },
+    {
+      "symbol": "AI16ZUSDT",
+      "adtv": 90.75,
+      "adts": 97.58
+    },
+    {
+      "symbol": "VETUSDT",
+      "adtv": 96.28,
+      "adts": 105.69
+    },
+    {
+      "symbol": "REZUSDT",
+      "adtv": 91.8,
+      "adts": 91.16
+    },
+    {
+      "symbol": "STGUSDT",
+      "adtv": 66.26,
+      "adts": 73.36
+    },
+    {
+      "symbol": "PUMPUSDT",
+      "adtv": 105.02,
+      "adts": 106.1
+    },
+    {
+      "symbol": "CHESSUSDT",
+      "adtv": 57.36,
+      "adts": 71.29
+    },
+    {
+      "symbol": "CHRUSDT",
+      "adtv": 106.43,
+      "adts": 106.8
+    },
+    {
+      "symbol": "CARVUSDT",
+      "adtv": 83.89,
+      "adts": 79.18
+    },
+    {
+      "symbol": "PROVEUSDT",
+      "adtv": 61.81,
+      "adts": 72.04
+    },
+    {
+      "symbol": "BANDUSDT",
+      "adtv": 114.07,
+      "adts": 109.55
+    },
+    {
+      "symbol": "KDAUSDT",
+      "adtv": 107.69,
+      "adts": 113.1
+    },
+    {
+      "symbol": "B2USDT",
+      "adtv": 118.11,
+      "adts": 100.13
+    },
+    {
+      "symbol": "INUSDT",
+      "adtv": 132.36,
+      "adts": 128.86
+    },
+    {
+      "symbol": "QNTUSDT",
+      "adtv": 92.09,
+      "adts": 96.64
+    },
+    {
+      "symbol": "BSWUSDT",
+      "adtv": 77.9,
+      "adts": 89.35
+    },
+    {
+      "symbol": "PLAYUSDT",
+      "adtv": 101.29,
+      "adts": 93.53
+    },
+    {
+      "symbol": "BNTUSDT",
+      "adtv": 100.54,
+      "adts": 98.87
+    },
+    {
+      "symbol": "GUSDT",
+      "adtv": 102.64,
+      "adts": 106.87
+    },
+    {
+      "symbol": "DEGOUSDT",
+      "adtv": 51.22,
+      "adts": 64.59
+    },
+    {
+      "symbol": "DOGSUSDT",
+      "adtv": 97.65,
+      "adts": 100.33
+    },
+    {
+      "symbol": "ASRUSDT",
+      "adtv": 108.61,
+      "adts": 107.65
+    },
+    {
+      "symbol": "AVAAIUSDT",
+      "adtv": 67.08,
+      "adts": 71.72
+    },
+    {
+      "symbol": "GRIFFAINUSDT",
+      "adtv": 85.46,
+      "adts": 92.68
+    },
+    {
+      "symbol": "JUPUSDT",
+      "adtv": 103.97,
+      "adts": 109.65
+    },
+    {
+      "symbol": "BERAUSDT",
+      "adtv": 107.49,
+      "adts": 101.62
+    },
+    {
+      "symbol": "TUTUSDT",
+      "adtv": 117.41,
+      "adts": 106.84
+    },
+    {
+      "symbol": "BRUSDT",
+      "adtv": 104.69,
+      "adts": 135.41
+    },
+    {
+      "symbol": "NEOUSDT",
+      "adtv": 77.84,
+      "adts": 90.24
+    },
+    {
+      "symbol": "DOLOUSDT",
+      "adtv": 98.3,
+      "adts": 89.57
+    },
+    {
+      "symbol": "LPTUSDT",
+      "adtv": 92.66,
+      "adts": 102.29
+    },
+    {
+      "symbol": "WIFUSDT",
+      "adtv": 113.58,
+      "adts": 113.7
+    },
+    {
+      "symbol": "BATUSDT",
+      "adtv": 86.02,
+      "adts": 91.18
+    },
+    {
+      "symbol": "AERGOUSDT",
+      "adtv": 91.69,
+      "adts": 96.18
+    },
+    {
+      "symbol": "EPICUSDT",
+      "adtv": 129.07,
+      "adts": 137.52
+    },
+    {
+      "symbol": "ROSEUSDT",
+      "adtv": 127.88,
+      "adts": 122.97
+    },
+    {
+      "symbol": "APEUSDT",
+      "adtv": 101.91,
+      "adts": 113.32
+    },
+    {
+      "symbol": "GMXUSDT",
+      "adtv": 107.55,
+      "adts": 111.82
+    },
+    {
+      "symbol": "ONTUSDT",
+      "adtv": 96.35,
+      "adts": 108.85
+    },
+    {
+      "symbol": "SKLUSDT",
+      "adtv": 383.02,
+      "adts": 327.67
+    },
+    {
+      "symbol": "HIFIUSDT",
+      "adtv": 154.27,
+      "adts": 156.54
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "adtv": 107.34,
+      "adts": 109.73
+    },
+    {
+      "symbol": "KAIAUSDT",
+      "adtv": 108.36,
+      "adts": 102.8
+    },
+    {
+      "symbol": "BIDUSDT",
+      "adtv": 88.91,
+      "adts": 87.92
+    },
+    {
+      "symbol": "STORJUSDT",
+      "adtv": 108.3,
+      "adts": 101.35
+    },
+    {
+      "symbol": "ERAUSDT",
+      "adtv": 93.63,
+      "adts": 90.84
+    },
+    {
+      "symbol": "ESPORTSUSDT",
+      "adtv": 116.79,
+      "adts": 100.91
+    },
+    {
+      "symbol": "HIVEUSDT",
+      "adtv": 97.2,
+      "adts": 104.31
+    },
+    {
+      "symbol": "AUSDT",
+      "adtv": 150.08,
+      "adts": 128.47
+    },
+    {
+      "symbol": "JSTUSDT",
+      "adtv": 92.54,
+      "adts": 90.53
+    },
+    {
+      "symbol": "INITUSDT",
+      "adtv": 132.51,
+      "adts": 123.09
+    },
+    {
+      "symbol": "SPXUSDT",
+      "adtv": 105.9,
+      "adts": 107.93
+    },
+    {
+      "symbol": "DEEPUSDT",
+      "adtv": 130.46,
+      "adts": 151.11
+    },
+    {
+      "symbol": "LSKUSDT",
+      "adtv": 101.66,
+      "adts": 101.46
+    },
+    {
+      "symbol": "SYNUSDT",
+      "adtv": 95.64,
+      "adts": 96.76
+    },
+    {
+      "symbol": "TAUSDT",
+      "adtv": 99.81,
+      "adts": 107.11
+    },
+    {
+      "symbol": "ALCHUSDT",
+      "adtv": 82.12,
+      "adts": 86.35
+    },
+    {
+      "symbol": "AGTUSDT",
+      "adtv": 82.43,
+      "adts": 95.76
+    },
+    {
+      "symbol": "DENTUSDT",
+      "adtv": 96.93,
+      "adts": 103.62
+    },
+    {
+      "symbol": "BDXNUSDT",
+      "adtv": 79.1,
+      "adts": 85.35
+    },
+    {
+      "symbol": "DODOXUSDT",
+      "adtv": 110.02,
+      "adts": 109.23
+    },
+    {
+      "symbol": "IOSTUSDT",
+      "adtv": 134.74,
+      "adts": 133.41
+    },
+    {
+      "symbol": "AINUSDT",
+      "adtv": 93.95,
+      "adts": 89.23
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "adtv": 100.94,
+      "adts": 115.43
+    },
+    {
+      "symbol": "UXLINKUSDT",
+      "adtv": 92.14,
+      "adts": 88
+    },
+    {
+      "symbol": "ARCUSDT",
+      "adtv": 78.96,
+      "adts": 81.49
+    },
+    {
+      "symbol": "OBOLUSDT",
+      "adtv": 75.03,
+      "adts": 126.26
+    },
+    {
+      "symbol": "OPUSDT",
+      "adtv": 102.67,
+      "adts": 104.09
+    },
+    {
+      "symbol": "PIPPINUSDT",
+      "adtv": 113.85,
+      "adts": 99.04
+    },
+    {
+      "symbol": "RENDERUSDT",
+      "adtv": 108.04,
+      "adts": 95.71
+    },
+    {
+      "symbol": "SWARMSUSDT",
+      "adtv": 65.21,
+      "adts": 69.54
+    },
+    {
+      "symbol": "AKTUSDT",
+      "adtv": 108.77,
+      "adts": 108.9
+    },
+    {
+      "symbol": "DUSKUSDT",
+      "adtv": 112.07,
+      "adts": 106.88
+    },
+    {
+      "symbol": "COMPUSDT",
+      "adtv": 104.21,
+      "adts": 97.86
+    },
+    {
+      "symbol": "ATHUSDT",
+      "adtv": 102.2,
+      "adts": 115.08
+    },
+    {
+      "symbol": "CVXUSDT",
+      "adtv": 136.84,
+      "adts": 118.9
+    },
+    {
+      "symbol": "TRBUSDT",
+      "adtv": 105.88,
+      "adts": 106.38
+    },
+    {
+      "symbol": "TREEUSDT",
+      "adtv": 110.49,
+      "adts": 122.18
+    },
+    {
+      "symbol": "TLMUSDT",
+      "adtv": 103.4,
+      "adts": 106.97
+    },
+    {
+      "symbol": "ANIMEUSDT",
+      "adtv": 334.8,
+      "adts": 259.61
+    },
+    {
+      "symbol": "ARUSDT",
+      "adtv": 110.84,
+      "adts": 109.1
+    },
+    {
+      "symbol": "NILUSDT",
+      "adtv": 121.24,
+      "adts": 121.99
+    },
+    {
+      "symbol": "LQTYUSDT",
+      "adtv": 96.54,
+      "adts": 98.15
+    },
+    {
+      "symbol": "SYSUSDT",
+      "adtv": 168.47,
+      "adts": 149.2
+    },
+    {
+      "symbol": "SIRENUSDT",
+      "adtv": 79.64,
+      "adts": 92.89
+    },
+    {
+      "symbol": "1000000BOBUSDT",
+      "adtv": 84.84,
+      "adts": 88.46
+    },
+    {
+      "symbol": "HIPPOUSDT",
+      "adtv": 47.53,
+      "adts": 53.86
+    },
+    {
+      "symbol": "BCHUSDT",
+      "adtv": 97.62,
+      "adts": 95.23
+    },
+    {
+      "symbol": "RAYSOLUSDT",
+      "adtv": 138.41,
+      "adts": 135.3
+    },
+    {
+      "symbol": "USDCUSDT",
+      "adtv": 100.48,
+      "adts": 103.16
+    },
+    {
+      "symbol": "EIGENUSDT",
+      "adtv": 115.19,
+      "adts": 116.15
+    },
+    {
+      "symbol": "LUMIAUSDT",
+      "adtv": 89.82,
+      "adts": 92.26
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "adtv": 177.3,
+      "adts": 165.89
+    },
+    {
+      "symbol": "ALLUSDT",
+      "adtv": 100.91,
+      "adts": 96.33
+    },
+    {
+      "symbol": "FIOUSDT",
+      "adtv": 51.06,
+      "adts": 60.98
+    },
+    {
+      "symbol": "JOEUSDT",
+      "adtv": 95.7,
+      "adts": 100.53
+    },
+    {
+      "symbol": "STRKUSDT",
+      "adtv": 117.97,
+      "adts": 114.07
+    },
+    {
+      "symbol": "YALAUSDT",
+      "adtv": 93.17,
+      "adts": 91.36
+    },
+    {
+      "symbol": "ALGOUSDT",
+      "adtv": 101.31,
+      "adts": 103.49
+    },
+    {
+      "symbol": "FLOWUSDT",
+      "adtv": 81.24,
+      "adts": 97.16
+    },
+    {
+      "symbol": "SXTUSDT",
+      "adtv": 93.86,
+      "adts": 109.55
+    },
+    {
+      "symbol": "VTHOUSDT",
+      "adtv": 99.69,
+      "adts": 100.49
+    },
+    {
+      "symbol": "DIAUSDT",
+      "adtv": 88.48,
+      "adts": 89.65
+    },
+    {
+      "symbol": "1000RATSUSDT",
+      "adtv": 84.68,
+      "adts": 101.65
+    },
+    {
+      "symbol": "AIXBTUSDT",
+      "adtv": 83.41,
+      "adts": 84.15
+    },
+    {
+      "symbol": "DYDXUSDT",
+      "adtv": 121.42,
+      "adts": 109.23
+    },
+    {
+      "symbol": "EDUUSDT",
+      "adtv": 28.39,
+      "adts": 35.75
+    },
+    {
+      "symbol": "MYXUSDT",
+      "adtv": 120.04,
+      "adts": 123.54
+    },
+    {
+      "symbol": "CTKUSDT",
+      "adtv": 105.28,
+      "adts": 97.27
+    },
+    {
+      "symbol": "SCRTUSDT",
+      "adtv": 120.53,
+      "adts": 109.39
+    },
+    {
+      "symbol": "COOKIEUSDT",
+      "adtv": 75.18,
+      "adts": 86.79
+    },
+    {
+      "symbol": "FIDAUSDT",
+      "adtv": 157.87,
+      "adts": 139.97
+    },
+    {
+      "symbol": "WAXPUSDT",
+      "adtv": 102.65,
+      "adts": 110.53
+    },
+    {
+      "symbol": "XVGUSDT",
+      "adtv": 94.39,
+      "adts": 99.27
+    },
+    {
+      "symbol": "MANAUSDT",
+      "adtv": 125.16,
+      "adts": 112.06
+    },
+    {
+      "symbol": "SAGAUSDT",
+      "adtv": 86.8,
+      "adts": 96.43
+    },
+    {
+      "symbol": "SNXUSDT",
+      "adtv": 108.1,
+      "adts": 97.03
+    },
+    {
+      "symbol": "1000000MOGUSDT",
+      "adtv": 105.16,
+      "adts": 114.03
+    },
+    {
+      "symbol": "DOTUSDT",
+      "adtv": 112.13,
+      "adts": 108.2
+    },
+    {
+      "symbol": "RIFUSDT",
+      "adtv": 93.36,
+      "adts": 100.93
+    },
+    {
+      "symbol": "WUSDT",
+      "adtv": 94.42,
+      "adts": 92.76
+    },
+    {
+      "symbol": "GHSTUSDT",
+      "adtv": 74.34,
+      "adts": 76.57
+    },
+    {
+      "symbol": "ONEUSDT",
+      "adtv": 121.68,
+      "adts": 111.44
+    },
+    {
+      "symbol": "STOUSDT",
+      "adtv": 99.01,
+      "adts": 100.29
+    },
+    {
+      "symbol": "SOLVUSDT",
+      "adtv": 114.39,
+      "adts": 122.82
+    }
+  ]
+}

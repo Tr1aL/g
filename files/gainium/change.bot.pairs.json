@@ -1,0 +1,14 @@
+{
+  "status": "OK",
+  "reason": null,
+  "data": {
+    "removed": 1,
+    "added": 1,
+    "current": [
+      "FORTH_USDT"
+    ],
+    "previous": [
+      "GTC_USDT"
+    ]
+  }
+}
