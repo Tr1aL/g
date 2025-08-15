@@ -168,7 +168,7 @@
     </dependencyManagement>
 
     <build>
-<!--        <plugins>-->
+        <plugins>
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
 <!--                <artifactId>maven-compiler-plugin</artifactId>-->
@@ -181,9 +181,9 @@
 <!--                    </annotationProcessorPaths>-->
 <!--                </configuration>-->
 <!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
 <!--                <configuration>-->
 <!--                    <excludes>-->
 <!--                        <exclude>-->
@@ -192,8 +192,8 @@
 <!--                        </exclude>-->
 <!--                    </excludes>-->
 <!--                </configuration>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
+            </plugin>
+        </plugins>
     </build>
     <repositories>
         <repository>
