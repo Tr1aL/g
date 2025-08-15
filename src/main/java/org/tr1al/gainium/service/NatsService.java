@@ -34,7 +34,7 @@ public class NatsService {
     private final static String SPEED_RUSH_ALL = "sf.core.scripts.screener.speedRush.all";
     public final static String SHORT_TEMPLATE = "SHORT_TEMPLATE";
     public final static String STATUS_OK = "OK";
-    private final static long OPEN_BOT_LIMIT = 5;
+    private final static long OPEN_BOT_LIMIT = 10;
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
 
     private final GainiumService gainiumService;
@@ -48,6 +48,9 @@ public class NatsService {
 
     private BotsResult cachedBotsTemplate = null;
     private long lastCachedBotTemplate;
+
+    private long lastToMany;
+    private long lastIterate;
 
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() throws IOException, InterruptedException {
@@ -85,10 +88,15 @@ public class NatsService {
 
     private MessageHandler getMessageHandler() {
         return (msg) -> {
-            if (lastToMany != null && lastToMany > System.currentTimeMillis() - 10 * 1000L) {
+            if (lastToMany > System.currentTimeMillis() - 10 * 1000L) {
                 log.debug("skip to many timeout");
                 return;
             }
+            if (lastIterate > System.currentTimeMillis() - 10 * 1000L) {
+                log.debug("skip last iterate");
+                return;
+            }
+            lastIterate = System.currentTimeMillis();
 
             NatsResponse response = null;
             try {
@@ -191,8 +199,6 @@ public class NatsService {
             }
         };
     }
-
-    private Long lastToMany;
 
     private <T> T request(ThrowingSupplier<T, ToManyException> supplier) {
         try {
