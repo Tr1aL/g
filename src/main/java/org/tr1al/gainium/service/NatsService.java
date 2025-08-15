@@ -34,8 +34,10 @@ public class NatsService {
     private final static String SPEED_RUSH_ALL = "sf.core.scripts.screener.speedRush.all";
     public final static String SHORT_TEMPLATE = "SHORT_TEMPLATE";
     public final static String STATUS_OK = "OK";
+    public final static String STATUS_NOTOK = "NOTOK";
     private final static long OPEN_BOT_LIMIT = 10;
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
+    private final static String NOTHING_CHANGED = "Nothing changed";
 
     private final GainiumService gainiumService;
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -148,6 +150,7 @@ public class NatsService {
                 log.debug("SHORT_TEMPLATE not fount");
                 return;
             }
+            log.debug("shortTemplate {}", shortTemplate);
             int count = openBots.size();
             log.debug("openBots count " + count);
             if (count < OPEN_BOT_LIMIT) {
@@ -175,7 +178,8 @@ public class NatsService {
 //                        SimpleBotResponse updateBotResponse = gainiumService.updateDCABot(cloneBotResponse.getData(),
 //                                "clone " + SHORT_TEMPLATE + " to " + toClonePair, toClonePair);
 //                        log.debug("updateBotResponse: " + updateBotResponse);
-                        if (changeBotResponse != null && STATUS_OK.equals(changeBotResponse.getStatus())) {
+                        if (changeBotResponse != null && (STATUS_OK.equals(changeBotResponse.getStatus())
+                                || STATUS_NOTOK.equals(changeBotResponse.getStatus()) && NOTHING_CHANGED.equals(changeBotResponse.getReason()))) {
                             Integer countActive = countActive();
                             if (countActive == null) {
                                 log.debug("countActive is null");
@@ -217,14 +221,4 @@ public class NatsService {
         }
         return openBots.size();
     }
-
-//    public static void main(String[] args) {
-//        String s = "GTCUSDT";
-//        int idx = s.indexOf("USDT");
-//
-//        log.debug(s.substring(0, idx));
-//    }
 }
-//    Попробуем такую логику: Я сделал бот-шаблон SHORT_TEMPLATE.
-//    Для топ5 пар из ADTS клонируем этого бота.
-//    При этом одновременно работающих должно быть не более пяти пар.
