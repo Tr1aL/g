@@ -19,6 +19,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -32,13 +33,16 @@ public class NatsService {
     public final static String SHORT_TEMPLATE = "SHORT_TEMPLATE";
     public final static String STATUS_OK = "OK";
     private final static long OPEN_BOT_LIMIT = 5;
+    private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
 
     private final GainiumService gainiumService;
     private final ObjectMapper objectMapper = new ObjectMapper();
     // Create a cache with expiration time of 5 minutes after write
-    Cache<String, String> STARTED_PAIR_CACHE = CacheBuilder.newBuilder()
+    private final Cache<String, String> STARTED_PAIR_CACHE = CacheBuilder.newBuilder()
             .expireAfterWrite(60, TimeUnit.SECONDS)
             .build();
+
+    private final Set<String> IGNORE_PAIRS = new CopyOnWriteArraySet<>();
 
     private BotsResult cachedBotsTemplate = null;
     private long lastCachedBotTemplate;
@@ -81,9 +85,12 @@ public class NatsService {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            List<NatsData> adtsTop = response.getData().stream().sorted((o1, o2) -> o2.getAdts().compareTo(o1.getAdts()))
+            List<NatsData> adtsTop = response.getData().stream()
+                    .filter(a -> !IGNORE_PAIRS.contains(a.getSymbol()))
+                    .sorted((o1, o2) -> o2.getAdts().compareTo(o1.getAdts()))
                     .limit(OPEN_BOT_LIMIT).toList();
             log.debug("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
+            log.debug("ignored pairs {}", IGNORE_PAIRS);
             List<BotsResult> openBots = gainiumService.getBotsDCA("open", 1L);
             if (openBots == null) {
                 log.debug("openBots is null");
@@ -162,6 +169,9 @@ public class NatsService {
                                         count = countActive + 1;
                                     }
                                 }
+                            } else if (changeBotResponse != null && NO_CHECK_SETTINGS.equals(changeBotResponse.getReason())) {
+                                log.debug("ignore pair {}", natsData.getSymbol());
+                                IGNORE_PAIRS.add(natsData.getSymbol());
                             }
                         }
                     }
