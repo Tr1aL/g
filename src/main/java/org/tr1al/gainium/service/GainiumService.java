@@ -3,6 +3,7 @@ package org.tr1al.gainium.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -24,6 +25,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class GainiumService {
 
     private final static String GAINIUM_TOKEN = "6899a0b49fc939e674d6262d";
@@ -163,12 +165,12 @@ public class GainiumService {
             );
 //
 //                // Выводим статус код и тело ответа
-//                System.out.println("Status code: " + response.statusCode());
+//                log.debug("Status code: " + response.statusCode());
 //                String body1 = response.body();
-//                System.out.println("Response body: " + body1);
+//                log.debug("Response body: " + body1);
 
             String body1 = response.body();
-            System.out.println(body1);
+            log.debug(body1);
             return objectMapper.readValue(body1, clazz);
 
         } catch (Exception e) {

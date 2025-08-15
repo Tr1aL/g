@@ -5,6 +5,7 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import io.nats.client.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class NatsService {
     private final static String SPEED_RUSH_ADTS = "sf.core.scripts.screener.speedRush.adts";
     private final static String SPEED_RUSH_ADTV = "sf.core.scripts.screener.speedRush.adtv";
@@ -51,13 +53,13 @@ public class NatsService {
                 .properties(props)
                 .server("nats://nats.eu-central.prod.linode.spreadfighter.cloud")
                 .connectionListener((conn, event) -> {
-                    System.out.println("Событие: " + event);
+                    log.debug("Событие: " + event);
                     if (event == ConnectionListener.Events.DISCONNECTED) {
-                        System.out.println("⚠️ Соединение разорвано!");
+                        log.debug("⚠️ Соединение разорвано!");
                     } else if (event == ConnectionListener.Events.RECONNECTED) {
-                        System.out.println("✅ Соединение восстановлено!");
+                        log.debug("✅ Соединение восстановлено!");
                     } else if (event == ConnectionListener.Events.CLOSED) {
-                        System.out.println("❌ Соединение закрыто навсегда.");
+                        log.debug("❌ Соединение закрыто навсегда.");
                     }
                 })
                 .reconnectWait(Duration.ofMillis(1000)) // Ждать 1 сек между попытками
@@ -81,7 +83,7 @@ public class NatsService {
             }
             List<NatsData> adtsTop = response.getData().stream().sorted((o1, o2) -> o2.getAdts().compareTo(o1.getAdts()))
                     .limit(OPEN_BOT_LIMIT).toList();
-            System.out.println("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
+            log.debug("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
             List<BotsResult> openBots = gainiumService.getBotsDCA("open", 1L);
             Set<String> openBotSymbols = openBots.stream()
                     .map(BotsResult::getSettings)
@@ -102,47 +104,47 @@ public class NatsService {
                             lastCachedBotTemplate = System.currentTimeMillis();
                         } else {
                             SimpleBotResponse archiveBotResponse = gainiumService.archiveBot(botsResult.getId(), "dca");
-                            System.out.println("archiveBotResponse: " + archiveBotResponse);
+                            log.debug("archiveBotResponse: " + archiveBotResponse);
                         }
                     }
                 }
             }
             if (shortTemplate == null) {
-                System.out.println("SHORT_TEMPLATE not fount");
+                log.debug("SHORT_TEMPLATE not fount");
                 return;
             }
             int count = openBots.size();
-            System.out.println("openBots count " + count);
+            log.debug("openBots count " + count);
             if (count < OPEN_BOT_LIMIT) {
                 while (count < OPEN_BOT_LIMIT) {
                     for (NatsData natsData : adtsTop) {
-                        System.out.println("try " + natsData.getSymbol());
-                        System.out.println("openBots count " + count);
+                        log.debug("try " + natsData.getSymbol());
+                        log.debug("openBots count " + count);
                         if (openBotSymbols.contains(natsData.getSymbol())) {
-                            System.out.println(natsData.getSymbol() + " already started");
+                            log.debug(natsData.getSymbol() + " already started");
                             continue;
                         }
                         int idx = natsData.getSymbol().indexOf("USDT");
                         String toClonePair = natsData.getSymbol().substring(0, idx) + "_USDT";
                         if (STARTED_PAIR_CACHE.getIfPresent(toClonePair) != null) {
-                            System.out.println(toClonePair + " already cloned");
+                            log.debug(toClonePair + " already cloned");
                             return;
                         }
                         SimpleBotResponse cloneBotResponse = gainiumService.cloneDCABot(shortTemplate.getId(),
                                 "clone " + SHORT_TEMPLATE + " to " + toClonePair,
                                 toClonePair);
-                        System.out.println("cloneBotResponse: " + cloneBotResponse);
+                        log.debug("cloneBotResponse: " + cloneBotResponse);
                         if (cloneBotResponse != null && STATUS_OK.equals(cloneBotResponse.getStatus())) {
                             SimpleBotResponse changeBotResponse = gainiumService.changeBotPairs(cloneBotResponse.getData().toString(), toClonePair);
-                            System.out.println("changeBotResponse: " + changeBotResponse);
+                            log.debug("changeBotResponse: " + changeBotResponse);
 //                        SimpleBotResponse updateBotResponse = gainiumService.updateDCABot(cloneBotResponse.getData(),
 //                                "clone " + SHORT_TEMPLATE + " to " + toClonePair, toClonePair);
-//                        System.out.println("updateBotResponse: " + updateBotResponse);
+//                        log.debug("updateBotResponse: " + updateBotResponse);
                             if (changeBotResponse != null && STATUS_OK.equals(changeBotResponse.getStatus())) {
                                 int countActive = countActive();
                                 if (countActive < OPEN_BOT_LIMIT) {
                                     SimpleBotResponse startBotResponse = gainiumService.startBot(cloneBotResponse.getData().toString(), "dca");
-                                    System.out.println("startBotResponse: " + startBotResponse);
+                                    log.debug("startBotResponse: " + startBotResponse);
                                     STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
                                     count = countActive + 1;
                                 }
@@ -163,7 +165,7 @@ public class NatsService {
 //        String s = "GTCUSDT";
 //        int idx = s.indexOf("USDT");
 //
-//        System.out.println(s.substring(0, idx));
+//        log.debug(s.substring(0, idx));
 //    }
 }
 //    Попробуем такую логику: Я сделал бот-шаблон SHORT_TEMPLATE.
