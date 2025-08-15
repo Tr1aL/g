@@ -207,22 +207,22 @@ public class GainiumService {
 
     public static void main(String[] args) throws ToManyException {
         GainiumService service = new GainiumService();
-        List<BotsResult> list = service.getBotsDCA("open", 1L);
+        List<BotsResult> list = service.getBotsDCA(null, 1L);
 //        List<BotsResult> list = service.getBotsCombo("open", 1L);
 //        String id = list.get(0).get_id();
 //        CloneBotResponse comboBot = service.cloneComboBot(id, "BNB_USDT");
-        List<BotsResult> startedBots = list.stream()
-                .filter(a -> !a.getSettings().getName().equals(NatsService.SHORT_TEMPLATE))
-                .toList();
-        startedBots.forEach(a -> {
-            SimpleBotResponse response = null;
-            try {
-                response = service.stopBot(a.getId(), "dca");
-            } catch (ToManyException e) {
-                throw new RuntimeException(e);
-            }
-            System.out.println(response);
-        });
+//        List<BotsResult> startedBots = list.stream()
+//                .filter(a -> !a.getSettings().getName().equals(NatsService.SHORT_TEMPLATE))
+//                .toList();
+//        startedBots.forEach(a -> {
+//            SimpleBotResponse response = null;
+//            try {
+//                response = service.stopBot(a.getId(), "dca");
+//            } catch (ToManyException e) {
+//                throw new RuntimeException(e);
+//            }
+//            System.out.println(response);
+//        });
         System.out.println();
     }
 
