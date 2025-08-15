@@ -85,6 +85,10 @@ public class NatsService {
                     .limit(OPEN_BOT_LIMIT).toList();
             log.debug("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
             List<BotsResult> openBots = gainiumService.getBotsDCA("open", 1L);
+            if (openBots == null) {
+                log.debug("openBots is null");
+                return;
+            }
             Set<String> openBotSymbols = openBots.stream()
                     .map(BotsResult::getSettings)
                     .flatMap(a -> a.getPair().stream())
@@ -97,6 +101,10 @@ public class NatsService {
                     shortTemplate = cachedBotsTemplate;
                 } else {
                     List<BotsResult> closed = gainiumService.getBotsDCA("closed", 1L);
+                    if (closed == null) {
+                        log.debug("closed is null");
+                        return;
+                    }
                     for (BotsResult botsResult : closed) {
                         if (shortTemplate == null && SHORT_TEMPLATE.equals(botsResult.getSettings().getName())) {
                             shortTemplate = botsResult;
@@ -141,12 +149,18 @@ public class NatsService {
 //                                "clone " + SHORT_TEMPLATE + " to " + toClonePair, toClonePair);
 //                        log.debug("updateBotResponse: " + updateBotResponse);
                             if (changeBotResponse != null && STATUS_OK.equals(changeBotResponse.getStatus())) {
-                                int countActive = countActive();
+                                Integer countActive = countActive();
+                                if (countActive == null) {
+                                    log.debug("countActive is null");
+                                    return;
+                                }
                                 if (countActive < OPEN_BOT_LIMIT) {
                                     SimpleBotResponse startBotResponse = gainiumService.startBot(cloneBotResponse.getData().toString(), "dca");
                                     log.debug("startBotResponse: " + startBotResponse);
-                                    STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
-                                    count = countActive + 1;
+                                    if (startBotResponse != null && STATUS_OK.equals(startBotResponse.getStatus())) {
+                                        STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
+                                        count = countActive + 1;
+                                    }
                                 }
                             }
                         }
@@ -156,8 +170,12 @@ public class NatsService {
         });
     }
 
-    private int countActive() {
+    private Integer countActive() {
         List<BotsResult> openBots = gainiumService.getBotsDCA("open", 1L);
+        if (openBots == null) {
+            log.debug("countActive openBots is null");
+            return null;
+        }
         return openBots.size();
     }
 
