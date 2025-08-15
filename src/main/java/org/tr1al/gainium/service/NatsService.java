@@ -6,6 +6,7 @@ import com.google.common.cache.CacheBuilder;
 import io.nats.client.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,11 @@ public class NatsService {
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
     private final static String NOTHING_CHANGED = "Nothing changed";
 
+    private final static String NATS_SERVER = "nats://nats.eu-central.prod.linode.spreadfighter.cloud";
+    @Value("${nats.username}")
+    private String NATS_USERNAME;
+    @Value("${nats.password}")
+    private String NATS_PASSWORD;
     private final GainiumService gainiumService;
     private final ObjectMapper objectMapper = new ObjectMapper();
     // Create a cache with expiration time of 5 minutes after write
@@ -58,11 +64,11 @@ public class NatsService {
     public void runAfterStartup() throws IOException, InterruptedException {
 
         Properties props = new Properties();
-        props.put("username", "crypto");
-        props.put("password", "cryptoPass");
+        props.put("username", NATS_USERNAME);
+        props.put("password", NATS_PASSWORD);
         Options options = Options.builder()
                 .properties(props)
-                .server("nats://nats.eu-central.prod.linode.spreadfighter.cloud")
+                .server(NATS_SERVER)
                 .connectionListener((conn, event) -> {
                     log.debug("Событие: " + event);
                     if (event == ConnectionListener.Events.DISCONNECTED) {
@@ -189,24 +195,24 @@ public class NatsService {
                         if (cloneBotResponse != null && STATUS_OK.equals(cloneBotResponse.getStatus())) {
                             SimpleBotResponse changeBotResponse = request(() -> gainiumService.changeBotPairs(cloneBotResponse.getData().toString(), toClonePair));
                             log.debug("changeBotResponse: " + changeBotResponse);
-    //                        SimpleBotResponse updateBotResponse = gainiumService.updateDCABot(cloneBotResponse.getData(),
-    //                                "clone " + SHORT_TEMPLATE + " to " + toClonePair, toClonePair);
-    //                        log.debug("updateBotResponse: " + updateBotResponse);
+                            //                        SimpleBotResponse updateBotResponse = gainiumService.updateDCABot(cloneBotResponse.getData(),
+                            //                                "clone " + SHORT_TEMPLATE + " to " + toClonePair, toClonePair);
+                            //                        log.debug("updateBotResponse: " + updateBotResponse);
                             if (changeBotResponse != null && (STATUS_OK.equals(changeBotResponse.getStatus())
                                     || STATUS_NOTOK.equals(changeBotResponse.getStatus()) && NOTHING_CHANGED.equals(changeBotResponse.getReason()))) {
-    //                            Integer countActive = countActive();
-    //                            if (countActive == null) {
-    //                                log.debug("countActive is null");
-    //                                return;
-    //                            }
-    //                            if (countActive < OPEN_BOT_LIMIT) {
-                                    SimpleBotResponse startBotResponse = request(() -> gainiumService.startBot(cloneBotResponse.getData().toString(), "dca"));
-                                    log.debug("startBotResponse: " + startBotResponse);
-                                    if (startBotResponse != null && STATUS_OK.equals(startBotResponse.getStatus())) {
-                                        STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
-                                        count++;// = countActive + 1;
-                                    }
-    //                            }
+                                //                            Integer countActive = countActive();
+                                //                            if (countActive == null) {
+                                //                                log.debug("countActive is null");
+                                //                                return;
+                                //                            }
+                                //                            if (countActive < OPEN_BOT_LIMIT) {
+                                SimpleBotResponse startBotResponse = request(() -> gainiumService.startBot(cloneBotResponse.getData().toString(), "dca"));
+                                log.debug("startBotResponse: " + startBotResponse);
+                                if (startBotResponse != null && STATUS_OK.equals(startBotResponse.getStatus())) {
+                                    STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
+                                    count++;// = countActive + 1;
+                                }
+                                //                            }
                             } else if (changeBotResponse != null && NO_CHECK_SETTINGS.equals(changeBotResponse.getReason())) {
                                 log.debug("ignore pair {}", natsData.getSymbol());
                                 IGNORE_PAIRS.add(natsData.getSymbol());

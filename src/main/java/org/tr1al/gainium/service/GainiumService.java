@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.tr1al.gainium.dto.gainium.BotsData;
 import org.tr1al.gainium.dto.gainium.BotsResponse;
@@ -29,8 +30,10 @@ import java.util.Optional;
 public class GainiumService {
     private final static String TO_MANY_REQUESTS = "Too many requests, please try again later";
 
-    private final static String GAINIUM_TOKEN = "6899a0b49fc939e674d6262d";
-    private final static String GAINIUM_SECRET = "2ecf03c1-29c6-4abc-baea-040294d0e23d";
+    @Value("${gainium.token}")
+    private String GAINIUM_TOKEN;
+    @Value("${gainium.secret}")
+    private String GAINIUM_SECRET;
     private final static String GAINIUM_API_URL = "https://api.gainium.io";
     private final ObjectMapper objectMapper = new ObjectMapper()
             .registerModule(new JavaTimeModule());

@@ -19,3 +19,9 @@ spring.jpa.properties.hibernate.format_sql=true
 #logging.level.root=debug
 
 logging.level.org.tr1al.gainium=DEBUG
+
+gainium.token=1
+gainium.secret=1
+
+nats.username=2
+nats.password=2
