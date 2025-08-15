@@ -176,10 +176,10 @@ public class GainiumService {
 //                log.debug("Response body: " + body1);
 
         String body1 = response.body();
+        log.debug(body1);
         if (body1 != null && body1.contains(TO_MANY_REQUESTS)) {
             throw new ToManyException();
         }
-        log.debug(body1);
         try {
             return objectMapper.readValue(body1, clazz);
         } catch (JsonProcessingException e) {
