@@ -13,6 +13,8 @@ import org.tr1al.gainium.dto.gainium.BotsResult;
 import org.tr1al.gainium.dto.gainium.SimpleBotResponse;
 import org.tr1al.gainium.dto.nats.NatsData;
 import org.tr1al.gainium.dto.nats.NatsResponse;
+import org.tr1al.gainium.exception.ToManyException;
+import org.tr1al.gainium.utils.ThrowingSupplier;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -78,7 +80,16 @@ public class NatsService {
     private void doWork(Connection nc) {
         Dispatcher d = nc.createDispatcher((msg) -> {
         });
-        Subscription s = d.subscribe(SPEED_RUSH_ALL, (msg) -> {
+        Subscription s = d.subscribe(SPEED_RUSH_ALL, getMessageHandler());
+    }
+
+    private MessageHandler getMessageHandler() {
+        return (msg) -> {
+            if (lastToMany != null && lastToMany > System.currentTimeMillis() - 10 * 1000L) {
+                log.debug("skip to many timeout");
+                return;
+            }
+
             NatsResponse response = null;
             try {
                 response = objectMapper.readValue(msg.getData(), NatsResponse.class);
@@ -92,7 +103,7 @@ public class NatsService {
                     .toList();
             log.debug("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
             log.debug("ignored pairs {}", IGNORE_PAIRS);
-            List<BotsResult> openBots = gainiumService.getBotsDCA("open", 1L);
+            List<BotsResult> openBots = request(() -> gainiumService.getBotsDCA("open", 1L));
             if (openBots == null) {
                 log.debug("openBots is null");
                 return;
@@ -108,7 +119,7 @@ public class NatsService {
                 if (cachedBotsTemplate != null && lastCachedBotTemplate > System.currentTimeMillis() - 60 * 1000) {
                     shortTemplate = cachedBotsTemplate;
                 } else {
-                    List<BotsResult> closed = gainiumService.getBotsDCA("closed", 1L);
+                    List<BotsResult> closed = request(() -> gainiumService.getBotsDCA("closed", 1L));
                     if (closed == null) {
                         log.debug("closed is null");
                         return;
@@ -119,7 +130,7 @@ public class NatsService {
                             cachedBotsTemplate = botsResult;
                             lastCachedBotTemplate = System.currentTimeMillis();
                         } else {
-                            SimpleBotResponse archiveBotResponse = gainiumService.archiveBot(botsResult.getId(), "dca");
+                            SimpleBotResponse archiveBotResponse = request(() -> gainiumService.archiveBot(botsResult.getId(), "dca"));
                             log.debug("archiveBotResponse: " + archiveBotResponse);
                         }
                     }
@@ -145,12 +156,13 @@ public class NatsService {
                         log.debug(toClonePair + " already cloned");
                         return;
                     }
-                    SimpleBotResponse cloneBotResponse = gainiumService.cloneDCABot(shortTemplate.getId(),
+                    BotsResult finalShortTemplate = shortTemplate;
+                    SimpleBotResponse cloneBotResponse = request(() -> gainiumService.cloneDCABot(finalShortTemplate.getId(),
                             "clone " + SHORT_TEMPLATE + " to " + toClonePair,
-                            toClonePair);
+                            toClonePair));
                     log.debug("cloneBotResponse: " + cloneBotResponse);
                     if (cloneBotResponse != null && STATUS_OK.equals(cloneBotResponse.getStatus())) {
-                        SimpleBotResponse changeBotResponse = gainiumService.changeBotPairs(cloneBotResponse.getData().toString(), toClonePair);
+                        SimpleBotResponse changeBotResponse = request(() -> gainiumService.changeBotPairs(cloneBotResponse.getData().toString(), toClonePair));
                         log.debug("changeBotResponse: " + changeBotResponse);
 //                        SimpleBotResponse updateBotResponse = gainiumService.updateDCABot(cloneBotResponse.getData(),
 //                                "clone " + SHORT_TEMPLATE + " to " + toClonePair, toClonePair);
@@ -162,7 +174,7 @@ public class NatsService {
                                 return;
                             }
                             if (countActive < OPEN_BOT_LIMIT) {
-                                SimpleBotResponse startBotResponse = gainiumService.startBot(cloneBotResponse.getData().toString(), "dca");
+                                SimpleBotResponse startBotResponse = request(() -> gainiumService.startBot(cloneBotResponse.getData().toString(), "dca"));
                                 log.debug("startBotResponse: " + startBotResponse);
                                 if (startBotResponse != null && STATUS_OK.equals(startBotResponse.getStatus())) {
                                     STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
@@ -177,11 +189,22 @@ public class NatsService {
 
                 }
             }
-        });
+        };
+    }
+
+    private Long lastToMany;
+
+    private <T> T request(ThrowingSupplier<T, ToManyException> supplier) {
+        try {
+            return supplier.get();
+        } catch (ToManyException e) {
+            lastToMany = System.currentTimeMillis();
+            return null;
+        }
     }
 
     private Integer countActive() {
-        List<BotsResult> openBots = gainiumService.getBotsDCA("open", 1L);
+        List<BotsResult> openBots = request(() -> gainiumService.getBotsDCA("open", 1L));
         if (openBots == null) {
             log.debug("countActive openBots is null");
             return null;

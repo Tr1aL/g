@@ -1,16 +1,16 @@
 package org.tr1al.gainium.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.tr1al.gainium.dto.gainium.BotsData;
 import org.tr1al.gainium.dto.gainium.BotsResponse;
 import org.tr1al.gainium.dto.gainium.BotsResult;
 import org.tr1al.gainium.dto.gainium.SimpleBotResponse;
+import org.tr1al.gainium.exception.ToManyException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -27,6 +27,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Slf4j
 public class GainiumService {
+    private final static String TO_MANY_REQUESTS = "Too many requests, please try again later";
 
     private final static String GAINIUM_TOKEN = "6899a0b49fc939e674d6262d";
     private final static String GAINIUM_SECRET = "2ecf03c1-29c6-4abc-baea-040294d0e23d";
@@ -34,17 +35,17 @@ public class GainiumService {
     private final ObjectMapper objectMapper = new ObjectMapper()
             .registerModule(new JavaTimeModule());
 
-    public List<BotsResult> getBotsCombo(String status, Long page) {
+    public List<BotsResult> getBotsCombo(String status, Long page) throws ToManyException {
         String endpoint = "/api/bots/combo";
         return getBotsResults(status, page, endpoint);
     }
 
-    public List<BotsResult> getBotsDCA(String status, Long page) {
+    public List<BotsResult> getBotsDCA(String status, Long page) throws ToManyException {
         String endpoint = "/api/bots/dca";
         return getBotsResults(status, page, endpoint);
     }
 
-    private List<BotsResult> getBotsResults(String status, Long page, String endpoint) {
+    private List<BotsResult> getBotsResults(String status, Long page, String endpoint) throws ToManyException {
         String method = "GET";
         endpoint += "?paperContext=false";
         if (status != null) {
@@ -61,7 +62,7 @@ public class GainiumService {
                 .orElse(null);
     }
 
-    public SimpleBotResponse cloneComboBot(String botId, String name, String pair) {
+    public SimpleBotResponse cloneComboBot(String botId, String name, String pair) throws ToManyException {
         String method = "PUT";
         String endpoint = "/api/cloneComboBot?botId=" + botId + "" +
                 "&paperContext=false";
@@ -69,7 +70,7 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint, body);
     }
 
-    public SimpleBotResponse cloneDCABot(String botId, String name, String pair) {
+    public SimpleBotResponse cloneDCABot(String botId, String name, String pair) throws ToManyException {
         String method = "PUT";
         String endpoint = "/api/cloneDCABot?botId=" + botId + "" +
                 "&paperContext=false";
@@ -78,7 +79,7 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint, body);
     }
 
-    public SimpleBotResponse startBot(String botId, String type) {
+    public SimpleBotResponse startBot(String botId, String type) throws ToManyException {
         String method = "POST";
         String endpoint = "/api/startBot?botId=" + botId + "" +
                 "&type=" + type + "" +
@@ -86,7 +87,7 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
-    public SimpleBotResponse archiveBot(String botId, String type) {
+    public SimpleBotResponse archiveBot(String botId, String type) throws ToManyException {
         String method = "DELETE";
         String endpoint = "/api/archiveBot?botId=" + botId + "" +
                 "&botType=" + type + "" +
@@ -94,7 +95,7 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
-    public SimpleBotResponse stopBot(String botId, String type) {
+    public SimpleBotResponse stopBot(String botId, String type) throws ToManyException {
         String method = "DELETE";
         String endpoint = "/api/stopBot?botId=" + botId + "" +
                 "&botType=" + type + "" +
@@ -102,7 +103,7 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
-    public SimpleBotResponse changeBotPairs(String botId, String pair) {
+    public SimpleBotResponse changeBotPairs(String botId, String pair) throws ToManyException {
         String method = "POST";
         String endpoint = "/api/changeBotPairs?botId=" + botId +
                 "&paperContext=false" +
@@ -111,7 +112,7 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
-    public SimpleBotResponse updateDCABot(String botId, String name, String pair) {
+    public SimpleBotResponse updateDCABot(String botId, String name, String pair) throws ToManyException {
 
 
         String method = "POST";
@@ -122,11 +123,11 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint, body);
     }
 
-    private <T> T doRequest(Class<T> clazz, String method, String endpoint) {
+    private <T> T doRequest(Class<T> clazz, String method, String endpoint) throws ToManyException {
         return doRequest(clazz, method, endpoint, "");
     }
 
-    private <T> T doRequest(Class<T> clazz, String method, String endpoint, String body) {
+    private <T> T doRequest(Class<T> clazz, String method, String endpoint, String body) throws ToManyException {
         Long time = System.currentTimeMillis();
         body = body.trim();
         String hmac = calculateHmac(body, method, endpoint, time);
@@ -157,27 +158,35 @@ public class GainiumService {
         }
         HttpRequest request = builder.build();
 
+        HttpResponse<String> response;
         try {
             // Отправляем запрос и получаем ответ
-            HttpResponse<String> response = client.send(
+            response = client.send(
                     request,
                     HttpResponse.BodyHandlers.ofString()
             );
+        } catch (Exception e) {
+            log.error("{}{}{}", method, endpoint, body, e);
+            return null;
+        }
 //
 //                // Выводим статус код и тело ответа
 //                log.debug("Status code: " + response.statusCode());
 //                String body1 = response.body();
 //                log.debug("Response body: " + body1);
 
-            String body1 = response.body();
-            log.debug(body1);
+        String body1 = response.body();
+        if (body1 != null && body1.contains(TO_MANY_REQUESTS)) {
+            throw new ToManyException();
+        }
+        log.debug(body1);
+        try {
             return objectMapper.readValue(body1, clazz);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            //todo
+        } catch (JsonProcessingException e) {
+            log.error("{}{}{}, response {}", method, endpoint, body, body1, e);
             return null;
         }
+
     }
 
     private String calculateHmac(String body, String method, String endpoint, long time) {
@@ -196,7 +205,7 @@ public class GainiumService {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ToManyException {
         GainiumService service = new GainiumService();
         List<BotsResult> list = service.getBotsDCA("open", 1L);
 //        List<BotsResult> list = service.getBotsCombo("open", 1L);
@@ -206,7 +215,12 @@ public class GainiumService {
                 .filter(a -> !a.getSettings().getName().equals(NatsService.SHORT_TEMPLATE))
                 .toList();
         startedBots.forEach(a -> {
-            SimpleBotResponse response = service.stopBot(a.getId(), "dca");
+            SimpleBotResponse response = null;
+            try {
+                response = service.stopBot(a.getId(), "dca");
+            } catch (ToManyException e) {
+                throw new RuntimeException(e);
+            }
             System.out.println(response);
         });
         System.out.println();
