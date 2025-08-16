@@ -19,9 +19,8 @@ import org.tr1al.gainium.utils.ThrowingSupplier;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -47,10 +46,6 @@ public class NatsService {
     private String NATS_PASSWORD;
     private final GainiumService gainiumService;
     private final ObjectMapper objectMapper = new ObjectMapper();
-    // Create a cache with expiration time of 5 minutes after write
-    private final Cache<String, String> STARTED_PAIR_CACHE = CacheBuilder.newBuilder()
-            .expireAfterWrite(60, TimeUnit.SECONDS)
-            .build();
 
     private final Set<String> IGNORE_PAIRS = new CopyOnWriteArraySet<>();
 
@@ -59,6 +54,13 @@ public class NatsService {
 
     private long lastToMany;
     private long lastIterate;
+    private final Cache<String, String> STARTED_PAIR_CACHE = CacheBuilder.newBuilder()
+            .expireAfterWrite(180, TimeUnit.SECONDS)
+            .build();
+    private boolean isWorking = false;
+    private final Object isWorkingObj = new Object();
+    private Map<String, String> clonedBotMap = new ConcurrentHashMap<>();
+    private Map<String, String> changedPairBotMap = new ConcurrentHashMap<>();
 
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() throws IOException, InterruptedException {
@@ -93,9 +95,6 @@ public class NatsService {
         });
         Subscription s = d.subscribe(SPEED_RUSH_ALL, getMessageHandler());
     }
-
-    private boolean isWorking = false;
-    private final Object isWorkingObj = new Object();
 
     private MessageHandler getMessageHandler() {
         return (msg) -> {
@@ -167,6 +166,8 @@ public class NatsService {
                     return;
                 }
                 log.debug("shortTemplate {}", shortTemplate);
+                log.debug("clonedBotMap {}", clonedBotMap);
+                log.debug("changedPairBotMap {}", changedPairBotMap);
                 int count = openBots.size();
                 log.debug("openBots count " + count);
                 if (count < OPEN_BOT_LIMIT) {
@@ -188,34 +189,43 @@ public class NatsService {
                             return;
                         }
                         BotsResult finalShortTemplate = shortTemplate;
-                        SimpleBotResponse cloneBotResponse = request(() -> gainiumService.cloneDCABot(finalShortTemplate.getId(),
-                                "clone " + SHORT_TEMPLATE + " to " + toClonePair,
-                                toClonePair));
-                        log.debug("cloneBotResponse: " + cloneBotResponse);
-                        if (cloneBotResponse != null && STATUS_OK.equals(cloneBotResponse.getStatus())) {
-                            SimpleBotResponse changeBotResponse = request(() -> gainiumService.changeBotPairs(cloneBotResponse.getData().toString(), toClonePair));
-                            log.debug("changeBotResponse: " + changeBotResponse);
-                            //                        SimpleBotResponse updateBotResponse = gainiumService.updateDCABot(cloneBotResponse.getData(),
-                            //                                "clone " + SHORT_TEMPLATE + " to " + toClonePair, toClonePair);
-                            //                        log.debug("updateBotResponse: " + updateBotResponse);
-                            if (changeBotResponse != null && (STATUS_OK.equals(changeBotResponse.getStatus())
-                                    || STATUS_NOTOK.equals(changeBotResponse.getStatus()) && NOTHING_CHANGED.equals(changeBotResponse.getReason()))) {
-                                //                            Integer countActive = countActive();
-                                //                            if (countActive == null) {
-                                //                                log.debug("countActive is null");
-                                //                                return;
-                                //                            }
-                                //                            if (countActive < OPEN_BOT_LIMIT) {
-                                SimpleBotResponse startBotResponse = request(() -> gainiumService.startBot(cloneBotResponse.getData().toString(), "dca"));
+
+                        String clonedBotId = clonedBotMap.get(natsData.getSymbol());
+                        if (clonedBotId == null) {
+                            SimpleBotResponse cloneBotResponse = request(() -> gainiumService.cloneDCABot(finalShortTemplate.getId(),
+                                    "clone " + SHORT_TEMPLATE + " to " + toClonePair,
+                                    toClonePair));
+                            log.debug("cloneBotResponse: " + cloneBotResponse);
+                            if (cloneBotResponse != null && STATUS_OK.equals(cloneBotResponse.getStatus())) {
+                                clonedBotId = cloneBotResponse.getData().toString();
+                                clonedBotMap.put(natsData.getSymbol(), clonedBotId);
+                            }
+                        }
+                        if (clonedBotId != null) {
+                            String changedPairBotId = changedPairBotMap.get(natsData.getSymbol());
+                            if (changedPairBotId == null) {
+                                String finalClonedBotId = clonedBotId;
+                                SimpleBotResponse changeBotResponse = request(() -> gainiumService.changeBotPairs(finalClonedBotId, toClonePair));
+                                log.debug("changeBotResponse: " + changeBotResponse);
+                                if (changeBotResponse != null && (STATUS_OK.equals(changeBotResponse.getStatus())
+                                        || STATUS_NOTOK.equals(changeBotResponse.getStatus()) && NOTHING_CHANGED.equals(changeBotResponse.getReason()))) {
+                                    changedPairBotId = clonedBotId;
+                                    changedPairBotMap.put(natsData.getSymbol(), changedPairBotId);
+                                } else if (changeBotResponse != null && NO_CHECK_SETTINGS.equals(changeBotResponse.getReason())) {
+                                    log.debug("ignore pair {}", natsData.getSymbol());
+                                    IGNORE_PAIRS.add(natsData.getSymbol());
+                                }
+                            }
+                            if (changedPairBotId != null) {
+                                String finalChangedPairBotId = changedPairBotId;
+                                SimpleBotResponse startBotResponse = request(() -> gainiumService.startBot(finalChangedPairBotId, "dca"));
                                 log.debug("startBotResponse: " + startBotResponse);
                                 if (startBotResponse != null && STATUS_OK.equals(startBotResponse.getStatus())) {
+                                    clonedBotMap.remove(natsData.getSymbol());
+                                    changedPairBotMap.remove(natsData.getSymbol());
                                     STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
-                                    count++;// = countActive + 1;
+                                    count++;
                                 }
-                                //                            }
-                            } else if (changeBotResponse != null && NO_CHECK_SETTINGS.equals(changeBotResponse.getReason())) {
-                                log.debug("ignore pair {}", natsData.getSymbol());
-                                IGNORE_PAIRS.add(natsData.getSymbol());
                             }
                         }
 
