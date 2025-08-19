@@ -17,6 +17,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
@@ -63,6 +64,24 @@ public class GainiumService {
                 .map(BotsData::getResult)
                 .orElse(null);
     }
+
+    public List<DealsResult> getAllDeals(String status, String botId, boolean terminal, String botType) throws ToManyException {
+        long page = 1;
+        List<DealsResult> ret = new ArrayList<>();
+        List<DealsResult> deals = getDeals(status, page++, botId, terminal, botType);
+        while (!deals.isEmpty()) {
+            ret.addAll(deals);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                log.error(e.getMessage(), e);
+            }
+            deals = getDeals(status, page++, botId, terminal, botType);
+        }
+        return ret;
+    }
+
     public List<DealsResult> getDeals(String status, Long page, String botId, boolean terminal, String botType) throws ToManyException {
         String method = "GET";
         String endpoint = "/api/deals?paperContext=" + paperContext;
@@ -120,11 +139,14 @@ public class GainiumService {
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
-    public SimpleBotResponse stopBot(String botId, String type) throws ToManyException {
+    public SimpleBotResponse stopBot(String botId, String type, String closeType) throws ToManyException {
         String method = "DELETE";
         String endpoint = "/api/stopBot?botId=" + botId + "" +
                 "&botType=" + type + "" +
                 "&paperContext=" + paperContext;
+        if (closeType != null) {
+            endpoint += "&closeType=" + closeType;
+        }
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
@@ -250,7 +272,7 @@ public class GainiumService {
 //        });
 
 //        service.getDeals(String status, Long page, String botId, boolean terminal, String botType)
-        List<DealsResult> deals = service.getDeals(null, 1L, null, false, "dca");
+        List<DealsResult> deals = service.getAllDeals(null, null, false, "dca");
         System.out.println();
     }
 

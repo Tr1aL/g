@@ -10,15 +10,19 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
-import org.tr1al.gainium.dto.gainium.BotsResult;
-import org.tr1al.gainium.dto.gainium.SimpleBotResponse;
+import org.tr1al.gainium.dto.gainium.*;
 import org.tr1al.gainium.dto.nats.NatsData;
 import org.tr1al.gainium.dto.nats.NatsResponse;
+import org.tr1al.gainium.entity.Bot;
 import org.tr1al.gainium.exception.ToManyException;
+import org.tr1al.gainium.repository.BotRepository;
 import org.tr1al.gainium.utils.ThrowingSupplier;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -27,6 +31,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import static java.util.Optional.ofNullable;
 
 @Service
 @RequiredArgsConstructor
@@ -38,6 +44,7 @@ public class NatsService {
     public final static String SHORT_TEMPLATE = "SHORT_TEMPLATE";
     public final static String STATUS_OK = "OK";
     public final static String STATUS_NOTOK = "NOTOK";
+    public final static BigDecimal TWO = BigDecimal.valueOf(2);
     @Value("${gainium.open.bot.limit:10}")
     private long OPEN_BOT_LIMIT;
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
@@ -49,6 +56,7 @@ public class NatsService {
     @Value("${nats.password}")
     private String NATS_PASSWORD;
     private final GainiumService gainiumService;
+    private final BotRepository botRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private final Set<String> IGNORE_PAIRS = new CopyOnWriteArraySet<>();
@@ -63,8 +71,8 @@ public class NatsService {
             .build();
     private boolean isWorking = false;
     private final Object isWorkingObj = new Object();
-    private Map<String, String> clonedBotMap = new ConcurrentHashMap<>();
-    private Map<String, String> changedPairBotMap = new ConcurrentHashMap<>();
+    private final Map<String, String> clonedBotMap = new ConcurrentHashMap<>();
+    private final Map<String, String> changedPairBotMap = new ConcurrentHashMap<>();
 
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() throws IOException, InterruptedException {
@@ -131,6 +139,13 @@ public class NatsService {
                         .sorted((o1, o2) -> o2.getAdts().compareTo(o1.getAdts()))
                         .limit(OPEN_BOT_LIMIT)
                         .toList();
+                List<NatsData> data = response.getData();
+                Map<String, BigDecimal> adtsMap = data.stream()
+                        .collect(Collectors.toMap(NatsData::getSymbol, NatsData::getAdts, (o1, o2) -> o1));
+                if (adtsTop.isEmpty()) {
+                    log.debug("Top Adts is empty");
+                    return;
+                }
                 log.debug("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
                 log.debug("ignored pairs {}", IGNORE_PAIRS);
                 List<BotsResult> openBots = request(() -> gainiumService.getBotsDCA("open", 1L));
@@ -170,13 +185,54 @@ public class NatsService {
                     log.debug("SHORT_TEMPLATE not fount");
                     return;
                 }
+                Set<String> openBotIds = openBots.stream()
+                        .map(BotsResult::getId)
+                        .collect(Collectors.toSet());
+                Map<String, List<Bot>> botFromDBMap = botRepository.findAllById(openBotIds).stream()
+                        .collect(Collectors.groupingBy(Bot::getSymbol));
                 log.debug("OPEN_BOT_LIMIT {}", OPEN_BOT_LIMIT);
                 log.debug("shortTemplate {}", shortTemplate);
                 log.debug("clonedBotMap {}", clonedBotMap);
                 log.debug("changedPairBotMap {}", changedPairBotMap);
                 int count = openBots.size();
                 log.debug("openBots count " + count);
+                log.debug("process close bots with leave");
+                for (BotsResult botsResult : openBots) {
+                    String symbol = ofNullable(botsResult.getSettings())
+                            .map(Settings::getPair)
+                            .map(a -> a.get(0))
+                            .orElse(null);
+                    log.debug("try close {} botId {}", symbol, botsResult.getId());
+                    List<Bot> bots = botFromDBMap.get(symbol);
+                    if (bots == null || bots.isEmpty()) {
+                        log.debug("not found in db {} botId {}", symbol, botsResult.getId());
+                        continue;
+                    }
+                    for (Bot bot : bots) {
+                        BigDecimal adts = adtsMap.get(symbol);
+                        if (adts == null) {
+                            log.debug("{} botId {} bot adts {} top adts {}", symbol, botsResult.getId(), bot.getAdts(), adts);
+                            continue;
+                        }
+                        if (bot.getAdts().divide(adts, MathContext.DECIMAL64).compareTo(TWO) > 0) {
+                            log.debug("stopBot {} botId {}", symbol, botsResult.getId());
+                            request(() -> gainiumService.stopBot(bot.getBotId(), "dca", "leave"));
+                        }
+                    }
+                }
+                log.debug("process open new bots");
                 if (count < OPEN_BOT_LIMIT) {
+                    List<DealsResult> openDeals = request(() -> gainiumService.getAllDeals("open", null, false, "dca"));
+                    if (openDeals == null) {
+                        log.debug("openDeals is null");
+                        return;
+                    }
+
+                    Set<String> openDealsSymbols = openDeals.stream()
+                            .map(DealsResult::getSymbol)
+                            .map(DealSymbol::getSymbol)
+                            .collect(Collectors.toSet());
+                    log.debug("openDealsSymbols {}", openDealsSymbols);
                     for (NatsData natsData : adtsTop) {
                         log.debug("try " + natsData.getSymbol());
                         if (count >= OPEN_BOT_LIMIT) {
@@ -186,6 +242,10 @@ public class NatsService {
                         log.debug("openBots count " + count);
                         if (openBotSymbols.contains(natsData.getSymbol())) {
                             log.debug(natsData.getSymbol() + " already started");
+                            continue;
+                        }
+                        if (openDealsSymbols.contains(natsData.getSymbol())) {
+                            log.debug(natsData.getSymbol() + " exists in open deals");
                             continue;
                         }
                         int idx = natsData.getSymbol().indexOf("USDT");
@@ -230,6 +290,7 @@ public class NatsService {
                                     clonedBotMap.remove(natsData.getSymbol());
                                     changedPairBotMap.remove(natsData.getSymbol());
                                     STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
+                                    createBotInDb(natsData, finalChangedPairBotId);
                                     count++;
                                 }
                             }
@@ -243,6 +304,16 @@ public class NatsService {
                 }
             }
         };
+    }
+
+    private void createBotInDb(NatsData natsData, String botId) {
+        Bot bot = new Bot();
+        bot.setBotId(botId);
+        bot.setSymbol(natsData.getSymbol());
+        bot.setCreated(Instant.now());
+        bot.setAdts(natsData.getAdts());
+        bot.setAdtv(natsData.getAdtv());
+        botRepository.save(bot);
     }
 
     private <T> T request(ThrowingSupplier<T, ToManyException> supplier) {
