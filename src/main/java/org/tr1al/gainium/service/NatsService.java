@@ -35,7 +35,8 @@ public class NatsService {
     public final static String SHORT_TEMPLATE = "SHORT_TEMPLATE";
     public final static String STATUS_OK = "OK";
     public final static String STATUS_NOTOK = "NOTOK";
-    private final static long OPEN_BOT_LIMIT = 10;
+    @Value("${gainium.open.bot.limit:10}")
+    private long OPEN_BOT_LIMIT;
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
     private final static String NOTHING_CHANGED = "Nothing changed";
 

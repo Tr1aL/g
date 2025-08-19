@@ -22,6 +22,7 @@ logging.level.org.tr1al.gainium=DEBUG
 
 gainium.token=1
 gainium.secret=1
+gainium.orders.limit=10
 
 nats.username=2
 nats.password=2
