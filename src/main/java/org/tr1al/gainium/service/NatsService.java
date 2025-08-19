@@ -166,6 +166,7 @@ public class NatsService {
                     log.debug("SHORT_TEMPLATE not fount");
                     return;
                 }
+                log.debug("OPEN_BOT_LIMIT {}", OPEN_BOT_LIMIT);
                 log.debug("shortTemplate {}", shortTemplate);
                 log.debug("clonedBotMap {}", clonedBotMap);
                 log.debug("changedPairBotMap {}", changedPairBotMap);
