@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Symbol {
+public class BotSymbol {
     private String key;
-    private SymbolValue value;
+    private BotSymbolValue value;
 }

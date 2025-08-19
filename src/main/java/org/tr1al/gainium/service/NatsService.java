@@ -19,7 +19,10 @@ import org.tr1al.gainium.utils.ThrowingSupplier;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.TimeUnit;
@@ -122,6 +125,7 @@ public class NatsService {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                log.debug("Nats response: {}", response);
                 List<NatsData> adtsTop = response.getData().stream()
                         .filter(a -> !IGNORE_PAIRS.contains(a.getSymbol()))
                         .sorted((o1, o2) -> o2.getAdts().compareTo(o1.getAdts()))

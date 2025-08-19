@@ -15,7 +15,7 @@ public class BotsResult {
     private String id;
     private String userId;
     private String status;
-    private List<Symbol> symbol;
+    private List<BotSymbol> symbol;
     private String exchange;
     private UUID exchangeUUID;
     private Balances initialBalances;

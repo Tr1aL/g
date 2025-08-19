@@ -1,0 +1,3769 @@
+{
+  "status": "OK",
+  "reason": null,
+  "data": {
+    "page": 1,
+    "totalPages": 180,
+    "totalResults": 3593,
+    "result": [
+      {
+        "_id": "689ca8be383d98891d2a145b",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 485.3,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 485.29999999999995,
+          "quote": -15.911510000000007
+        },
+        "initialPrice": 0.4339,
+        "lastPrice": 0.4867,
+        "profit": {
+          "total": -16.009006517000035,
+          "totalUsd": -16.007565706413505,
+          "pureBase": -0.14559000000005684,
+          "pureQuote": -15.938002304000007
+        },
+        "feePaid": {
+          "base": 0.14559,
+          "quote": 0.026492304
+        },
+        "avgPrice": 0.4549,
+        "displayAvg": 0,
+        "commission": 0.283392345,
+        "createTime": 1755097278464,
+        "updateTime": 1755097644939,
+        "levels": {
+          "all": 9,
+          "complete": 9
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.038459999999999
+          },
+          "current": {
+            "base": 0,
+            "quote": 11.038459999999999
+          },
+          "maxUsd": 11.037466538599999,
+          "currentUsd": 11.037466538599999,
+          "relative": 1
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0
+          },
+          "required": {
+            "base": 0,
+            "quote": 0
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "5",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4549,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 1.3972706089250382,
+          "runUpPercent": 0.035268211273858104,
+          "timeInProfit": 60000,
+          "timeInLoss": 181099,
+          "trackTime": 241099,
+          "timeCountStart": 1755097579228,
+          "currentCount": "loss",
+          "unrealizedProfit": -13.289793810900022,
+          "usage": 11.037466538599999
+        },
+        "tpSlTargetFilled": [
+          "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+          "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+          "ced187ef-10c4-40fe-9a74-9328a86c6334"
+        ],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:07:25.046Z",
+        "tpFilledHistory": [
+          {
+            "qty": 121.3,
+            "price": 0.4853,
+            "id": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+            "_id": "689caa2b383d98891d2a85b6"
+          },
+          {
+            "qty": 121.3,
+            "price": 0.4897,
+            "id": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+            "_id": "689caa2b383d98891d2a85b7"
+          },
+          {
+            "qty": 121.3,
+            "price": 0.4891,
+            "id": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+            "_id": "689caa2b383d98891d2a85b8"
+          }
+        ],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:01:18.469Z",
+        "cost": 11.038459999999999,
+        "size": 485.3,
+        "value": 220.76919999999998,
+        "eightySent": 1755097407906,
+        "hundredSent": 1755097426416,
+        "closeTrigger": "trailing",
+        "feeBalance": 0,
+        "closeTime": 1755097645046,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689ca8fa383d98891d2a276c",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 462.8,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 462.80000000000007,
+          "quote": 1.5932599999999866
+        },
+        "initialPrice": 0.4529,
+        "lastPrice": 0.4734,
+        "profit": {
+          "total": 1.5403964312000133,
+          "totalUsd": 1.5402577955212053,
+          "pureBase": -0.05563199999994316,
+          "pureQuote": 1.5667326199999865
+        },
+        "feePaid": {
+          "base": 0.055632,
+          "quote": 0.026527379999999996
+        },
+        "avgPrice": 0.4769,
+        "displayAvg": 0,
+        "commission": 0.052863568799999996,
+        "createTime": 1755097338665,
+        "updateTime": 1755097941636,
+        "levels": {
+          "all": 9,
+          "complete": 9
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.053075
+          },
+          "current": {
+            "base": 0,
+            "quote": 11.053075
+          },
+          "maxUsd": 11.032733964570001,
+          "currentUsd": 11.05208022325,
+          "relative": 1.0017535326005436
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0
+          },
+          "required": {
+            "base": 0,
+            "quote": 0
+          }
+        },
+        "settings": {
+          "changed": false,
+          "ordersCount": 8,
+          "startOrderType": "LIMIT",
+          "tpPerc": "0.7",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4769,
+          "baseOrderSize": "6",
+          "orderSize": "9",
+          "useTp": true,
+          "useDca": true,
+          "useSl": true,
+          "slPerc": "-10",
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "step": "1.25",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "dcaCondition": "percentage",
+          "dcaCustom": [],
+          "closeByTimer": false,
+          "closeByTimerUnits": "minutes",
+          "closeByTimerValue": 10,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6",
+          "baseSlOn": "avg",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeMaxValue": "180",
+          "dcaVolumeRequiredChange": "5"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [
+          {
+            "price": 0.4794,
+            "displacedPrice": 0.4837,
+            "_id": "689ca987383d98891d2a4fc1"
+          }
+        ],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0.6670464583770194,
+          "runUpPercent": 0.21783506814845807,
+          "timeInProfit": 120199,
+          "timeInLoss": 363299,
+          "trackTime": 483498,
+          "timeCountStart": 1755097881728,
+          "currentCount": "loss",
+          "unrealizedProfit": -7.39991394779999,
+          "usage": 11.05208022325
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:12:21.796Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:02:18.668Z",
+        "cost": 11.053075,
+        "size": 463.59999999999997,
+        "value": 221.0615,
+        "eightySent": 1755097479081,
+        "hundredSent": 1755097481400,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755097941796,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689ca9b0383d98891d2a5fdf",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 433.6,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 433.6,
+          "quote": 0.8227499999999992
+        },
+        "initialPrice": 0.4854,
+        "lastPrice": 0.4772,
+        "profit": {
+          "total": 0.8164438523999992,
+          "totalUsd": 0.8163703724532831,
+          "pureBase": -0.006504,
+          "pureQuote": 0.8195475611999992
+        },
+        "feePaid": {
+          "base": 0.006504,
+          "quote": 0.0032024388000000004
+        },
+        "avgPrice": 0.4924,
+        "displayAvg": 0,
+        "commission": 0.006306147600000001,
+        "createTime": 1755097520383,
+        "updateTime": 1755097902289,
+        "levels": {
+          "complete": 3,
+          "all": 9
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.0346985
+          },
+          "current": {
+            "base": 0,
+            "quote": 1.3343495
+          },
+          "maxUsd": 11.033705377134998,
+          "currentUsd": 1.334229408545,
+          "relative": 0.12092305920275032
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.759318
+          },
+          "required": {
+            "base": 0,
+            "quote": 9.700349
+          }
+        },
+        "settings": {
+          "changed": false,
+          "ordersCount": 8,
+          "startOrderType": "LIMIT",
+          "tpPerc": "0.7",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4924,
+          "baseOrderSize": "6",
+          "orderSize": "9",
+          "useTp": true,
+          "useDca": true,
+          "useSl": true,
+          "slPerc": "-10",
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "step": "1.25",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "dcaCondition": "percentage",
+          "dcaCustom": [],
+          "closeByTimer": false,
+          "closeByTimerUnits": "minutes",
+          "closeByTimerValue": 10,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6",
+          "baseSlOn": "avg",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeMaxValue": "180",
+          "dcaVolumeRequiredChange": "5"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0.6177546709991872,
+          "timeInProfit": 183600,
+          "timeInLoss": 58299,
+          "trackTime": 241899,
+          "timeCountStart": 1755097821128,
+          "currentCount": "profit",
+          "unrealizedProfit": 0.014758671599994555,
+          "usage": 0.29849413311
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:11:43.041Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:05:20.388Z",
+        "cost": 1.3343495,
+        "size": 54.200000000000045,
+        "value": 26.68699,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755097903041,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cab2f383d98891d2ad007",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 441,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 441,
+          "quote": 0.04374999999999929
+        },
+        "initialPrice": 0.4773,
+        "lastPrice": 0.4738,
+        "profit": {
+          "total": 0.04232334999999929,
+          "totalUsd": 0.042319540898499285,
+          "pureBase": -0.0015,
+          "pureQuote": 0.04303404999999929
+        },
+        "feePaid": {
+          "base": 0.0015,
+          "quote": 0.0007159499999999999
+        },
+        "avgPrice": 0.4773,
+        "displayAvg": 0,
+        "commission": 0.00142665,
+        "createTime": 1755097903490,
+        "updateTime": 1755097941635,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.034189999999999
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.2983125
+          },
+          "maxUsd": 11.033196922899998,
+          "currentUsd": 0.29828565187499995,
+          "relative": 0.027035287592473936
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.449469
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.735877499999999
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4773,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755097903490
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:12:22.773Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:11:43.495Z",
+        "cost": 0.2983125,
+        "size": 12.5,
+        "value": 5.96625,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755097942773,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cab56383d98891d2ad5ce",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 442.80000000000007,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 442.80000000000007,
+          "quote": 1.6099799999999789
+        },
+        "initialPrice": 0.4743,
+        "lastPrice": 0.4948,
+        "profit": {
+          "total": 1.5571677911999788,
+          "totalUsd": 1.5570276460987709,
+          "pureBase": -0.053172000000000004,
+          "pureQuote": 1.5834772967999788
+        },
+        "feePaid": {
+          "base": 0.053172000000000004,
+          "quote": 0.026502703199999998
+        },
+        "avgPrice": 0.4984,
+        "displayAvg": 0,
+        "commission": 0.0528122088,
+        "createTime": 1755097942259,
+        "updateTime": 1755098078821,
+        "levels": {
+          "all": 9,
+          "complete": 9
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.042793
+          },
+          "current": {
+            "base": 0,
+            "quote": 11.042793
+          },
+          "maxUsd": 11.034277325655001,
+          "currentUsd": 11.04179914863,
+          "relative": 1.0006816778981538
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0
+          },
+          "required": {
+            "base": 0,
+            "quote": 0
+          }
+        },
+        "settings": {
+          "changed": false,
+          "ordersCount": 8,
+          "startOrderType": "LIMIT",
+          "tpPerc": "0.7",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4984,
+          "baseOrderSize": "6",
+          "orderSize": "9",
+          "useTp": true,
+          "useDca": true,
+          "useSl": true,
+          "slPerc": "-10",
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "step": "1.25",
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "dcaCondition": "percentage",
+          "dcaCustom": [],
+          "closeByTimer": false,
+          "closeByTimerUnits": "minutes",
+          "closeByTimerValue": 10,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6",
+          "baseSlOn": "avg",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeMaxValue": "180",
+          "dcaVolumeRequiredChange": "5"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [
+          {
+            "price": 0.4995,
+            "displacedPrice": 0.5015,
+            "_id": "689cabcd383d98891d2afbeb"
+          }
+        ],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755097942259
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:14:38.943Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:12:22.265Z",
+        "cost": 11.042793,
+        "size": 443.1,
+        "value": 220.85586,
+        "eightySent": 1755098061679,
+        "hundredSent": 1755098062076,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098078943,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cabce383d98891d2afc7c",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 416.00000000000006,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 416.00000000000006,
+          "quote": 0.04366000000000092
+        },
+        "initialPrice": 0.506,
+        "lastPrice": 0.5023,
+        "profit": {
+          "total": 0.04223224720000092,
+          "totalUsd": 0.042228446297752915,
+          "pureBase": -0.0014160000000000002,
+          "pureQuote": 0.04294350400000092
+        },
+        "feePaid": {
+          "base": 0.0014160000000000002,
+          "quote": 0.0007164960000000001
+        },
+        "avgPrice": 0.506,
+        "displayAvg": 0,
+        "commission": 0.0014277528,
+        "createTime": 1755098062864,
+        "updateTime": 1755098063892,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.034115499999999
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.29854
+          },
+          "maxUsd": 11.033122429604997,
+          "currentUsd": 0.2985131314,
+          "relative": 0.027056088002703985
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.450824
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.7355755
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.506,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098062865
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:14:24.634Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:14:22.870Z",
+        "cost": 0.29854,
+        "size": 11.800000000000011,
+        "value": 5.9708000000000006,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098064634,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cabd1383d98891d2afd44",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 417.79999999999995,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 417.79999999999995,
+          "quote": 0.04284000000000088
+        },
+        "initialPrice": 0.504,
+        "lastPrice": 0.5004,
+        "profit": {
+          "total": 0.04140571680000088,
+          "totalUsd": 0.041401990285488875,
+          "pureBase": -0.001428,
+          "pureQuote": 0.04212028800000088
+        },
+        "feePaid": {
+          "base": 0.001428,
+          "quote": 0.0007197120000000001
+        },
+        "avgPrice": 0.504,
+        "displayAvg": 0,
+        "commission": 0.0014342832,
+        "createTime": 1755098065564,
+        "updateTime": 1755098073297,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.0377145
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.29988000000000004
+          },
+          "maxUsd": 11.036721105695,
+          "currentUsd": 0.29985301080000004,
+          "relative": 0.027168667933927814
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.449064
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.7378345
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.504,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098065564
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:14:34.033Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:14:25.568Z",
+        "cost": 0.29988000000000004,
+        "size": 11.899999999999977,
+        "value": 5.9976,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098074033,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cabda383d98891d2afead",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 424.19999999999993,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 424.19999999999993,
+          "quote": 0.44691999999999865
+        },
+        "initialPrice": 0.4962,
+        "lastPrice": 0.5059,
+        "profit": {
+          "total": 0.43218717519999866,
+          "totalUsd": 0.43214827835423064,
+          "pureBase": -0.014508000000000002,
+          "pureQuote": 0.43952677239999866
+        },
+        "feePaid": {
+          "base": 0.014508000000000002,
+          "quote": 0.0073932276
+        },
+        "avgPrice": 0.5096,
+        "displayAvg": 0,
+        "commission": 0.0147328248,
+        "createTime": 1755098074479,
+        "updateTime": 1755098188178,
+        "levels": {
+          "all": 9,
+          "complete": 5
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.032552499999998
+          },
+          "current": {
+            "base": 0,
+            "quote": 3.0805115
+          },
+          "maxUsd": 11.031559570274997,
+          "currentUsd": 3.080234253965,
+          "relative": 0.2792201985895831
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 1.2860099999999999
+          },
+          "required": {
+            "base": 0,
+            "quote": 7.9520409999999995
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5096,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098074480
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:16:28.882Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:14:34.484Z",
+        "cost": 3.0805115,
+        "size": 120.89999999999998,
+        "value": 61.61023,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098188882,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cabdf383d98891d2b09bd",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 423.9,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 423.9,
+          "quote": 0.04320000000000057
+        },
+        "initialPrice": 0.4968,
+        "lastPrice": 0.4932,
+        "profit": {
+          "total": 0.04177440000000057,
+          "totalUsd": 0.04177064030400057,
+          "pureBase": -0.00144,
+          "pureQuote": 0.04248460800000057
+        },
+        "feePaid": {
+          "base": 0.00144,
+          "quote": 0.0007153920000000001
+        },
+        "avgPrice": 0.4968,
+        "displayAvg": 0,
+        "commission": 0.0014256000000000002,
+        "createTime": 1755098079366,
+        "updateTime": 1755098119932,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.037423
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.29808
+          },
+          "maxUsd": 11.03642963193,
+          "currentUsd": 0.2980531728,
+          "relative": 0.027006303917137178
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.45018499999999995
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.739343000000002
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4968,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098079366
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:15:21.579Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:14:39.369Z",
+        "cost": 0.29808,
+        "size": 12,
+        "value": 5.961600000000001,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098121579,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cac47383d98891d2b248c",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 417.1,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 417.1,
+          "quote": 0.04366000000000003
+        },
+        "initialPrice": 0.5047,
+        "lastPrice": 0.501,
+        "profit": {
+          "total": 0.041163946000000035,
+          "totalUsd": 0.041160241244860035,
+          "pureBase": -0.0014160000000000002,
+          "pureQuote": 0.04187336200000003
+        },
+        "feePaid": {
+          "base": 0.0014160000000000002,
+          "quote": 0.001786638
+        },
+        "avgPrice": 0.5047,
+        "displayAvg": 0,
+        "commission": 0.002496054,
+        "createTime": 1755098183911,
+        "updateTime": 1755098231449,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.0362355
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.297773
+          },
+          "maxUsd": 11.035242238804999,
+          "currentUsd": 0.29774620043,
+          "relative": 0.026981392341618664
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.44968
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.7384625
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5047,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098183912
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:17:13.458Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:16:23.918Z",
+        "enterMarketPrice": true,
+        "cost": 0.297773,
+        "size": 11.800000000000011,
+        "value": 5.95546,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098233458,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cac4d383d98891d2b255d",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 414.3,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 414.3,
+          "quote": 0.04366000000000092
+        },
+        "initialPrice": 0.508,
+        "lastPrice": 0.5043,
+        "profit": {
+          "total": 0.04222658320000092,
+          "totalUsd": 0.04222278280751292,
+          "pureBase": -0.0014160000000000002,
+          "pureQuote": 0.04294067200000092
+        },
+        "feePaid": {
+          "base": 0.0014160000000000002,
+          "quote": 0.0007193280000000001
+        },
+        "avgPrice": 0.508,
+        "displayAvg": 0,
+        "commission": 0.0014334168000000001,
+        "createTime": 1755098189274,
+        "updateTime": 1755098226584,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.034378
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.29972000000000004
+          },
+          "maxUsd": 11.03338490598,
+          "currentUsd": 0.2996930252,
+          "relative": 0.0271623828728724
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.45009999999999994
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.734658
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.508,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098189274
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:17:07.334Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:16:29.277Z",
+        "cost": 0.29972000000000004,
+        "size": 11.800000000000011,
+        "value": 5.994400000000001,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098227334,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cac7a383d98891d2b371b",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 419.9,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 419.9,
+          "quote": 0.04283999999999999
+        },
+        "initialPrice": 0.5013,
+        "lastPrice": 0.4977,
+        "profit": {
+          "total": 0.04141342799999999,
+          "totalUsd": 0.041409700791479986,
+          "pureBase": -0.001428,
+          "pureQuote": 0.04212414359999999
+        },
+        "feePaid": {
+          "base": 0.001428,
+          "quote": 0.0007158564
+        },
+        "avgPrice": 0.5013,
+        "displayAvg": 0,
+        "commission": 0.001426572,
+        "createTime": 1755098234865,
+        "updateTime": 1755098267212,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.033445
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.29827349999999997
+          },
+          "maxUsd": 11.03245198995,
+          "currentUsd": 0.29824665538499995,
+          "relative": 0.027033578361064924
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.449226
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.7351715
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5013,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098234866
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:17:48.040Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:17:14.870Z",
+        "cost": 0.29827349999999997,
+        "size": 11.899999999999977,
+        "value": 5.96547,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098268040,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cac9c383d98891d2b3b59",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 428,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 428,
+          "quote": 0.04355999999999938
+        },
+        "initialPrice": 0.4919,
+        "lastPrice": 0.4883,
+        "profit": {
+          "total": 0.04213674959999938,
+          "totalUsd": 0.042132957292535377,
+          "pureBase": -0.001452,
+          "pureQuote": 0.042845761199999374
+        },
+        "feePaid": {
+          "base": 0.001452,
+          "quote": 0.0007142387999999999
+        },
+        "avgPrice": 0.4919,
+        "displayAvg": 0,
+        "commission": 0.0014232504,
+        "createTime": 1755098268485,
+        "updateTime": 1755098282781,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.034863499999998
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.29759949999999996
+          },
+          "maxUsd": 11.033870362284999,
+          "currentUsd": 0.29757271604499996,
+          "relative": 0.026969024129750222
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.45069
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.737264
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4919,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098268486
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:18:03.644Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:17:48.491Z",
+        "cost": 0.29759949999999996,
+        "size": 12.100000000000023,
+        "value": 5.9519899999999994,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098283644,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cacac383d98891d2b481d",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 430.2,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 430.2,
+          "quote": 0.04269999999999996
+        },
+        "initialPrice": 0.4893,
+        "lastPrice": 0.4858,
+        "profit": {
+          "total": 0.04127245359999996,
+          "totalUsd": 0.041268739079175956,
+          "pureBase": -0.001464,
+          "pureQuote": 0.04198366479999996
+        },
+        "feePaid": {
+          "base": 0.001464,
+          "quote": 0.0007163352
+        },
+        "avgPrice": 0.4893,
+        "displayAvg": 0,
+        "commission": 0.0014275464,
+        "createTime": 1755098284199,
+        "updateTime": 1755098290221,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.034009999999999
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.298473
+          },
+          "maxUsd": 11.033016939099998,
+          "currentUsd": 0.29844613743,
+          "relative": 0.027050274560200694
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.450814
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.735536999999999
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.4893,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098284200
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:18:13.334Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:18:04.203Z",
+        "cost": 0.298473,
+        "size": 12.199999999999989,
+        "value": 5.96946,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098293334,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cacb7383d98891d2b4a19",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 432.40000000000003,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 432.40000000000003,
+          "quote": 0.8827600000000189
+        },
+        "initialPrice": 0.487,
+        "lastPrice": 0.5021,
+        "profit": {
+          "total": 0.8538536128000188,
+          "totalUsd": 0.8537767659748667,
+          "pureBase": -0.02868,
+          "pureQuote": 0.8682538408000189
+        },
+        "feePaid": {
+          "base": 0.02868,
+          "quote": 0.0145061592
+        },
+        "avgPrice": 0.5058,
+        "displayAvg": 0,
+        "commission": 0.0289063872,
+        "createTime": 1755098295091,
+        "updateTime": 1755098408102,
+        "levels": {
+          "all": 9,
+          "complete": 7
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.037363000000001
+          },
+          "current": {
+            "base": 0,
+            "quote": 6.044233
+          },
+          "maxUsd": 11.03636963733,
+          "currentUsd": 6.04368901903,
+          "relative": 0.5476156759544829
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 2.1710970000000005
+          },
+          "required": {
+            "base": 0,
+            "quote": 4.995696000000001
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5058,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [
+          {
+            "price": 0.5129,
+            "displacedPrice": 0.5132,
+            "_id": "689cacf1383d98891d2b5d62"
+          }
+        ],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098295091
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:20:14.497Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:18:15.099Z",
+        "cost": 6.044233,
+        "size": 239,
+        "value": 120.88466,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098414497,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cacfb383d98891d2b5f06",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 416.00000000000006,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 416,
+          "quote": 0.10794000000000104
+        },
+        "initialPrice": 0.506,
+        "lastPrice": 0.5061,
+        "profit": {
+          "total": 0.10435600559997227,
+          "totalUsd": 0.10434661355946827,
+          "pureBase": -0.0035280000000568433,
+          "pureQuote": 0.10614152640000103
+        },
+        "feePaid": {
+          "base": 0.003528,
+          "quote": 0.0017984736
+        },
+        "avgPrice": 0.5098,
+        "displayAvg": 0,
+        "commission": 0.0035839944,
+        "createTime": 1755098363724,
+        "updateTime": 1755098407022,
+        "levels": {
+          "all": 9,
+          "complete": 2
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.034115499999999
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.749364
+          },
+          "maxUsd": 11.033122429604997,
+          "currentUsd": 0.74929655724,
+          "relative": 0.06791337284805476
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.5850010000000001
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.2847515
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5098,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098363724
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:20:07.757Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:19:23.728Z",
+        "cost": 0.749364,
+        "size": 29.400000000000034,
+        "value": 14.98728,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098407757,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cad28383d98891d2b650b",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 418,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 418,
+          "quote": 0.04284000000000088
+        },
+        "initialPrice": 0.5036,
+        "lastPrice": 0.5,
+        "profit": {
+          "total": 0.041406859200000874,
+          "totalUsd": 0.04140313258267287,
+          "pureBase": -0.001428,
+          "pureQuote": 0.04212085920000088
+        },
+        "feePaid": {
+          "base": 0.001428,
+          "quote": 0.0007191408000000001
+        },
+        "avgPrice": 0.5036,
+        "displayAvg": 0,
+        "commission": 0.0014331408000000001,
+        "createTime": 1755098408421,
+        "updateTime": 1755098425672,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.034507999999999
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.2996420000000001
+          },
+          "maxUsd": 11.033514894279998,
+          "currentUsd": 0.2996150322200001,
+          "relative": 0.027154994132950933
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.45126150000000004
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.734866
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5036,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098408421
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:20:27.575Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:20:08.426Z",
+        "cost": 0.2996420000000001,
+        "size": 11.899999999999977,
+        "value": 5.992840000000001,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098427575,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cad3d383d98891d2b67bf",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 420.20000000000005,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 420.20000000000005,
+          "quote": 0.04284000000000088
+        },
+        "initialPrice": 0.5008,
+        "lastPrice": 0.4972,
+        "profit": {
+          "total": 0.041414856000000874,
+          "totalUsd": 0.04141112866296087,
+          "pureBase": -0.001428,
+          "pureQuote": 0.04212485760000088
+        },
+        "feePaid": {
+          "base": 0.001428,
+          "quote": 0.0007151424
+        },
+        "avgPrice": 0.5008,
+        "displayAvg": 0,
+        "commission": 0.001425144,
+        "createTime": 1755098429073,
+        "updateTime": 1755098435647,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.030894499999999
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.297976
+          },
+          "maxUsd": 11.029901719494998,
+          "currentUsd": 0.29794918216,
+          "relative": 0.027012859201944146
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.44878349999999995
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.7329185
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5008,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098429073
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:20:36.929Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:20:29.078Z",
+        "cost": 0.297976,
+        "size": 11.899999999999977,
+        "value": 5.95952,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098436929,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cad46383d98891d2b72b6",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 424.90000000000003,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 424.90000000000003,
+          "quote": 0.44715999999998957
+        },
+        "initialPrice": 0.4955,
+        "lastPrice": 0.5052,
+        "profit": {
+          "total": 0.43241108319998955,
+          "totalUsd": 0.4323721662025015,
+          "pureBase": -0.014544000000000001,
+          "pureQuote": 0.43975871199998956
+        },
+        "feePaid": {
+          "base": 0.014544000000000001,
+          "quote": 0.007401287999999999
+        },
+        "avgPrice": 0.5089,
+        "displayAvg": 0,
+        "commission": 0.0147489168,
+        "createTime": 1755098438015,
+        "updateTime": 1755098515055,
+        "levels": {
+          "all": 9,
+          "complete": 5
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.0358035
+          },
+          "current": {
+            "base": 0,
+            "quote": 3.0838699999999997
+          },
+          "maxUsd": 11.034810277685,
+          "currentUsd": 3.0835924516999995,
+          "relative": 0.279442271693221
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 1.2842775000000002
+          },
+          "required": {
+            "base": 0,
+            "quote": 7.9519335
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5089,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098438015
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:21:55.822Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:20:38.023Z",
+        "cost": 3.0838699999999997,
+        "size": 121.19999999999999,
+        "value": 61.67739999999999,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098515822,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      },
+      {
+        "_id": "689cad75383d98891d2b7d1e",
+        "flags": [
+          "newMultiTp"
+        ],
+        "botId": "689ca8b09fc939e6744a252e",
+        "userId": "68999fbf9fc939e674d6019d",
+        "status": "closed",
+        "initialBalances": {
+          "base": 413.49999999999994,
+          "quote": 0
+        },
+        "currentBalances": {
+          "base": 413.49999999999994,
+          "quote": 0.04329000000000072
+        },
+        "initialPrice": 0.5089,
+        "lastPrice": 0.5052,
+        "profit": {
+          "total": 0.040794460200000715,
+          "totalUsd": 0.040790788698582714,
+          "pureBase": -0.0014039999999999999,
+          "pureQuote": 0.041503761000000715
+        },
+        "feePaid": {
+          "base": 0.0014039999999999999,
+          "quote": 0.0017862389999999998
+        },
+        "avgPrice": 0.5089,
+        "displayAvg": 0,
+        "commission": 0.0024955397999999996,
+        "createTime": 1755098485214,
+        "updateTime": 1755098515055,
+        "levels": {
+          "all": 9,
+          "complete": 1
+        },
+        "usage": {
+          "max": {
+            "base": 0,
+            "quote": 11.031756
+          },
+          "current": {
+            "base": 0,
+            "quote": 0.2977065
+          },
+          "maxUsd": 11.03076314196,
+          "currentUsd": 0.29767970641499997,
+          "relative": 0.026986320219555254
+        },
+        "assets": {
+          "used": {
+            "base": 0,
+            "quote": 0.4508875
+          },
+          "required": {
+            "base": 0,
+            "quote": 10.734049500000001
+          }
+        },
+        "settings": {
+          "dcaCondition": "percentage",
+          "dcaVolumeBaseOn": "scale",
+          "dcaVolumeRequiredChange": "5",
+          "dcaVolumeMaxValue": "180",
+          "baseSlOn": "avg",
+          "closeByTimer": false,
+          "closeByTimerValue": 10,
+          "closeByTimerUnits": "minutes",
+          "dcaCustom": [],
+          "ordersCount": 8,
+          "tpPerc": "0.7",
+          "slPerc": "-10",
+          "profitCurrency": "quote",
+          "avgPrice": 0.5089,
+          "baseOrderSize": "6",
+          "startOrderType": "LIMIT",
+          "volumeScale": "1.3",
+          "stepScale": "0.86",
+          "orderSize": "9",
+          "changed": false,
+          "useTp": true,
+          "useSl": true,
+          "useDca": true,
+          "useSmartOrders": true,
+          "activeOrdersCount": 1,
+          "orderSizePercQty": 0,
+          "trailingSl": false,
+          "moveSL": false,
+          "moveSLTrigger": "0.5",
+          "moveSLValue": "0.2",
+          "moveSLForAll": true,
+          "dealCloseCondition": "tp",
+          "dealCloseConditionSL": "tp",
+          "trailingTp": false,
+          "trailingTpPerc": "0.3",
+          "useMinTP": false,
+          "minTp": "1",
+          "orderSizeType": "quote",
+          "useMultiSl": true,
+          "multiSl": [
+            {
+              "target": "-6.5",
+              "amount": "25",
+              "uuid": "abd9b654-5fa9-4378-9357-8bb1f37b9991",
+              "_id": "689ca8b09fc939e6744a2530"
+            },
+            {
+              "target": "-7.5",
+              "amount": "25",
+              "uuid": "ec3fbaa4-ad7a-4afc-8d40-64d7337b3a34",
+              "_id": "689ca8b09fc939e6744a2531"
+            },
+            {
+              "target": "-8.5",
+              "amount": "25",
+              "uuid": "ced187ef-10c4-40fe-9a74-9328a86c6334",
+              "_id": "689ca8b09fc939e6744a2532"
+            },
+            {
+              "target": "-9.5",
+              "amount": "25",
+              "uuid": "86cff110-5ec4-4798-a3b4-759fdef0d4d3",
+              "_id": "689ca8b09fc939e6744a2533"
+            }
+          ],
+          "useMultiTp": false,
+          "multiTp": [],
+          "step": "1.25",
+          "futures": true,
+          "coinm": false,
+          "marginType": "cross",
+          "leverage": 20,
+          "comboTpBase": "filled",
+          "comboSmartGridsCount": "6"
+        },
+        "parentId": null,
+        "childIds": [],
+        "parent": false,
+        "child": false,
+        "gridBreakpoints": [],
+        "paperContext": false,
+        "type": "regular",
+        "strategy": "SHORT",
+        "exchange": "bybitLinear",
+        "exchangeUUID": "b6ad2870-5cc3-4534-a971-a98193fd05d6",
+        "symbol": {
+          "symbol": "GTCUSDT",
+          "baseAsset": "GTC",
+          "quoteAsset": "USDT"
+        },
+        "stats": {
+          "drawdownPercent": 0,
+          "runUpPercent": 0,
+          "timeInProfit": 0,
+          "timeInLoss": 0,
+          "trackTime": 0,
+          "timeCountStart": 1755098485215
+        },
+        "tpSlTargetFilled": [],
+        "dynamicAr": [],
+        "sizes": {
+          "dca": [],
+          "origDca": []
+        },
+        "tags": [],
+        "fixSize": 0,
+        "updated": "2025-08-13T15:21:58.060Z",
+        "tpFilledHistory": [],
+        "tpHistory": [],
+        "pendingAddFunds": [],
+        "pendingReduceFunds": [],
+        "blockOrders": [],
+        "funds": [],
+        "reduceFunds": [],
+        "created": "2025-08-13T15:21:25.220Z",
+        "enterMarketPrice": true,
+        "cost": 0.2977065,
+        "size": 11.699999999999989,
+        "value": 5.954129999999999,
+        "closeTrigger": "tp",
+        "feeBalance": 0,
+        "closeTime": 1755098518060,
+        "isDeleted": true,
+        "botName": "SHORT_TEMPLATE_"
+      }
+    ]
+  }
+}
