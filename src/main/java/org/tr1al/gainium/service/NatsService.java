@@ -194,7 +194,7 @@ public class NatsService {
                 log.debug("shortTemplate {}", shortTemplate);
                 log.debug("clonedBotMap {}", clonedBotMap);
                 log.debug("changedPairBotMap {}", changedPairBotMap);
-                int count = openBots.size();
+                long count = openBots.size();
                 log.debug("openBots count " + count);
                 log.debug("process close bots with leave");
                 for (BotsResult botsResult : openBots) {
@@ -227,7 +227,10 @@ public class NatsService {
                         log.debug("openDeals is null");
                         return;
                     }
-
+                    count = Math.max(count, openDeals.stream()
+                            .map(DealsResult::getBotId)
+                            .distinct()
+                            .count());
                     Set<String> openDealsSymbols = openDeals.stream()
                             .map(DealsResult::getSymbol)
                             .map(DealSymbol::getSymbol)
