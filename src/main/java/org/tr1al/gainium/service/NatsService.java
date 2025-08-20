@@ -167,7 +167,13 @@ public class NatsService {
                         .map(BotsResult::getSettings)
                         .flatMap(a -> a.getPair().stream())
                         .collect(Collectors.toSet());
-                BotsResult template = findBotTemplate(openBots, setting.getBotTemplateName());
+                List<DealsResult> openDeals = request(() -> gainiumService.getAllDeals("open", null, false, "dca"));
+                if (openDeals == null) {
+                    log.debug("openDeals is null");
+                    return;
+                }
+                LAST_OPEN_DEALS = openDeals;
+                BotsResult template = findBotTemplate(openBots, setting.getBotTemplateName(), openDeals, setting.isBotArchiveEnabled());
                 if (template == null) {
                     log.debug("template not fount");
                     return;
@@ -188,12 +194,6 @@ public class NatsService {
 
                 log.debug("process open new bots");
                 if (count < setting.getBotCount()) {
-                    List<DealsResult> openDeals = request(() -> gainiumService.getAllDeals("open", null, false, "dca"));
-                    if (openDeals == null) {
-                        log.debug("openDeals is null");
-                        return;
-                    }
-                    LAST_OPEN_DEALS = openDeals;
                     count = Math.max(count, openDeals.stream()
                             .map(DealsResult::getBotId)
                             .distinct()
@@ -288,10 +288,13 @@ public class NatsService {
         return clonedBotId;
     }
 
-    private BotsResult findBotTemplate(List<BotsResult> openBots, String templateName) {
+    private BotsResult findBotTemplate(List<BotsResult> openBots, String templateName, List<DealsResult> openDeals, boolean isBotArchiveEnabled) {
         BotsResult template = openBots.stream()
                 .filter(a -> templateName.equals(a.getSettings().getName()))
                 .findFirst().orElse(null);
+        Set<String> openDealsBotIds = openDeals.stream()
+                .map(DealsResult::getBotId)
+                .collect(Collectors.toSet());
         if (template == null) {
             if (cachedBotsTemplate != null && lastCachedBotTemplate > System.currentTimeMillis() - 60 * 1000) {
                 template = cachedBotsTemplate;
@@ -307,8 +310,16 @@ public class NatsService {
                         cachedBotsTemplate = botsResult;
                         lastCachedBotTemplate = System.currentTimeMillis();
                     } else {
-                        SimpleBotResponse archiveBotResponse = request(() -> gainiumService.archiveBot(botsResult.getId(), "dca"));
-                        log.debug("archiveBotResponse: " + archiveBotResponse);
+                        if (isBotArchiveEnabled) {
+                            if (openDealsBotIds.contains(botsResult.getId())) {
+                                log.debug("skip archive botId {} in openDeals", botsResult.getId());
+                                continue;
+                            }
+                            SimpleBotResponse archiveBotResponse = request(() -> gainiumService.archiveBot(botsResult.getId(), "dca"));
+                            log.debug("archiveBotResponse: " + archiveBotResponse);
+                        } else {
+                            log.debug("skip archive botId {} archive is disabled", botsResult.getId());
+                        }
                     }
                 }
             }

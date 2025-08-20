@@ -16,3 +16,6 @@ VALUES (1, 20, false, 30.0, 'SHORT_TEMPLATE');
 
 --changeset dsamorukov:002-settings.sql-2
 alter table setting add column bot_leave_enabled boolean not null default false;
+
+--changeset dsamorukov:002-settings.sql-3
+alter table setting add column bot_archive_enabled boolean not null default true;

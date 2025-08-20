@@ -195,6 +195,7 @@
         const [settings, setSettings] = useState({
             botCount: 0,
             paperContext: false,
+            botArchiveEnabled: false,
             botLeaveEnabled: false,
             botLeavePercent: 0.00,
             botTemplateName: ''
@@ -249,7 +250,7 @@
         const handleInputChange = (key, value) => {
             setSettings(prev => ({
                 ...prev,
-                [key]: (key === 'paperContext' || key === 'botLeaveEnabled') ? value === 'true' :
+                [key]: (key === 'paperContext' || key === 'botArchiveEnabled' || key === 'botLeaveEnabled') ? value === 'true' :
                     key === 'botCount' ? parseInt(value) || 0 :
                         key === 'botLeavePercent' ? parseFloat(value) || 0.00 : value
             }));
@@ -321,7 +322,7 @@
                             React.createElement('tr', {key: key},
                                 React.createElement('td', {className: 'key-column'}, key),
                                 React.createElement('td', null,
-                                    (key === 'paperContext' || key === 'botLeaveEnabled') ?
+                                    (key === 'paperContext' || key === 'botArchiveEnabled' || key === 'botLeaveEnabled') ?
                                         React.createElement('select', {
                                                 value: value.toString(),
                                                 onChange: (e) => handleInputChange(key, e.target.value),
