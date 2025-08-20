@@ -20,7 +20,6 @@ import org.tr1al.gainium.utils.ThrowingSupplier;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
@@ -44,6 +43,7 @@ public class NatsService {
     public final static String STATUS_OK = "OK";
     public final static String STATUS_NOTOK = "NOTOK";
     public final static BigDecimal TWO = BigDecimal.valueOf(2);
+    public final static BigDecimal _0_3 = BigDecimal.valueOf(0.3);
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
     private final static String NOTHING_CHANGED = "Nothing changed";
     private final static String NATS_SERVER = "nats://nats.eu-central.prod.linode.spreadfighter.cloud";
@@ -326,7 +326,10 @@ public class NatsService {
                     log.debug("{} botId {} bot adts {} top adts {}", symbol, botsResult.getId(), bot.getAdts(), adts);
                     continue;
                 }
-                if (bot.getAdts().divide(adts, MathContext.DECIMAL64).compareTo(TWO) > 0) {
+                BigDecimal compareAdts = BigDecimal.ONE.subtract(_0_3).multiply(bot.getAdts());
+                log.debug("{} botId {} bot adts {} compare adts {} top adts {}",
+                        symbol, botsResult.getId(), bot.getAdts(), compareAdts, adts);
+                if (compareAdts.compareTo(adts) > 0) {
                     log.debug("stopBot {} botId {}", symbol, botsResult.getId());
                     request(() -> gainiumService.stopBot(bot.getBotId(), "dca", "leave"));
                 }
