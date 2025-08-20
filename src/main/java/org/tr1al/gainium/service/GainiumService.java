@@ -258,8 +258,23 @@ public class GainiumService {
     }
 
     public static void main(String[] args) throws ToManyException {
-        GainiumService service = new GainiumService();
-        List<BotsResult> list = service.getBotsDCA(null, 1L);
+        GainiumService service = new GainiumService(new SettingRepositoryMock());
+        service.gainiumToken = "";
+        service.gainiumSecret = "";
+//        service.paperContext = true;
+        List<BotsResult> list1 = service.getBotsDCA("open", 1L);
+        List<BotsResult> results = list1.stream()
+                .filter(b -> b.getSettings().getPair().contains("RAREUSDT"))
+                .collect(Collectors.toList());
+        System.out.println(results);
+        for (BotsResult result : results) {
+            SimpleBotResponse response = service.stopBot(result.getId(), "dca", "closeByMarket");
+            System.out.println();
+        }
+//        List<BotsResult> list2 = service.getBotsDCA(null, 2L);
+//        List<BotsResult> list3 = service.getBotsDCA(null, 3L);
+//        List<BotsResult> list4 = service.getBotsDCA(null, 4L);
+//        List<BotsResult> list5 = service.getBotsDCA(null, 5L);
 //        List<BotsResult> list = service.getBotsCombo("open", 1L);
 //        String id = list.get(0).get_id();
 //        CloneBotResponse comboBot = service.cloneComboBot(id, "BNB_USDT");
@@ -277,7 +292,7 @@ public class GainiumService {
 //        });
 
 //        service.getDeals(String status, Long page, String botId, boolean terminal, String botType)
-        List<DealsResult> deals = service.getAllDeals(null, null, false, "dca");
+        List<DealsResult> deals = service.getAllDeals("open", null, false, "dca");
         System.out.println();
     }
 
