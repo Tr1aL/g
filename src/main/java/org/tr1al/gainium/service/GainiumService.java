@@ -8,7 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.tr1al.gainium.dto.gainium.*;
+import org.tr1al.gainium.entity.Setting;
 import org.tr1al.gainium.exception.ToManyException;
+import org.tr1al.gainium.mock.SettingRepositoryMock;
+import org.tr1al.gainium.repository.SettingRepository;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -33,13 +36,17 @@ public class GainiumService {
     private String gainiumToken;
     @Value("${gainium.secret}")
     private String gainiumSecret;
-    @Value("${gainium.paper.context:true}")
-    private boolean paperContext;
-    @Value("${gainium.bot.template:SHORT_TEMPLATE}")
-    private String template;
+
     private final static String GAINIUM_API_URL = "https://api.gainium.io";
     private final ObjectMapper objectMapper = new ObjectMapper()
             .registerModule(new JavaTimeModule());
+    private final SettingRepository settingRepository;
+
+    private boolean getPaperContext() {
+        Setting setting = settingRepository.findById(Setting.SETTING_ID)
+                .orElseThrow(() -> new RuntimeException("setting with id " + Setting.SETTING_ID + " not found"));
+        return setting.isPaperContext();
+    }
 
     public List<BotsResult> getBotsCombo(String status, Long page) throws ToManyException {
         String endpoint = "/api/bots/combo";
@@ -53,7 +60,7 @@ public class GainiumService {
 
     private List<BotsResult> getBotsResults(String status, Long page, String endpoint) throws ToManyException {
         String method = "GET";
-        endpoint += "?paperContext=" + paperContext;
+        endpoint += "?paperContext=" + getPaperContext();
         if (status != null) {
             endpoint += "&status=" + status;
         }
@@ -87,7 +94,7 @@ public class GainiumService {
 
     public List<DealsResult> getDeals(String status, Long page, String botId, boolean terminal, String botType) throws ToManyException {
         String method = "GET";
-        String endpoint = "/api/deals?paperContext=" + paperContext;
+        String endpoint = "/api/deals?paperContext=" + getPaperContext();
         endpoint += "&terminal=" + terminal;
         if (status != null) {
             endpoint += "&status=" + status;
@@ -112,7 +119,7 @@ public class GainiumService {
     public SimpleBotResponse cloneComboBot(String botId, String name, String pair) throws ToManyException {
         String method = "PUT";
         String endpoint = "/api/cloneComboBot?botId=" + botId + "" +
-                "&paperContext=" + paperContext;
+                "&paperContext=" + getPaperContext();
         String body = "{\"name\":\"" + name + "\",\"pair\":[" + pair + "\"]}";
         return doRequest(SimpleBotResponse.class, method, endpoint, body);
     }
@@ -120,7 +127,7 @@ public class GainiumService {
     public SimpleBotResponse cloneDCABot(String botId, String name, String pair) throws ToManyException {
         String method = "PUT";
         String endpoint = "/api/cloneDCABot?botId=" + botId + "" +
-                "&paperContext=" + paperContext;
+                "&paperContext=" + getPaperContext();
         String body = "";
 //        String body = "{\"name\":\"" + name + "\",\"pair\":[" + pair + "\"]}";
         return doRequest(SimpleBotResponse.class, method, endpoint, body);
@@ -130,7 +137,7 @@ public class GainiumService {
         String method = "POST";
         String endpoint = "/api/startBot?botId=" + botId + "" +
                 "&type=" + type + "" +
-                "&paperContext=" + paperContext;
+                "&paperContext=" + getPaperContext();
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
@@ -138,7 +145,7 @@ public class GainiumService {
         String method = "DELETE";
         String endpoint = "/api/archiveBot?botId=" + botId + "" +
                 "&botType=" + type + "" +
-                "&paperContext=" + paperContext;
+                "&paperContext=" + getPaperContext();
         return doRequest(SimpleBotResponse.class, method, endpoint);
     }
 
@@ -146,7 +153,7 @@ public class GainiumService {
         String method = "DELETE";
         String endpoint = "/api/stopBot?botId=" + botId + "" +
                 "&botType=" + type + "" +
-                "&paperContext=" + paperContext;
+                "&paperContext=" + getPaperContext();
         if (closeType != null) {
             endpoint += "&closeType=" + closeType;
         }
@@ -156,7 +163,7 @@ public class GainiumService {
     public SimpleBotResponse changeBotPairs(String botId, String pair) throws ToManyException {
         String method = "POST";
         String endpoint = "/api/changeBotPairs?botId=" + botId +
-                "&paperContext=" + paperContext +
+                "&paperContext=" + getPaperContext() +
                 "&pairsToSetMode=replace" +
                 "&pairsToSet=" + pair;
         return doRequest(SimpleBotResponse.class, method, endpoint);
@@ -167,7 +174,7 @@ public class GainiumService {
 
         String method = "POST";
         String endpoint = "/api/updateDCABot?botId=" + botId +
-                "&paperContext=" + paperContext;
+                "&paperContext=" + getPaperContext();
         String body = "{\"name\":\"" + name + "\",\"pair\":[" + pair + "\"]}";
 
         return doRequest(SimpleBotResponse.class, method, endpoint, body);
@@ -219,11 +226,6 @@ public class GainiumService {
             log.error("{}{}{}", method, endpoint, body, e);
             return null;
         }
-//
-//                // Выводим статус код и тело ответа
-//                log.debug("Status code: " + response.statusCode());
-//                String body1 = response.body();
-//                log.debug("Response body: " + body1);
 
         String body1 = response.body();
         log.debug(body1);

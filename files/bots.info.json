@@ -1,0 +1,62 @@
+[
+  {
+    "botId": "68a5a388333374061ec85c9b",
+    "symbol": "OGNUSDT",
+    "startAdts": null,
+    "currentAdts": 259.75
+  },
+  {
+    "botId": "68a5a389333374061ec85cbd",
+    "symbol": "VELVETUSDT",
+    "startAdts": null,
+    "currentAdts": 198.46
+  },
+  {
+    "botId": "68a5a38a333374061ec85cdc",
+    "symbol": "PHAUSDT",
+    "startAdts": null,
+    "currentAdts": 188.28
+  },
+  {
+    "botId": "68a5a38b333374061ec85d09",
+    "symbol": "MUSDT",
+    "startAdts": null,
+    "currentAdts": 206.6
+  },
+  {
+    "botId": "68a5a38c333374061ec85d29",
+    "symbol": "VICUSDT",
+    "startAdts": null,
+    "currentAdts": 178.96
+  },
+  {
+    "botId": "68a5a38d333374061ec85d4e",
+    "symbol": "1000XUSDT",
+    "startAdts": null,
+    "currentAdts": 149.03
+  },
+  {
+    "botId": "68a5a38e333374061ec85d6d",
+    "symbol": "CROSSUSDT",
+    "startAdts": null,
+    "currentAdts": 160.77
+  },
+  {
+    "botId": "68a5a38f333374061ec85d98",
+    "symbol": "HIPPOUSDT",
+    "startAdts": null,
+    "currentAdts": 159.8
+  },
+  {
+    "botId": "68a5a390333374061ec85dba",
+    "symbol": "RAREUSDT",
+    "startAdts": null,
+    "currentAdts": 123.87
+  },
+  {
+    "botId": "68a5a390333374061ec85dde",
+    "symbol": "BANDUSDT",
+    "startAdts": null,
+    "currentAdts": 175.72
+  }
+]

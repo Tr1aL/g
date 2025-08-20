@@ -14,18 +14,17 @@ import org.tr1al.gainium.dto.gainium.*;
 import org.tr1al.gainium.dto.nats.NatsData;
 import org.tr1al.gainium.dto.nats.NatsResponse;
 import org.tr1al.gainium.entity.Bot;
+import org.tr1al.gainium.entity.Setting;
 import org.tr1al.gainium.exception.ToManyException;
 import org.tr1al.gainium.repository.BotRepository;
+import org.tr1al.gainium.repository.SettingRepository;
 import org.tr1al.gainium.utils.ThrowingSupplier;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.TimeUnit;
@@ -42,8 +41,6 @@ public class NatsService {
     private final static String SPEED_RUSH_ALL = "sf.core.scripts.screener.speedRush.all";
     public final static String STATUS_OK = "OK";
     public final static String STATUS_NOTOK = "NOTOK";
-    public final static BigDecimal TWO = BigDecimal.valueOf(2);
-    public final static BigDecimal _0_3 = BigDecimal.valueOf(0.3);
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
     private final static String NOTHING_CHANGED = "Nothing changed";
     private final static String NATS_SERVER = "nats://nats.eu-central.prod.linode.spreadfighter.cloud";
@@ -52,13 +49,12 @@ public class NatsService {
     private String natsUsername;
     @Value("${nats.password}")
     private String natsPassword;
-    @Value("${gainium.open.bot.limit:10}")
-    private long openBotLimit;
-    @Value("${gainium.bot.template:SHORT_TEMPLATE}")
-    private String templateName;
+    @Value("${gainium.bot.process.enabled:true}")
+    private boolean processEnabled;
 
     private final GainiumService gainiumService;
     private final BotRepository botRepository;
+    private final SettingRepository settingRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private final Set<String> IGNORE_PAIRS = new CopyOnWriteArraySet<>();
@@ -75,6 +71,10 @@ public class NatsService {
     private final Object isWorkingObj = new Object();
     private final Map<String, String> clonedBotMap = new ConcurrentHashMap<>();
     private final Map<String, String> changedPairBotMap = new ConcurrentHashMap<>();
+
+    public static List<NatsData> LAST_NATS_DATA = new ArrayList<>();
+    public static List<BotsResult> LAST_OPEN_BOTS = new ArrayList<>();
+    public static List<DealsResult> LAST_OPEN_DEALS = new ArrayList<>();
 
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() throws IOException, InterruptedException {
@@ -112,6 +112,8 @@ public class NatsService {
 
     private MessageHandler getMessageHandler() {
         return (msg) -> {
+            Setting setting = settingRepository.findById(Setting.SETTING_ID)
+                    .orElseThrow(() -> new RuntimeException("setting with id " + Setting.SETTING_ID + " not found"));
             synchronized (isWorkingObj) {
                 if (isWorking) {
                     return;
@@ -136,10 +138,11 @@ public class NatsService {
                     e.printStackTrace();
                 }
                 log.debug("Nats response: {}", response);
+                LAST_NATS_DATA = response.getData();
                 List<NatsData> adtsTop = response.getData().stream()
                         .filter(a -> !IGNORE_PAIRS.contains(a.getSymbol()))
                         .sorted((o1, o2) -> o2.getAdts().compareTo(o1.getAdts()))
-                        .limit(openBotLimit)
+                        .limit(setting.getBotCount())
                         .toList();
                 List<NatsData> data = response.getData();
                 Map<String, BigDecimal> adtsMap = data.stream()
@@ -155,11 +158,16 @@ public class NatsService {
                     log.debug("openBots is null");
                     return;
                 }
+                LAST_OPEN_BOTS = openBots;
+                if (!processEnabled) {
+                    log.debug("process enabled is false");
+                    return;
+                }
                 Set<String> openBotSymbols = openBots.stream()
                         .map(BotsResult::getSettings)
                         .flatMap(a -> a.getPair().stream())
                         .collect(Collectors.toSet());
-                BotsResult template = findBotTemplate(openBots);
+                BotsResult template = findBotTemplate(openBots, setting.getBotTemplateName());
                 if (template == null) {
                     log.debug("template not fount");
                     return;
@@ -169,22 +177,23 @@ public class NatsService {
                         .collect(Collectors.toSet());
                 Map<String, List<Bot>> botFromDBMap = botRepository.findAllById(openBotIds).stream()
                         .collect(Collectors.groupingBy(Bot::getSymbol));
-                log.debug("OPEN_BOT_LIMIT {}", openBotLimit);
+                log.debug("OPEN_BOT_LIMIT {}", setting.getBotCount());
                 log.debug("template {}", template);
                 log.debug("clonedBotMap {}", clonedBotMap);
                 log.debug("changedPairBotMap {}", changedPairBotMap);
                 long count = openBots.size();
                 log.debug("openBots count " + count);
 
-                leaveBots(adtsMap, openBots, botFromDBMap);
+                leaveBots(adtsMap, openBots, botFromDBMap, setting.getBotLeavePercent());
 
                 log.debug("process open new bots");
-                if (count < openBotLimit) {
+                if (count < setting.getBotCount()) {
                     List<DealsResult> openDeals = request(() -> gainiumService.getAllDeals("open", null, false, "dca"));
                     if (openDeals == null) {
                         log.debug("openDeals is null");
                         return;
                     }
+                    LAST_OPEN_DEALS = openDeals;
                     count = Math.max(count, openDeals.stream()
                             .map(DealsResult::getBotId)
                             .distinct()
@@ -196,7 +205,7 @@ public class NatsService {
                     log.debug("openDealsSymbols {}", openDealsSymbols);
                     for (NatsData natsData : adtsTop) {
                         log.debug("try " + natsData.getSymbol());
-                        if (count >= openBotLimit) {
+                        if (count >= setting.getBotCount()) {
                             log.debug("break limit");
                             break;
                         }
@@ -216,7 +225,7 @@ public class NatsService {
                             return;
                         }
 
-                        String clonedBotId = cloneBot(template, natsData, toClonePair);
+                        String clonedBotId = cloneBot(template, natsData, toClonePair, setting.getBotTemplateName());
                         if (clonedBotId != null) {
                             String changedPairBotId = changeBotPair(natsData, toClonePair, clonedBotId);
                             if (changedPairBotId != null) {
@@ -264,7 +273,7 @@ public class NatsService {
         return changedPairBotId;
     }
 
-    private String cloneBot(BotsResult template, NatsData natsData, String toClonePair) {
+    private String cloneBot(BotsResult template, NatsData natsData, String toClonePair, String templateName) {
         String clonedBotId = clonedBotMap.get(natsData.getSymbol());
         if (clonedBotId == null) {
             SimpleBotResponse cloneBotResponse = request(() -> gainiumService.cloneDCABot(template.getId(),
@@ -279,7 +288,7 @@ public class NatsService {
         return clonedBotId;
     }
 
-    private BotsResult findBotTemplate(List<BotsResult> openBots) {
+    private BotsResult findBotTemplate(List<BotsResult> openBots, String templateName) {
         BotsResult template = openBots.stream()
                 .filter(a -> templateName.equals(a.getSettings().getName()))
                 .findFirst().orElse(null);
@@ -307,7 +316,8 @@ public class NatsService {
         return template;
     }
 
-    private void leaveBots(Map<String, BigDecimal> adtsMap, List<BotsResult> openBots, Map<String, List<Bot>> botFromDBMap) {
+    private void leaveBots(Map<String, BigDecimal> adtsMap, List<BotsResult> openBots,
+                           Map<String, List<Bot>> botFromDBMap, BigDecimal botLeavePercent) {
         log.debug("process close bots with leave");
         for (BotsResult botsResult : openBots) {
             String symbol = ofNullable(botsResult.getSettings())
@@ -326,7 +336,7 @@ public class NatsService {
                     log.debug("{} botId {} bot adts {} top adts {}", symbol, botsResult.getId(), bot.getAdts(), adts);
                     continue;
                 }
-                BigDecimal compareAdts = BigDecimal.ONE.subtract(_0_3).multiply(bot.getAdts());
+                BigDecimal compareAdts = BigDecimal.ONE.subtract(botLeavePercent.movePointLeft(2)).multiply(bot.getAdts());
                 log.debug("{} botId {} bot adts {} compare adts {} top adts {}",
                         symbol, botsResult.getId(), bot.getAdts(), compareAdts, adts);
                 if (compareAdts.compareTo(adts) > 0) {
