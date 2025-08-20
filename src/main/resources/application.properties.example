@@ -24,6 +24,7 @@ gainium.token=1
 gainium.secret=1
 gainium.orders.limit=10
 gainium.paper.context=true
+gainium.bot.template=SHORT_TEMPLATE
 
 nats.username=2
 nats.password=2

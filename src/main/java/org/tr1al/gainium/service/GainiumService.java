@@ -30,11 +30,13 @@ public class GainiumService {
     private final static String TO_MANY_REQUESTS = "Too many requests, please try again later";
 
     @Value("${gainium.token}")
-    private String GAINIUM_TOKEN;
+    private String gainiumToken;
     @Value("${gainium.secret}")
-    private String GAINIUM_SECRET;
+    private String gainiumSecret;
     @Value("${gainium.paper.context:true}")
     private boolean paperContext;
+    @Value("${gainium.bot.template:SHORT_TEMPLATE}")
+    private String template;
     private final static String GAINIUM_API_URL = "https://api.gainium.io";
     private final ObjectMapper objectMapper = new ObjectMapper()
             .registerModule(new JavaTimeModule());
@@ -187,7 +189,7 @@ public class GainiumService {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                 .uri(URI.create(GAINIUM_API_URL + endpoint))
                 .header("accept", "application/json")
-                .header("token", GAINIUM_TOKEN)
+                .header("token", gainiumToken)
                 .header("time", String.valueOf(time))
                 .header("signature", hmac);
         switch (method) {
@@ -242,7 +244,7 @@ public class GainiumService {
             String data = method + endpoint + time;
 
             Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
-            SecretKeySpec secret_key = new SecretKeySpec(GAINIUM_SECRET.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
+            SecretKeySpec secret_key = new SecretKeySpec(gainiumSecret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
             sha256_HMAC.init(secret_key);
 
             byte[] hashBytes = sha256_HMAC.doFinal(data.getBytes(StandardCharsets.UTF_8));

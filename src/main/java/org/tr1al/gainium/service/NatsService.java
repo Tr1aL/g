@@ -41,20 +41,22 @@ public class NatsService {
     private final static String SPEED_RUSH_ADTS = "sf.core.scripts.screener.speedRush.adts";
     private final static String SPEED_RUSH_ADTV = "sf.core.scripts.screener.speedRush.adtv";
     private final static String SPEED_RUSH_ALL = "sf.core.scripts.screener.speedRush.all";
-    public final static String SHORT_TEMPLATE = "SHORT_TEMPLATE";
     public final static String STATUS_OK = "OK";
     public final static String STATUS_NOTOK = "NOTOK";
     public final static BigDecimal TWO = BigDecimal.valueOf(2);
-    @Value("${gainium.open.bot.limit:10}")
-    private long OPEN_BOT_LIMIT;
     private final static String NO_CHECK_SETTINGS = "Pairs didn't pass settings check";
     private final static String NOTHING_CHANGED = "Nothing changed";
-
     private final static String NATS_SERVER = "nats://nats.eu-central.prod.linode.spreadfighter.cloud";
+
     @Value("${nats.username}")
-    private String NATS_USERNAME;
+    private String natsUsername;
     @Value("${nats.password}")
-    private String NATS_PASSWORD;
+    private String natsPassword;
+    @Value("${gainium.open.bot.limit:10}")
+    private long openBotLimit;
+    @Value("${gainium.bot.template:SHORT_TEMPLATE}")
+    private String templateName;
+
     private final GainiumService gainiumService;
     private final BotRepository botRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -78,8 +80,8 @@ public class NatsService {
     public void runAfterStartup() throws IOException, InterruptedException {
 
         Properties props = new Properties();
-        props.put("username", NATS_USERNAME);
-        props.put("password", NATS_PASSWORD);
+        props.put("username", natsUsername);
+        props.put("password", natsPassword);
         Options options = Options.builder()
                 .properties(props)
                 .server(NATS_SERVER)
@@ -137,7 +139,7 @@ public class NatsService {
                 List<NatsData> adtsTop = response.getData().stream()
                         .filter(a -> !IGNORE_PAIRS.contains(a.getSymbol()))
                         .sorted((o1, o2) -> o2.getAdts().compareTo(o1.getAdts()))
-                        .limit(OPEN_BOT_LIMIT)
+                        .limit(openBotLimit)
                         .toList();
                 List<NatsData> data = response.getData();
                 Map<String, BigDecimal> adtsMap = data.stream()
@@ -157,32 +159,9 @@ public class NatsService {
                         .map(BotsResult::getSettings)
                         .flatMap(a -> a.getPair().stream())
                         .collect(Collectors.toSet());
-                BotsResult shortTemplate = openBots.stream()
-                        .filter(a -> SHORT_TEMPLATE.equals(a.getSettings().getName()))
-                        .findFirst().orElse(null);
-                if (shortTemplate == null) {
-                    if (cachedBotsTemplate != null && lastCachedBotTemplate > System.currentTimeMillis() - 60 * 1000) {
-                        shortTemplate = cachedBotsTemplate;
-                    } else {
-                        List<BotsResult> closed = request(() -> gainiumService.getBotsDCA("closed", 1L));
-                        if (closed == null) {
-                            log.debug("closed is null");
-                            return;
-                        }
-                        for (BotsResult botsResult : closed) {
-                            if (shortTemplate == null && SHORT_TEMPLATE.equals(botsResult.getSettings().getName())) {
-                                shortTemplate = botsResult;
-                                cachedBotsTemplate = botsResult;
-                                lastCachedBotTemplate = System.currentTimeMillis();
-                            } else {
-                                SimpleBotResponse archiveBotResponse = request(() -> gainiumService.archiveBot(botsResult.getId(), "dca"));
-                                log.debug("archiveBotResponse: " + archiveBotResponse);
-                            }
-                        }
-                    }
-                }
-                if (shortTemplate == null) {
-                    log.debug("SHORT_TEMPLATE not fount");
+                BotsResult template = findBotTemplate(openBots);
+                if (template == null) {
+                    log.debug("template not fount");
                     return;
                 }
                 Set<String> openBotIds = openBots.stream()
@@ -190,38 +169,17 @@ public class NatsService {
                         .collect(Collectors.toSet());
                 Map<String, List<Bot>> botFromDBMap = botRepository.findAllById(openBotIds).stream()
                         .collect(Collectors.groupingBy(Bot::getSymbol));
-                log.debug("OPEN_BOT_LIMIT {}", OPEN_BOT_LIMIT);
-                log.debug("shortTemplate {}", shortTemplate);
+                log.debug("OPEN_BOT_LIMIT {}", openBotLimit);
+                log.debug("template {}", template);
                 log.debug("clonedBotMap {}", clonedBotMap);
                 log.debug("changedPairBotMap {}", changedPairBotMap);
                 long count = openBots.size();
                 log.debug("openBots count " + count);
-                log.debug("process close bots with leave");
-                for (BotsResult botsResult : openBots) {
-                    String symbol = ofNullable(botsResult.getSettings())
-                            .map(Settings::getPair)
-                            .map(a -> a.get(0))
-                            .orElse(null);
-                    log.debug("try close {} botId {}", symbol, botsResult.getId());
-                    List<Bot> bots = botFromDBMap.get(symbol);
-                    if (bots == null || bots.isEmpty()) {
-                        log.debug("not found in db {} botId {}", symbol, botsResult.getId());
-                        continue;
-                    }
-                    for (Bot bot : bots) {
-                        BigDecimal adts = adtsMap.get(symbol);
-                        if (adts == null) {
-                            log.debug("{} botId {} bot adts {} top adts {}", symbol, botsResult.getId(), bot.getAdts(), adts);
-                            continue;
-                        }
-                        if (bot.getAdts().divide(adts, MathContext.DECIMAL64).compareTo(TWO) > 0) {
-                            log.debug("stopBot {} botId {}", symbol, botsResult.getId());
-                            request(() -> gainiumService.stopBot(bot.getBotId(), "dca", "leave"));
-                        }
-                    }
-                }
+
+                leaveBots(adtsMap, openBots, botFromDBMap);
+
                 log.debug("process open new bots");
-                if (count < OPEN_BOT_LIMIT) {
+                if (count < openBotLimit) {
                     List<DealsResult> openDeals = request(() -> gainiumService.getAllDeals("open", null, false, "dca"));
                     if (openDeals == null) {
                         log.debug("openDeals is null");
@@ -238,7 +196,7 @@ public class NatsService {
                     log.debug("openDealsSymbols {}", openDealsSymbols);
                     for (NatsData natsData : adtsTop) {
                         log.debug("try " + natsData.getSymbol());
-                        if (count >= OPEN_BOT_LIMIT) {
+                        if (count >= openBotLimit) {
                             log.debug("break limit");
                             break;
                         }
@@ -257,45 +215,12 @@ public class NatsService {
                             log.debug(toClonePair + " already cloned");
                             return;
                         }
-                        BotsResult finalShortTemplate = shortTemplate;
 
-                        String clonedBotId = clonedBotMap.get(natsData.getSymbol());
-                        if (clonedBotId == null) {
-                            SimpleBotResponse cloneBotResponse = request(() -> gainiumService.cloneDCABot(finalShortTemplate.getId(),
-                                    "clone " + SHORT_TEMPLATE + " to " + toClonePair,
-                                    toClonePair));
-                            log.debug("cloneBotResponse: " + cloneBotResponse);
-                            if (cloneBotResponse != null && STATUS_OK.equals(cloneBotResponse.getStatus())) {
-                                clonedBotId = cloneBotResponse.getData().toString();
-                                clonedBotMap.put(natsData.getSymbol(), clonedBotId);
-                            }
-                        }
+                        String clonedBotId = cloneBot(template, natsData, toClonePair);
                         if (clonedBotId != null) {
-                            String changedPairBotId = changedPairBotMap.get(natsData.getSymbol());
-                            if (changedPairBotId == null) {
-                                String finalClonedBotId = clonedBotId;
-                                SimpleBotResponse changeBotResponse = request(() -> gainiumService.changeBotPairs(finalClonedBotId, toClonePair));
-                                log.debug("changeBotResponse: " + changeBotResponse);
-                                if (changeBotResponse != null && (STATUS_OK.equals(changeBotResponse.getStatus())
-                                        || STATUS_NOTOK.equals(changeBotResponse.getStatus()) && NOTHING_CHANGED.equals(changeBotResponse.getReason()))) {
-                                    changedPairBotId = clonedBotId;
-                                    changedPairBotMap.put(natsData.getSymbol(), changedPairBotId);
-                                } else if (changeBotResponse != null && NO_CHECK_SETTINGS.equals(changeBotResponse.getReason())) {
-                                    log.debug("ignore pair {}", natsData.getSymbol());
-                                    IGNORE_PAIRS.add(natsData.getSymbol());
-                                }
-                            }
+                            String changedPairBotId = changeBotPair(natsData, toClonePair, clonedBotId);
                             if (changedPairBotId != null) {
-                                String finalChangedPairBotId = changedPairBotId;
-                                SimpleBotResponse startBotResponse = request(() -> gainiumService.startBot(finalChangedPairBotId, "dca"));
-                                log.debug("startBotResponse: " + startBotResponse);
-                                if (startBotResponse != null && STATUS_OK.equals(startBotResponse.getStatus())) {
-                                    clonedBotMap.remove(natsData.getSymbol());
-                                    changedPairBotMap.remove(natsData.getSymbol());
-                                    STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
-                                    createBotInDb(natsData, finalChangedPairBotId);
-                                    count++;
-                                }
+                                count = startBot(count, natsData, toClonePair, changedPairBotId);
                             }
                         }
 
@@ -309,6 +234,106 @@ public class NatsService {
         };
     }
 
+    private long startBot(long count, NatsData natsData, String toClonePair, String changedPairBotId) {
+        SimpleBotResponse startBotResponse = request(() -> gainiumService.startBot(changedPairBotId, "dca"));
+        log.debug("startBotResponse: " + startBotResponse);
+        if (startBotResponse != null && STATUS_OK.equals(startBotResponse.getStatus())) {
+            clonedBotMap.remove(natsData.getSymbol());
+            changedPairBotMap.remove(natsData.getSymbol());
+            STARTED_PAIR_CACHE.put(toClonePair, toClonePair);
+            createBotInDb(natsData, changedPairBotId);
+            count++;
+        }
+        return count;
+    }
+
+    private String changeBotPair(NatsData natsData, String toClonePair, String clonedBotId) {
+        String changedPairBotId = changedPairBotMap.get(natsData.getSymbol());
+        if (changedPairBotId == null) {
+            SimpleBotResponse changeBotResponse = request(() -> gainiumService.changeBotPairs(clonedBotId, toClonePair));
+            log.debug("changeBotResponse: " + changeBotResponse);
+            if (changeBotResponse != null && (STATUS_OK.equals(changeBotResponse.getStatus())
+                    || STATUS_NOTOK.equals(changeBotResponse.getStatus()) && NOTHING_CHANGED.equals(changeBotResponse.getReason()))) {
+                changedPairBotId = clonedBotId;
+                changedPairBotMap.put(natsData.getSymbol(), changedPairBotId);
+            } else if (changeBotResponse != null && NO_CHECK_SETTINGS.equals(changeBotResponse.getReason())) {
+                log.debug("ignore pair {}", natsData.getSymbol());
+                IGNORE_PAIRS.add(natsData.getSymbol());
+            }
+        }
+        return changedPairBotId;
+    }
+
+    private String cloneBot(BotsResult template, NatsData natsData, String toClonePair) {
+        String clonedBotId = clonedBotMap.get(natsData.getSymbol());
+        if (clonedBotId == null) {
+            SimpleBotResponse cloneBotResponse = request(() -> gainiumService.cloneDCABot(template.getId(),
+                    "clone " + templateName + " to " + toClonePair,
+                    toClonePair));
+            log.debug("cloneBotResponse: " + cloneBotResponse);
+            if (cloneBotResponse != null && STATUS_OK.equals(cloneBotResponse.getStatus())) {
+                clonedBotId = cloneBotResponse.getData().toString();
+                clonedBotMap.put(natsData.getSymbol(), clonedBotId);
+            }
+        }
+        return clonedBotId;
+    }
+
+    private BotsResult findBotTemplate(List<BotsResult> openBots) {
+        BotsResult template = openBots.stream()
+                .filter(a -> templateName.equals(a.getSettings().getName()))
+                .findFirst().orElse(null);
+        if (template == null) {
+            if (cachedBotsTemplate != null && lastCachedBotTemplate > System.currentTimeMillis() - 60 * 1000) {
+                template = cachedBotsTemplate;
+            } else {
+                List<BotsResult> closed = request(() -> gainiumService.getBotsDCA("closed", 1L));
+                if (closed == null) {
+                    log.debug("closed is null");
+                    return null;
+                }
+                for (BotsResult botsResult : closed) {
+                    if (template == null && templateName.equals(botsResult.getSettings().getName())) {
+                        template = botsResult;
+                        cachedBotsTemplate = botsResult;
+                        lastCachedBotTemplate = System.currentTimeMillis();
+                    } else {
+                        SimpleBotResponse archiveBotResponse = request(() -> gainiumService.archiveBot(botsResult.getId(), "dca"));
+                        log.debug("archiveBotResponse: " + archiveBotResponse);
+                    }
+                }
+            }
+        }
+        return template;
+    }
+
+    private void leaveBots(Map<String, BigDecimal> adtsMap, List<BotsResult> openBots, Map<String, List<Bot>> botFromDBMap) {
+        log.debug("process close bots with leave");
+        for (BotsResult botsResult : openBots) {
+            String symbol = ofNullable(botsResult.getSettings())
+                    .map(Settings::getPair)
+                    .map(a -> a.get(0))
+                    .orElse(null);
+            log.debug("try close {} botId {}", symbol, botsResult.getId());
+            List<Bot> bots = botFromDBMap.get(symbol);
+            if (bots == null || bots.isEmpty()) {
+                log.debug("not found in db {} botId {}", symbol, botsResult.getId());
+                continue;
+            }
+            for (Bot bot : bots) {
+                BigDecimal adts = adtsMap.get(symbol);
+                if (adts == null) {
+                    log.debug("{} botId {} bot adts {} top adts {}", symbol, botsResult.getId(), bot.getAdts(), adts);
+                    continue;
+                }
+                if (bot.getAdts().divide(adts, MathContext.DECIMAL64).compareTo(TWO) > 0) {
+                    log.debug("stopBot {} botId {}", symbol, botsResult.getId());
+                    request(() -> gainiumService.stopBot(bot.getBotId(), "dca", "leave"));
+                }
+            }
+        }
+    }
+
     private void createBotInDb(NatsData natsData, String botId) {
         Bot bot = new Bot();
         bot.setBotId(botId);
@@ -316,7 +341,8 @@ public class NatsService {
         bot.setCreated(Instant.now());
         bot.setAdts(natsData.getAdts());
         bot.setAdtv(natsData.getAdtv());
-        botRepository.save(bot);
+        bot = botRepository.save(bot);
+        log.debug("created bot in db {}", bot);
     }
 
     private <T> T request(ThrowingSupplier<T, ToManyException> supplier) {
@@ -326,14 +352,5 @@ public class NatsService {
             lastToMany = System.currentTimeMillis();
             return null;
         }
-    }
-
-    private Integer countActive() {
-        List<BotsResult> openBots = request(() -> gainiumService.getBotsDCA("open", 1L));
-        if (openBots == null) {
-            log.debug("countActive openBots is null");
-            return null;
-        }
-        return openBots.size();
     }
 }
