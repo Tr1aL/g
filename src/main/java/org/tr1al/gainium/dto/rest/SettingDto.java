@@ -11,12 +11,14 @@ import java.math.BigDecimal;
 public class SettingDto {
     private Long botCount;
     private boolean paperContext;
+    private boolean botLeaveEnabled;
     private BigDecimal botLeavePercent;
     private String botTemplateName;
 
     public SettingDto(Setting setting) {
         this.botCount = setting.getBotCount();
         this.paperContext = setting.isPaperContext();
+        this.botLeaveEnabled = setting.isBotLeaveEnabled();
         this.botLeavePercent = setting.getBotLeavePercent();
         this.botTemplateName = setting.getBotTemplateName();
     }
@@ -24,6 +26,7 @@ public class SettingDto {
     public Setting fillSetting(Setting setting) {
         setting.setBotCount(this.botCount);
         setting.setPaperContext(this.paperContext);
+        setting.setBotLeaveEnabled(this.botLeaveEnabled);
         setting.setBotLeavePercent(this.botLeavePercent);
         setting.setBotTemplateName(this.botTemplateName);
         return setting;

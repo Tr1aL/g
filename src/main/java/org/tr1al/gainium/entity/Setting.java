@@ -17,6 +17,7 @@ public class Setting {
     private Integer id;
     private Long botCount;
     private boolean paperContext;
+    private boolean botLeaveEnabled;
     private BigDecimal botLeavePercent;
     private String botTemplateName;
 }

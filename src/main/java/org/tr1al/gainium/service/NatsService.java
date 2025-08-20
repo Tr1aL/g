@@ -184,7 +184,7 @@ public class NatsService {
                 long count = openBots.size();
                 log.debug("openBots count " + count);
 
-                leaveBots(adtsMap, openBots, botFromDBMap, setting.getBotLeavePercent());
+                leaveBots(adtsMap, openBots, botFromDBMap, setting.isBotLeaveEnabled(), setting.getBotLeavePercent());
 
                 log.debug("process open new bots");
                 if (count < setting.getBotCount()) {
@@ -317,7 +317,11 @@ public class NatsService {
     }
 
     private void leaveBots(Map<String, BigDecimal> adtsMap, List<BotsResult> openBots,
-                           Map<String, List<Bot>> botFromDBMap, BigDecimal botLeavePercent) {
+                           Map<String, List<Bot>> botFromDBMap, boolean isBotLeaveEnabled, BigDecimal botLeavePercent) {
+        if (!isBotLeaveEnabled) {
+            log.debug("leave bot is disabled");
+            return;
+        }
         log.debug("process close bots with leave");
         for (BotsResult botsResult : openBots) {
             String symbol = ofNullable(botsResult.getSettings())

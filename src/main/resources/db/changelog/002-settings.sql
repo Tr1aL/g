@@ -13,3 +13,6 @@ CREATE TABLE setting
 );
 insert into setting (id, bot_count, paper_context, bot_leave_percent, bot_template_name)
 VALUES (1, 20, false, 30.0, 'SHORT_TEMPLATE');
+
+--changeset dsamorukov:002-settings.sql-2
+alter table setting add column bot_leave_enabled boolean not null default false;
