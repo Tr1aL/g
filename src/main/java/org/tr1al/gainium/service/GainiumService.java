@@ -42,7 +42,7 @@ public class GainiumService {
             .registerModule(new JavaTimeModule());
     private final SettingRepository settingRepository;
 
-    private boolean getPaperContext() {
+    boolean getPaperContext() {
         Setting setting = settingRepository.findById(Setting.SETTING_ID)
                 .orElseThrow(() -> new RuntimeException("setting with id " + Setting.SETTING_ID + " not found"));
         return setting.isPaperContext();
@@ -257,6 +257,17 @@ public class GainiumService {
         }
     }
 
+    private static class GainiumServiceTest extends GainiumService{
+
+        public GainiumServiceTest(SettingRepository settingRepository) {
+            super(settingRepository);
+        }
+
+        @Override
+        boolean getPaperContext() {
+            return false;
+        }
+    }
     public static void main(String[] args) throws ToManyException {
         GainiumService service = new GainiumService(new SettingRepositoryMock());
         service.gainiumToken = "";
@@ -264,9 +275,9 @@ public class GainiumService {
 //        service.paperContext = true;
         List<BotsResult> list1 = service.getBotsDCA("open", 1L);
         List<BotsResult> results = list1.stream()
-                .filter(a -> a.getId().equals("68a8e1b9c45cf30fd1635cf3")
-                        || a.getId().equals("68a90c63c45cf30fd16a570c"))
-//                .filter(b -> b.getSettings().getPair().contains("ZEREBROUSDT"))
+//                .filter(a -> a.getId().equals("68a8e1b9c45cf30fd1635cf3")
+//                        || a.getId().equals("68a90c63c45cf30fd16a570c"))
+                .filter(b -> b.getSettings().getPair().contains("FHEUSDT"))
                 .collect(Collectors.toList());
 //        System.out.println(results);
 //        for (BotsResult result : results) {
