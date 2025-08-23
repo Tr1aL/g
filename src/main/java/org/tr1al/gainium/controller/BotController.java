@@ -51,6 +51,7 @@ public class BotController {
                     .map(Bot::getAdts)
                     .orElse(null));
             infoDto.setCurrentAdts(currentAdtsMap.get(infoDto.getSymbol()));
+            infoDto.setSource("open bot");
             ret.add(infoDto);
             processedBots.add(openBot.getId());
         }
@@ -69,6 +70,7 @@ public class BotController {
                     .map(Bot::getAdts)
                     .orElse(null));
             infoDto.setCurrentAdts(currentAdtsMap.get(infoDto.getSymbol()));
+            infoDto.setSource("deals");
             ret.add(infoDto);
 
         }

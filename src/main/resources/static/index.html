@@ -365,6 +365,7 @@
                             React.createElement('th', null, 'Символ'),
                             React.createElement('th', null, 'Начальный ADTS'),
                             React.createElement('th', null, 'Текущий ADTS'),
+                            React.createElement('th', null, 'Source'),
                         )
                     ),
                     React.createElement('tbody', null,
@@ -387,6 +388,7 @@
                                         formatNumber(bot.startAdts)
                                     ),
                                     React.createElement('td', null, formatNumber(bot.currentAdts)),
+                                    React.createElement('td', null, bot.source),
                                     // React.createElement('td', { className: changeClass }, changeText)
                                 );
                             })

@@ -12,4 +12,5 @@ public class BotInfoDto {
     private String symbol;
     private BigDecimal startAdts;
     private BigDecimal currentAdts;
+    private String source;
 }
