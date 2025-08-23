@@ -263,14 +263,14 @@ public class GainiumService {
         service.gainiumSecret = "";
 //        service.paperContext = true;
         List<BotsResult> list1 = service.getBotsDCA("open", 1L);
-        List<BotsResult> results = list1.stream()
-                .filter(b -> b.getSettings().getPair().contains("RAREUSDT"))
-                .collect(Collectors.toList());
-        System.out.println(results);
-        for (BotsResult result : results) {
-            SimpleBotResponse response = service.stopBot(result.getId(), "dca", "closeByMarket");
-            System.out.println();
-        }
+//        List<BotsResult> results = list1.stream()
+//                .filter(b -> b.getSettings().getPair().contains("RAREUSDT"))
+//                .collect(Collectors.toList());
+//        System.out.println(results);
+//        for (BotsResult result : results) {
+//            SimpleBotResponse response = service.stopBot(result.getId(), "dca", "closeByMarket");
+//            System.out.println();
+//        }
 //        List<BotsResult> list2 = service.getBotsDCA(null, 2L);
 //        List<BotsResult> list3 = service.getBotsDCA(null, 3L);
 //        List<BotsResult> list4 = service.getBotsDCA(null, 4L);
@@ -293,6 +293,7 @@ public class GainiumService {
 
 //        service.getDeals(String status, Long page, String botId, boolean terminal, String botType)
         List<DealsResult> deals = service.getAllDeals("open", null, false, "dca");
+        List<String> openDealBots = deals.stream().map(a -> a.getBotId()).distinct().collect(Collectors.toList());
         System.out.println();
     }
 

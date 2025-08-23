@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import io.nats.client.*;
+import jakarta.annotation.PreDestroy;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,9 +26,7 @@ import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 import static java.util.Optional.ofNullable;
@@ -76,9 +75,19 @@ public class NatsService {
     public static List<BotsResult> LAST_OPEN_BOTS = new ArrayList<>();
     public static List<DealsResult> LAST_OPEN_DEALS = new ArrayList<>();
 
+    private Long lastProcess = null;
+    private Connection nc = null;
+    private Dispatcher d = null;
+    private Subscription s = null;
+    private final ExecutorService executorService = Executors.newSingleThreadExecutor();
+
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() throws IOException, InterruptedException {
+        createNatsConnection();
+        executorService.submit(new ReconnectTask());
+    }
 
+    private void createNatsConnection() throws IOException, InterruptedException {
         Properties props = new Properties();
         props.put("username", natsUsername);
         props.put("password", natsPassword);
@@ -100,18 +109,42 @@ public class NatsService {
                 .build();
 
 
-        Connection nc = Nats.connectReconnectOnConnect(options);
-        doWork(nc);
+        nc = Nats.connectReconnectOnConnect(options);
+        doWork();
     }
 
-    private void doWork(Connection nc) {
-        Dispatcher d = nc.createDispatcher((msg) -> {
+    @PreDestroy
+    public void destroy() {
+        doReconnectWork = false;
+        executorService.shutdown();
+        disconnectNats();
+    }
+
+    private void disconnectNats() {
+        try {
+            if (s != null) {
+                s.unsubscribe();
+            }
+            if (d != null) {
+                d.unsubscribe(SPEED_RUSH_ALL);
+            }
+            if (nc != null) {
+                nc.close();
+            }
+        } catch (Exception e) {
+            log.error("error on destroy Nats subscribe and connection");
+        }
+    }
+
+    private void doWork() {
+        d = nc.createDispatcher((msg) -> {
         });
-        Subscription s = d.subscribe(SPEED_RUSH_ALL, getMessageHandler());
+        s = d.subscribe(SPEED_RUSH_ALL, getMessageHandler());
     }
 
     private MessageHandler getMessageHandler() {
         return (msg) -> {
+            lastProcess = System.currentTimeMillis();
             Setting setting = settingRepository.findById(Setting.SETTING_ID)
                     .orElseThrow(() -> new RuntimeException("setting with id " + Setting.SETTING_ID + " not found"));
             synchronized (isWorkingObj) {
@@ -379,6 +412,24 @@ public class NatsService {
         } catch (ToManyException e) {
             lastToMany = System.currentTimeMillis();
             return null;
+        }
+    }
+
+    private boolean doReconnectWork = true;
+
+    private class ReconnectTask implements Runnable {
+        @Override
+        public void run() {
+            while (doReconnectWork) {
+                try {
+                    if (lastProcess != null && lastProcess + 60_1000 < System.currentTimeMillis()) {
+                        disconnectNats();
+                        createNatsConnection();
+                    }
+                } catch (Exception e) {
+                    log.error("error reconnect Nats", e);
+                }
+            }
         }
     }
 }
