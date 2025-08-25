@@ -180,17 +180,23 @@ public class NatsService {
                 List<NatsData> data = response.getData();
                 Map<String, BigDecimal> adtsMap = data.stream()
                         .collect(Collectors.toMap(NatsData::getSymbol, NatsData::getAdts, (o1, o2) -> o1));
-                if (adtsTop.isEmpty()) {
-                    log.debug("Top Adts is empty");
-                    return;
-                }
-                log.debug("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
                 log.debug("ignored pairs {}", IGNORE_PAIRS);
                 List<BotsResult> openBots = request(() -> gainiumService.getBotsDCA("open", 1L));
                 if (openBots == null) {
                     log.debug("openBots is null");
                     return;
                 }
+                Set<String> openBotIds = openBots.stream()
+                        .map(BotsResult::getId)
+                        .collect(Collectors.toSet());
+                Map<String, List<Bot>> botFromDBMap = botRepository.findAllById(openBotIds).stream()
+                        .collect(Collectors.groupingBy(Bot::getSymbol));
+                leaveBots(adtsMap, openBots, botFromDBMap, setting.isBotLeaveEnabled(), setting.getBotLeavePercent());
+                if (adtsTop.isEmpty()) {
+                    log.debug("Top Adts is empty");
+                    return;
+                }
+                log.debug("Top Adts:" + adtsTop.stream().map(NatsData::toString).toList());
                 LAST_OPEN_BOTS = openBots;
                 if (!processEnabled) {
                     log.debug("process enabled is false");
@@ -211,11 +217,6 @@ public class NatsService {
                     log.debug("template not fount");
                     return;
                 }
-                Set<String> openBotIds = openBots.stream()
-                        .map(BotsResult::getId)
-                        .collect(Collectors.toSet());
-                Map<String, List<Bot>> botFromDBMap = botRepository.findAllById(openBotIds).stream()
-                        .collect(Collectors.groupingBy(Bot::getSymbol));
                 log.debug("OPEN_BOT_LIMIT {}", setting.getBotCount());
                 log.debug("template {}", template);
                 log.debug("clonedBotMap {}", clonedBotMap);
@@ -223,7 +224,6 @@ public class NatsService {
                 long count = openBots.size();
                 log.debug("openBots count " + count);
 
-                leaveBots(adtsMap, openBots, botFromDBMap, setting.isBotLeaveEnabled(), setting.getBotLeavePercent());
 
                 log.debug("process open new bots");
                 if (count < setting.getBotCount()) {
